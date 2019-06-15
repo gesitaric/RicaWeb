@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1CABF233377FF525D4EA78 /* Pods_RicaWebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C15CB302476CE136C492715A /* Pods_RicaWebUITests.framework */; };
+		529249AB0702270A0E54E9F9 /* Pods_RicaWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D25F24A438EA5DAE5937504 /* Pods_RicaWeb.framework */; };
+		9141D5895545BED443E12B7D /* Pods_RicaWebTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82565D6AB3DE7869199AE277 /* Pods_RicaWebTests.framework */; };
 		AE2662E722B4CDC800DE3996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662E622B4CDC800DE3996 /* AppDelegate.swift */; };
 		AE2662E922B4CDC800DE3996 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662E822B4CDC800DE3996 /* MainViewController.swift */; };
 		AE2662EC22B4CDC800DE3996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2662EA22B4CDC800DE3996 /* Main.storyboard */; };
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BFEFEABE18FB29360628108 /* Pods-RicaWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWeb.debug.xcconfig"; path = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb.debug.xcconfig"; sourceTree = "<group>"; };
+		7E63AD54A4AE0561007C1B9A /* Pods-RicaWebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebTests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.debug.xcconfig"; sourceTree = "<group>"; };
+		82565D6AB3DE7869199AE277 /* Pods_RicaWebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D25F24A438EA5DAE5937504 /* Pods_RicaWeb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWeb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2662E322B4CDC800DE3996 /* RicaWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RicaWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2662E622B4CDC800DE3996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE2662E822B4CDC800DE3996 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,11 @@
 		AE26630222B4CDCA00DE3996 /* RicaWebUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RicaWebUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE26630622B4CDCA00DE3996 /* RicaWebUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RicaWebUITests.swift; sourceTree = "<group>"; };
 		AE26630822B4CDCA00DE3996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB949C792E453C219AB3C96F /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C15CB302476CE136C492715A /* Pods_RicaWebUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C82CE502B6A104E0363B1CA7 /* Pods-RicaWebTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebTests.release.xcconfig"; path = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8585C44E5E6E83B19D38659 /* Pods-RicaWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWeb.release.xcconfig"; path = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb.release.xcconfig"; sourceTree = "<group>"; };
+		D9A91A5940E5E6E94BA83AE7 /* Pods-RicaWebUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.release.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529249AB0702270A0E54E9F9 /* Pods_RicaWeb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9141D5895545BED443E12B7D /* Pods_RicaWebTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1CABF233377FF525D4EA78 /* Pods_RicaWebUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2E0F7DC5C534291C3D14A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BFEFEABE18FB29360628108 /* Pods-RicaWeb.debug.xcconfig */,
+				C8585C44E5E6E83B19D38659 /* Pods-RicaWeb.release.xcconfig */,
+				7E63AD54A4AE0561007C1B9A /* Pods-RicaWebTests.debug.xcconfig */,
+				C82CE502B6A104E0363B1CA7 /* Pods-RicaWebTests.release.xcconfig */,
+				BB949C792E453C219AB3C96F /* Pods-RicaWebUITests.debug.xcconfig */,
+				D9A91A5940E5E6E94BA83AE7 /* Pods-RicaWebUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		575072C372F188DBAC3C7A35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D25F24A438EA5DAE5937504 /* Pods_RicaWeb.framework */,
+				82565D6AB3DE7869199AE277 /* Pods_RicaWebTests.framework */,
+				C15CB302476CE136C492715A /* Pods_RicaWebUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE2662DA22B4CDC800DE3996 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +120,8 @@
 				AE2662FA22B4CDCA00DE3996 /* RicaWebTests */,
 				AE26630522B4CDCA00DE3996 /* RicaWebUITests */,
 				AE2662E422B4CDC800DE3996 /* Products */,
+				3F2E0F7DC5C534291C3D14A9 /* Pods */,
+				575072C372F188DBAC3C7A35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE26630B22B4CDCA00DE3996 /* Build configuration list for PBXNativeTarget "RicaWeb" */;
 			buildPhases = (
+				E8B568364890450C370896A2 /* [CP] Check Pods Manifest.lock */,
 				AE2662DF22B4CDC800DE3996 /* Sources */,
 				AE2662E022B4CDC800DE3996 /* Frameworks */,
 				AE2662E122B4CDC800DE3996 /* Resources */,
+				669C5C7F5FBA5C18025CE5DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE26630E22B4CDCA00DE3996 /* Build configuration list for PBXNativeTarget "RicaWebTests" */;
 			buildPhases = (
+				B9DB46F041FD650056D25865 /* [CP] Check Pods Manifest.lock */,
 				AE2662F322B4CDCA00DE3996 /* Sources */,
 				AE2662F422B4CDCA00DE3996 /* Frameworks */,
 				AE2662F522B4CDCA00DE3996 /* Resources */,
@@ -167,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE26631122B4CDCA00DE3996 /* Build configuration list for PBXNativeTarget "RicaWebUITests" */;
 			buildPhases = (
+				CD69F42F68DB8FAC08FFC617 /* [CP] Check Pods Manifest.lock */,
 				AE2662FE22B4CDCA00DE3996 /* Sources */,
 				AE2662FF22B4CDCA00DE3996 /* Frameworks */,
 				AE26630022B4CDCA00DE3996 /* Resources */,
@@ -250,6 +295,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		669C5C7F5FBA5C18025CE5DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RicaWeb/Pods-RicaWeb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RicaWeb/Pods-RicaWeb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RicaWeb/Pods-RicaWeb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9DB46F041FD650056D25865 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RicaWebTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD69F42F68DB8FAC08FFC617 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RicaWebUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8B568364890450C370896A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RicaWeb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE2662DF22B4CDC800DE3996 /* Sources */ = {
@@ -430,6 +561,7 @@
 		};
 		AE26630C22B4CDCA00DE3996 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BFEFEABE18FB29360628108 /* Pods-RicaWeb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +580,7 @@
 		};
 		AE26630D22B4CDCA00DE3996 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8585C44E5E6E83B19D38659 /* Pods-RicaWeb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +599,7 @@
 		};
 		AE26630F22B4CDCA00DE3996 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E63AD54A4AE0561007C1B9A /* Pods-RicaWebTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +621,7 @@
 		};
 		AE26631022B4CDCA00DE3996 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C82CE502B6A104E0363B1CA7 /* Pods-RicaWebTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +643,7 @@
 		};
 		AE26631222B4CDCA00DE3996 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB949C792E453C219AB3C96F /* Pods-RicaWebUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +664,7 @@
 		};
 		AE26631322B4CDCA00DE3996 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9A91A5940E5E6E94BA83AE7 /* Pods-RicaWebUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

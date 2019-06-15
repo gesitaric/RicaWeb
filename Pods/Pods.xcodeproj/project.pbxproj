@@ -1,0 +1,995 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15F82A654BB128334860C44BD2B340A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		1CFD153C1663E326439E29886F46265B /* RAMBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C205CF12B5A93038A0CE586C615D3F0 /* RAMBadge.swift */; };
+		2837F948CA61F88DF152EDE41A82568E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		29CE7C346457CEA5F2F6058A76123B37 /* Pods-RicaWebUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC57BC1274F29A0825B3E64DF8EDEDB /* Pods-RicaWebUITests-dummy.m */; };
+		4205E4544A8F0DF171037CE730C23600 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3B68B16F40A7ABC803FB8E93E4E52 /* RAMFumeAnimation.swift */; };
+		57765BAFB040F6735441AB67E7E79B9F /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236280D119DEEC097BC2D34A00D8C4B /* RAMItemAnimationProtocol.swift */; };
+		7C094B4FF824B735DB77A5DE8E0354B3 /* Pods-RicaWebTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9943689C3445F73AC96762EB1019D53 /* Pods-RicaWebTests-dummy.m */; };
+		8013F896FC2ADA356ADD7C029DFD75A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		8116D2AEEDFCA48F867C3651E94CF6B8 /* Pods-RicaWeb-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D272B4EC7DC136481E852B2588F0D89 /* Pods-RicaWeb-dummy.m */; };
+		8672DFFE108CC958D3EF0814D85B1D1E /* Pods-RicaWebUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5659B044E86DA4C2CE25D56B0E52EA4 /* Pods-RicaWebUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90BEC455D49795F48E393206F449279D /* Pods-RicaWeb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4072A5B44E20CDE19275CCE9C25C53B5 /* Pods-RicaWeb-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9107E554AF648893C2AC5DB880D4E527 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35C746B9A0BE3154E8A033EA6613A87 /* RAMBounceAnimation.swift */; };
+		A7F3092CFF1A81FAF376F2100F85CEC3 /* RAMAnimatedTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4120A3FF27A4D99A4A80BB5EE56E60F4 /* RAMAnimatedTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2AA8105BAD229738B4697DEC4EE30A4 /* Pods-RicaWebTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CEBB93C8BE17BBCCEFAEAA31760DA11E /* Pods-RicaWebTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D35CF1AD14A6DAE78EF96025EA357C21 /* RAMTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BD19F3971D7BAE3ACCF9DF5F0DF17 /* RAMTransitionItemAnimations.swift */; };
+		D8D0C21A75008EB6EF57EC82B559D8D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E081E53812DF48C2E6E1819016349495 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5621FD126C01ADF3039E7CC40A3C8A7A /* RAMFrameItemAnimation.swift */; };
+		E8821BA50B02A5A9507303BF81A871B1 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448735460A32DD56CE270C300AAFA9E /* RAMAnimatedTabBarController+BottomLine.swift */; };
+		F188A8E15A925526B322CEAF4F64C819 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723C74EB9A07BEBFC2BF3CCF854FAE9 /* RAMRotationAnimation.swift */; };
+		F6A55782608C5DBBB995EF9C2FB2EC12 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3F644960E657F814DE124F1EC8893F /* RAMAnimatedTabBarController.swift */; };
+		F99DCAF4A18E487FDC16666B4D4F0346 /* RAMAnimatedTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E8DC342ABE174A145C45C0E8474CBC /* RAMAnimatedTabBarController-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41E935331EDDCAFBA289A63F117E24EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DED4DEF356A163E50925101C3C7C0FB9;
+			remoteInfo = RAMAnimatedTabBarController;
+		};
+		50A701E482AEE7E75A9A496A6F67AEF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C8461A766D314A7CA9B2B2A11404DC;
+			remoteInfo = "Pods-RicaWeb";
+		};
+		952E5747F8FA01C05CB70BCA0710A7F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C8461A766D314A7CA9B2B2A11404DC;
+			remoteInfo = "Pods-RicaWeb";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0448735460A32DD56CE270C300AAFA9E /* RAMAnimatedTabBarController+BottomLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RAMAnimatedTabBarController+BottomLine.swift"; path = "RAMAnimatedTabBarController/BottomLine/RAMAnimatedTabBarController+BottomLine.swift"; sourceTree = "<group>"; };
+		0A91EBEF79B246DEB39CD787A05AF5A6 /* Pods_RicaWebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RicaWebTests.framework; path = "Pods-RicaWebTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16377AA8C51B42AF7271851C4DE28AEF /* Pods-RicaWebUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RicaWebUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1BC783C39584AAF88F42C5C488AF9EAC /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D272B4EC7DC136481E852B2588F0D89 /* Pods-RicaWeb-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RicaWeb-dummy.m"; sourceTree = "<group>"; };
+		1F8AAF3BBED5A22BB0FB4A1910F0E51E /* Pods-RicaWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RicaWeb.release.xcconfig"; sourceTree = "<group>"; };
+		269E12306803CFA8C13CF200AC016F35 /* Pods-RicaWeb-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RicaWeb-acknowledgements.plist"; sourceTree = "<group>"; };
+		27A5CAE71A58A2D5EFE75D3608D26F29 /* RAMAnimatedTabBarController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RAMAnimatedTabBarController-Info.plist"; sourceTree = "<group>"; };
+		2B3F644960E657F814DE124F1EC8893F /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMAnimatedTabBarController.swift; path = RAMAnimatedTabBarController/RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3270903E264698C7B683D35F5110E8E5 /* Pods-RicaWebTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RicaWebTests.modulemap"; sourceTree = "<group>"; };
+		3723C74EB9A07BEBFC2BF3CCF854FAE9 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMRotationAnimation.swift; path = RAMAnimatedTabBarController/Animations/RotationAnimation/RAMRotationAnimation.swift; sourceTree = "<group>"; };
+		3E3BD19F3971D7BAE3ACCF9DF5F0DF17 /* RAMTransitionItemAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMTransitionItemAnimations.swift; path = RAMAnimatedTabBarController/Animations/TransitionAniamtions/RAMTransitionItemAnimations.swift; sourceTree = "<group>"; };
+		4072A5B44E20CDE19275CCE9C25C53B5 /* Pods-RicaWeb-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RicaWeb-umbrella.h"; sourceTree = "<group>"; };
+		4120A3FF27A4D99A4A80BB5EE56E60F4 /* RAMAnimatedTabBarController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RAMAnimatedTabBarController-umbrella.h"; sourceTree = "<group>"; };
+		41B1A47518F8EAF570CC6FBCF6793752 /* Pods-RicaWebTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RicaWebTests.release.xcconfig"; sourceTree = "<group>"; };
+		448E30741758BA2A38FA9B2C615CF65C /* Pods-RicaWeb-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RicaWeb-Info.plist"; sourceTree = "<group>"; };
+		55E8DC342ABE174A145C45C0E8474CBC /* RAMAnimatedTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RAMAnimatedTabBarController-dummy.m"; sourceTree = "<group>"; };
+		5621FD126C01ADF3039E7CC40A3C8A7A /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
+		5C205CF12B5A93038A0CE586C615D3F0 /* RAMBadge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMBadge.swift; path = RAMAnimatedTabBarController/RAMBadge/RAMBadge.swift; sourceTree = "<group>"; };
+		61243A8E61509E6B377DFBFDF4BF7B2D /* Pods-RicaWebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RicaWebTests.debug.xcconfig"; sourceTree = "<group>"; };
+		61A3B68B16F40A7ABC803FB8E93E4E52 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMFumeAnimation.swift; path = RAMAnimatedTabBarController/Animations/FumeAnimation/RAMFumeAnimation.swift; sourceTree = "<group>"; };
+		6803A26D713572B4FCF211333F946956 /* RAMAnimatedTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RAMAnimatedTabBarController.framework; path = RAMAnimatedTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7236280D119DEEC097BC2D34A00D8C4B /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMItemAnimationProtocol.swift; path = RAMAnimatedTabBarController/RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
+		73328004E019BEC72D4DF3A87FFB50F9 /* RAMAnimatedTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RAMAnimatedTabBarController.xcconfig; sourceTree = "<group>"; };
+		79317FBFE246B6B8C95029631D25F782 /* RAMAnimatedTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RAMAnimatedTabBarController-prefix.pch"; sourceTree = "<group>"; };
+		9D03FED53941BAF2E2E11263BCFF4E65 /* Pods-RicaWebTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RicaWebTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F59A2399360A1F35FA032E2D93C860D /* Pods_RicaWeb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RicaWeb.framework; path = "Pods-RicaWeb.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32A37DB87B2D2069B305C4FC7C84178 /* Pods-RicaWeb-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RicaWeb-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A9943689C3445F73AC96762EB1019D53 /* Pods-RicaWebTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RicaWebTests-dummy.m"; sourceTree = "<group>"; };
+		AA749391E24F773C70C2B30160088560 /* Pods-RicaWebUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RicaWebUITests-Info.plist"; sourceTree = "<group>"; };
+		AEC57BC1274F29A0825B3E64DF8EDEDB /* Pods-RicaWebUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RicaWebUITests-dummy.m"; sourceTree = "<group>"; };
+		B489657B771442E8647FC527286F973F /* Pods-RicaWebUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RicaWebUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C1600698578D0967A0203E091CA70F1F /* Pods_RicaWebUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RicaWebUITests.framework; path = "Pods-RicaWebUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C531C023891DC74AF7565794247DFECC /* Pods-RicaWebTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RicaWebTests-Info.plist"; sourceTree = "<group>"; };
+		C84E03CF592BEE9167E7D8237080F0CB /* Pods-RicaWebTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RicaWebTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CEBB93C8BE17BBCCEFAEAA31760DA11E /* Pods-RicaWebTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RicaWebTests-umbrella.h"; sourceTree = "<group>"; };
+		D35C746B9A0BE3154E8A033EA6613A87 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = "<group>"; };
+		D7A565C8FCA61DD5D1156CA1926785AF /* Pods-RicaWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RicaWeb.debug.xcconfig"; sourceTree = "<group>"; };
+		DE6BD8CDFBC0ECA9D5C088208CD995BA /* RAMAnimatedTabBarController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RAMAnimatedTabBarController.modulemap; sourceTree = "<group>"; };
+		E5659B044E86DA4C2CE25D56B0E52EA4 /* Pods-RicaWebUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RicaWebUITests-umbrella.h"; sourceTree = "<group>"; };
+		E65BE2D9146764C9C9921F2359E9EF38 /* Pods-RicaWebUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RicaWebUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E8B6C8CC8A8AB75264B5D3862D2391C3 /* Pods-RicaWeb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RicaWeb.modulemap"; sourceTree = "<group>"; };
+		ECA7ED4B65587BA451E88D97D16862D2 /* Pods-RicaWebUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RicaWebUITests.modulemap"; sourceTree = "<group>"; };
+		F4580BE4534CDFCED6EC06A94DBEC41F /* Pods-RicaWeb-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RicaWeb-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CCAE283E1925F5E4779D5ACB7F07211 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D0C21A75008EB6EF57EC82B559D8D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA1BAAFB81121FE38FA80E039BE7E86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8013F896FC2ADA356ADD7C029DFD75A7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66CF72A4C9DC48FCC3E1FBCD8C23659E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F82A654BB128334860C44BD2B340A8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE968F06D59B8E4C41AAD73E630C9900 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2837F948CA61F88DF152EDE41A82568E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C1A9008F9D649B7DB97385C9CF22579 /* RAMAnimatedTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2B3F644960E657F814DE124F1EC8893F /* RAMAnimatedTabBarController.swift */,
+				0448735460A32DD56CE270C300AAFA9E /* RAMAnimatedTabBarController+BottomLine.swift */,
+				5C205CF12B5A93038A0CE586C615D3F0 /* RAMBadge.swift */,
+				D35C746B9A0BE3154E8A033EA6613A87 /* RAMBounceAnimation.swift */,
+				5621FD126C01ADF3039E7CC40A3C8A7A /* RAMFrameItemAnimation.swift */,
+				61A3B68B16F40A7ABC803FB8E93E4E52 /* RAMFumeAnimation.swift */,
+				7236280D119DEEC097BC2D34A00D8C4B /* RAMItemAnimationProtocol.swift */,
+				3723C74EB9A07BEBFC2BF3CCF854FAE9 /* RAMRotationAnimation.swift */,
+				3E3BD19F3971D7BAE3ACCF9DF5F0DF17 /* RAMTransitionItemAnimations.swift */,
+				668A7FF826A960DBCD84E1EA3FB386A6 /* Support Files */,
+			);
+			name = RAMAnimatedTabBarController;
+			path = RAMAnimatedTabBarController;
+			sourceTree = "<group>";
+		};
+		491764A126B3252EA14336DA4285534E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F59A2399360A1F35FA032E2D93C860D /* Pods_RicaWeb.framework */,
+				0A91EBEF79B246DEB39CD787A05AF5A6 /* Pods_RicaWebTests.framework */,
+				C1600698578D0967A0203E091CA70F1F /* Pods_RicaWebUITests.framework */,
+				6803A26D713572B4FCF211333F946956 /* RAMAnimatedTabBarController.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D8830796DABA90F4E3D121E7C85D564 /* Pods-RicaWebUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECA7ED4B65587BA451E88D97D16862D2 /* Pods-RicaWebUITests.modulemap */,
+				16377AA8C51B42AF7271851C4DE28AEF /* Pods-RicaWebUITests-acknowledgements.markdown */,
+				E65BE2D9146764C9C9921F2359E9EF38 /* Pods-RicaWebUITests-acknowledgements.plist */,
+				AEC57BC1274F29A0825B3E64DF8EDEDB /* Pods-RicaWebUITests-dummy.m */,
+				AA749391E24F773C70C2B30160088560 /* Pods-RicaWebUITests-Info.plist */,
+				E5659B044E86DA4C2CE25D56B0E52EA4 /* Pods-RicaWebUITests-umbrella.h */,
+				1BC783C39584AAF88F42C5C488AF9EAC /* Pods-RicaWebUITests.debug.xcconfig */,
+				B489657B771442E8647FC527286F973F /* Pods-RicaWebUITests.release.xcconfig */,
+			);
+			name = "Pods-RicaWebUITests";
+			path = "Target Support Files/Pods-RicaWebUITests";
+			sourceTree = "<group>";
+		};
+		668A7FF826A960DBCD84E1EA3FB386A6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE6BD8CDFBC0ECA9D5C088208CD995BA /* RAMAnimatedTabBarController.modulemap */,
+				73328004E019BEC72D4DF3A87FFB50F9 /* RAMAnimatedTabBarController.xcconfig */,
+				55E8DC342ABE174A145C45C0E8474CBC /* RAMAnimatedTabBarController-dummy.m */,
+				27A5CAE71A58A2D5EFE75D3608D26F29 /* RAMAnimatedTabBarController-Info.plist */,
+				79317FBFE246B6B8C95029631D25F782 /* RAMAnimatedTabBarController-prefix.pch */,
+				4120A3FF27A4D99A4A80BB5EE56E60F4 /* RAMAnimatedTabBarController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RAMAnimatedTabBarController";
+			sourceTree = "<group>";
+		};
+		83C0F265B1FEC70AB84FABDB5D7CA54D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E84FE5D13166709A1097B90F6601367E /* Pods-RicaWeb */,
+				C08E00450B425022B92D21C430247946 /* Pods-RicaWebTests */,
+				5D8830796DABA90F4E3D121E7C85D564 /* Pods-RicaWebUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9C7949DE556517BC8FF93AF4FB4C3CF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C1A9008F9D649B7DB97385C9CF22579 /* RAMAnimatedTabBarController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C08E00450B425022B92D21C430247946 /* Pods-RicaWebTests */ = {
+			isa = PBXGroup;
+			children = (
+				3270903E264698C7B683D35F5110E8E5 /* Pods-RicaWebTests.modulemap */,
+				9D03FED53941BAF2E2E11263BCFF4E65 /* Pods-RicaWebTests-acknowledgements.markdown */,
+				C84E03CF592BEE9167E7D8237080F0CB /* Pods-RicaWebTests-acknowledgements.plist */,
+				A9943689C3445F73AC96762EB1019D53 /* Pods-RicaWebTests-dummy.m */,
+				C531C023891DC74AF7565794247DFECC /* Pods-RicaWebTests-Info.plist */,
+				CEBB93C8BE17BBCCEFAEAA31760DA11E /* Pods-RicaWebTests-umbrella.h */,
+				61243A8E61509E6B377DFBFDF4BF7B2D /* Pods-RicaWebTests.debug.xcconfig */,
+				41B1A47518F8EAF570CC6FBCF6793752 /* Pods-RicaWebTests.release.xcconfig */,
+			);
+			name = "Pods-RicaWebTests";
+			path = "Target Support Files/Pods-RicaWebTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				9C7949DE556517BC8FF93AF4FB4C3CF8 /* Pods */,
+				491764A126B3252EA14336DA4285534E /* Products */,
+				83C0F265B1FEC70AB84FABDB5D7CA54D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E84FE5D13166709A1097B90F6601367E /* Pods-RicaWeb */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6C8CC8A8AB75264B5D3862D2391C3 /* Pods-RicaWeb.modulemap */,
+				A32A37DB87B2D2069B305C4FC7C84178 /* Pods-RicaWeb-acknowledgements.markdown */,
+				269E12306803CFA8C13CF200AC016F35 /* Pods-RicaWeb-acknowledgements.plist */,
+				1D272B4EC7DC136481E852B2588F0D89 /* Pods-RicaWeb-dummy.m */,
+				F4580BE4534CDFCED6EC06A94DBEC41F /* Pods-RicaWeb-frameworks.sh */,
+				448E30741758BA2A38FA9B2C615CF65C /* Pods-RicaWeb-Info.plist */,
+				4072A5B44E20CDE19275CCE9C25C53B5 /* Pods-RicaWeb-umbrella.h */,
+				D7A565C8FCA61DD5D1156CA1926785AF /* Pods-RicaWeb.debug.xcconfig */,
+				1F8AAF3BBED5A22BB0FB4A1910F0E51E /* Pods-RicaWeb.release.xcconfig */,
+			);
+			name = "Pods-RicaWeb";
+			path = "Target Support Files/Pods-RicaWeb";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		83CE2B801CA5EAA4AAA6227DE2657DE5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8672DFFE108CC958D3EF0814D85B1D1E /* Pods-RicaWebUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8308D2833B423710189730177E2C44D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2AA8105BAD229738B4697DEC4EE30A4 /* Pods-RicaWebTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B33561487B4CA4402B93492FBB3553 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F3092CFF1A81FAF376F2100F85CEC3 /* RAMAnimatedTabBarController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDED2E823B8A78BA18DD89E41C196252 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BEC455D49795F48E393206F449279D /* Pods-RicaWeb-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0D5325FE05E91694D8C6C0305C11B8C3 /* Pods-RicaWebUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7601898C81447FC275EE519DB8EA1F52 /* Build configuration list for PBXNativeTarget "Pods-RicaWebUITests" */;
+			buildPhases = (
+				83CE2B801CA5EAA4AAA6227DE2657DE5 /* Headers */,
+				CCCFE83A16F3F5C1A3C2DDFAE3D05B67 /* Sources */,
+				CE968F06D59B8E4C41AAD73E630C9900 /* Frameworks */,
+				5813D0651E9090A9B44E49BE51F04CB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6F5423AEEEBE6A13B906CD68767879E /* PBXTargetDependency */,
+			);
+			name = "Pods-RicaWebUITests";
+			productName = "Pods-RicaWebUITests";
+			productReference = C1600698578D0967A0203E091CA70F1F /* Pods_RicaWebUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		52C8461A766D314A7CA9B2B2A11404DC /* Pods-RicaWeb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7496C2E3F645AC1C7664F5A81B68A173 /* Build configuration list for PBXNativeTarget "Pods-RicaWeb" */;
+			buildPhases = (
+				CDED2E823B8A78BA18DD89E41C196252 /* Headers */,
+				0DCA214F7006FFFC3F2426E8B195869D /* Sources */,
+				2CCAE283E1925F5E4779D5ACB7F07211 /* Frameworks */,
+				F59488645D581FB0F9EFEFDEF7A4521B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9AD159162ACD1A905649AA15B596349 /* PBXTargetDependency */,
+			);
+			name = "Pods-RicaWeb";
+			productName = "Pods-RicaWeb";
+			productReference = 9F59A2399360A1F35FA032E2D93C860D /* Pods_RicaWeb.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A2C2AF681BBCC3EB9BC674256F8C0BFD /* Pods-RicaWebTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A02135FDC4510EC55A5E06827761FFF /* Build configuration list for PBXNativeTarget "Pods-RicaWebTests" */;
+			buildPhases = (
+				C8308D2833B423710189730177E2C44D /* Headers */,
+				8577883A64038375D2F791513CFD538E /* Sources */,
+				66CF72A4C9DC48FCC3E1FBCD8C23659E /* Frameworks */,
+				ED05AA92C46BB4187318C0E9D9490228 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12070DBA3B4BF25830A568004989F44F /* PBXTargetDependency */,
+			);
+			name = "Pods-RicaWebTests";
+			productName = "Pods-RicaWebTests";
+			productReference = 0A91EBEF79B246DEB39CD787A05AF5A6 /* Pods_RicaWebTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DED4DEF356A163E50925101C3C7C0FB9 /* RAMAnimatedTabBarController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A1FCE74D70726F9070958DECA8C25D5 /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarController" */;
+			buildPhases = (
+				C9B33561487B4CA4402B93492FBB3553 /* Headers */,
+				2F9EBF64796E6E1E297175A05A478AD2 /* Sources */,
+				5BA1BAAFB81121FE38FA80E039BE7E86 /* Frameworks */,
+				69C21D48B6C2AFC53C38446FE362661A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RAMAnimatedTabBarController;
+			productName = RAMAnimatedTabBarController;
+			productReference = 6803A26D713572B4FCF211333F946956 /* RAMAnimatedTabBarController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 491764A126B3252EA14336DA4285534E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52C8461A766D314A7CA9B2B2A11404DC /* Pods-RicaWeb */,
+				A2C2AF681BBCC3EB9BC674256F8C0BFD /* Pods-RicaWebTests */,
+				0D5325FE05E91694D8C6C0305C11B8C3 /* Pods-RicaWebUITests */,
+				DED4DEF356A163E50925101C3C7C0FB9 /* RAMAnimatedTabBarController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5813D0651E9090A9B44E49BE51F04CB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69C21D48B6C2AFC53C38446FE362661A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED05AA92C46BB4187318C0E9D9490228 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59488645D581FB0F9EFEFDEF7A4521B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DCA214F7006FFFC3F2426E8B195869D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8116D2AEEDFCA48F867C3651E94CF6B8 /* Pods-RicaWeb-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9EBF64796E6E1E297175A05A478AD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8821BA50B02A5A9507303BF81A871B1 /* RAMAnimatedTabBarController+BottomLine.swift in Sources */,
+				F99DCAF4A18E487FDC16666B4D4F0346 /* RAMAnimatedTabBarController-dummy.m in Sources */,
+				F6A55782608C5DBBB995EF9C2FB2EC12 /* RAMAnimatedTabBarController.swift in Sources */,
+				1CFD153C1663E326439E29886F46265B /* RAMBadge.swift in Sources */,
+				9107E554AF648893C2AC5DB880D4E527 /* RAMBounceAnimation.swift in Sources */,
+				E081E53812DF48C2E6E1819016349495 /* RAMFrameItemAnimation.swift in Sources */,
+				4205E4544A8F0DF171037CE730C23600 /* RAMFumeAnimation.swift in Sources */,
+				57765BAFB040F6735441AB67E7E79B9F /* RAMItemAnimationProtocol.swift in Sources */,
+				F188A8E15A925526B322CEAF4F64C819 /* RAMRotationAnimation.swift in Sources */,
+				D35CF1AD14A6DAE78EF96025EA357C21 /* RAMTransitionItemAnimations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8577883A64038375D2F791513CFD538E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C094B4FF824B735DB77A5DE8E0354B3 /* Pods-RicaWebTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCCFE83A16F3F5C1A3C2DDFAE3D05B67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29CE7C346457CEA5F2F6058A76123B37 /* Pods-RicaWebUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12070DBA3B4BF25830A568004989F44F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RicaWeb";
+			target = 52C8461A766D314A7CA9B2B2A11404DC /* Pods-RicaWeb */;
+			targetProxy = 952E5747F8FA01C05CB70BCA0710A7F8 /* PBXContainerItemProxy */;
+		};
+		A6F5423AEEEBE6A13B906CD68767879E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RicaWeb";
+			target = 52C8461A766D314A7CA9B2B2A11404DC /* Pods-RicaWeb */;
+			targetProxy = 50A701E482AEE7E75A9A496A6F67AEF6 /* PBXContainerItemProxy */;
+		};
+		C9AD159162ACD1A905649AA15B596349 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RAMAnimatedTabBarController;
+			target = DED4DEF356A163E50925101C3C7C0FB9 /* RAMAnimatedTabBarController */;
+			targetProxy = 41E935331EDDCAFBA289A63F117E24EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		379E3EB47B26A429BC60523D1ADE3392 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B489657B771442E8647FC527286F973F /* Pods-RicaWebUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		4E48E5D9F03805D4E468037BEEA2D7B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73328004E019BEC72D4DF3A87FFB50F9 /* RAMAnimatedTabBarController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RAMAnimatedTabBarController/RAMAnimatedTabBarController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RAMAnimatedTabBarController/RAMAnimatedTabBarController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RAMAnimatedTabBarController/RAMAnimatedTabBarController.modulemap";
+				PRODUCT_MODULE_NAME = RAMAnimatedTabBarController;
+				PRODUCT_NAME = RAMAnimatedTabBarController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D8B1B897B9399D2A617DF7CD544B966 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7A565C8FCA61DD5D1156CA1926785AF /* Pods-RicaWeb.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		710FB60B9BB3B28F97959C10DDCB9C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73328004E019BEC72D4DF3A87FFB50F9 /* RAMAnimatedTabBarController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RAMAnimatedTabBarController/RAMAnimatedTabBarController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RAMAnimatedTabBarController/RAMAnimatedTabBarController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RAMAnimatedTabBarController/RAMAnimatedTabBarController.modulemap";
+				PRODUCT_MODULE_NAME = RAMAnimatedTabBarController;
+				PRODUCT_NAME = RAMAnimatedTabBarController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		82E167F8CBE26ECD0DB3536B61123720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61243A8E61509E6B377DFBFDF4BF7B2D /* Pods-RicaWebTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9A9DA3D44E0F55565A719EF2DE2E4918 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41B1A47518F8EAF570CC6FBCF6793752 /* Pods-RicaWebTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B1E6EF97A679F164BF1F051AD144DFF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BC783C39584AAF88F42C5C488AF9EAC /* Pods-RicaWebUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFBDE644C7EA2D7C4A38528AA5907A9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F8AAF3BBED5A22BB0FB4A1910F0E51E /* Pods-RicaWeb.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A02135FDC4510EC55A5E06827761FFF /* Build configuration list for PBXNativeTarget "Pods-RicaWebTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82E167F8CBE26ECD0DB3536B61123720 /* Debug */,
+				9A9DA3D44E0F55565A719EF2DE2E4918 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */,
+				3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7496C2E3F645AC1C7664F5A81B68A173 /* Build configuration list for PBXNativeTarget "Pods-RicaWeb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8B1B897B9399D2A617DF7CD544B966 /* Debug */,
+				DFBDE644C7EA2D7C4A38528AA5907A9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7601898C81447FC275EE519DB8EA1F52 /* Build configuration list for PBXNativeTarget "Pods-RicaWebUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1E6EF97A679F164BF1F051AD144DFF1 /* Debug */,
+				379E3EB47B26A429BC60523D1ADE3392 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A1FCE74D70726F9070958DECA8C25D5 /* Build configuration list for PBXNativeTarget "RAMAnimatedTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E48E5D9F03805D4E468037BEEA2D7B6 /* Debug */,
+				710FB60B9BB3B28F97959C10DDCB9C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
