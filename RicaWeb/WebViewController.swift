@@ -49,8 +49,10 @@ extension WebViewController : UITabBarDelegate {
                 tabBar.selectedItem = nil
             }
         case .more:
-            // TODO: Menu
-            print(2)
+            let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
+            guard let sideMenuViewController = storyboard.instantiateInitialViewController() else { return }
+            present(sideMenuViewController, animated: true, completion: nil)
+            // TODO: deselect
         }
     }
 }
