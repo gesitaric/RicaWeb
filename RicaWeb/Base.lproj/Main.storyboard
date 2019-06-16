@@ -30,8 +30,8 @@
                                 <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem title="Back" id="AZb-Y8-8TZ"/>
-                                    <tabBarItem title="Forward" id="rbn-Gj-8Vf"/>
+                                    <tabBarItem title="Back" image="back2" id="AZb-Y8-8TZ"/>
+                                    <tabBarItem title="Forward" image="forward" id="rbn-Gj-8Vf"/>
                                     <tabBarItem systemItem="more" id="DWf-ad-VqV"/>
                                 </items>
                                 <connections>
@@ -60,4 +60,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back2" width="16" height="16"/>
+        <image name="forward" width="16" height="16"/>
+    </resources>
 </document>

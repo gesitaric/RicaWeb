@@ -39,10 +39,17 @@ extension WebViewController : UITabBarDelegate {
         guard let selectedItem = ToolbarItem(rawValue: index) else { return }
         switch selectedItem {
         case .back:
-            print(0)
+            webView.goBack()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                tabBar.selectedItem = nil
+            }
         case .forward:
-            print(1)
+            webView.goForward()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                tabBar.selectedItem = nil
+            }
         case .more:
+            // TODO: Menu
             print(2)
         }
     }
