@@ -11,8 +11,14 @@ import WebKit
 
 class WebViewController: UIViewController {
 
-    @IBOutlet weak var webView: WKWebView!
+    private lazy var viewModel: WebViewViewModel = {
+        let model = WebViewViewModel()
+        return model
+    }()
 
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     enum ToolbarItem: Int {
         case back = 0
         case forward
@@ -22,14 +28,8 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let urlString = "https://www.google.com/"
-        let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
-
-        guard let encodedUrl = encodedUrlString else { return }
-        if let url = URL(string: encodedUrl) {
-            let request = URLRequest(url: url)
-            webView.load(request)
-        }
+        guard let request = viewModel.request(url: "https://www.google.com/") else { return }
+        webView.load(request)
     }
 }
 
@@ -55,5 +55,31 @@ extension WebViewController : UITabBarDelegate {
             // TODO: deselect
         }
     }
+}
+
+extension WebViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // TODO: suggestions
+        print("from searchbar delegate: \(searchText)")
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let input = searchBar.text else { return }
+        let newUrl: String?
+        if viewModel.verifyUrl(urlString: input) != false {
+            guard let request = viewModel.request(url: input) else { return }
+            webView.load(request)
+            newUrl = input
+        } else {
+            let googleSearch = viewModel.googleSearch(q: input)
+            guard let request = viewModel.request(url: googleSearch) else { return }
+            webView.load(request)
+            newUrl = googleSearch
+        }
+        if let newUrl = newUrl {
+            searchBar.text = newUrl
+        }
+    }
+    //TODO: コードの整理とキーボードの表示のタイミング
 }
 

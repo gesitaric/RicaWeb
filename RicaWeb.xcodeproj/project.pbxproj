@@ -21,6 +21,7 @@
 		AE26631C22B645D900DE3996 /* SideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE26631B22B645D900DE3996 /* SideMenuViewController.storyboard */; };
 		AE26631E22B6854F00DE3996 /* SideMenuCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26631D22B6854F00DE3996 /* SideMenuCellViewController.swift */; };
 		AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */; };
+		AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632522B697FB00DE3996 /* WebViewViewModel.swift */; };
 		DF5CBFDF8ED016121DEE4B10 /* Pods_RicaWebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7B4E7C2CDB9D528850FE44 /* Pods_RicaWebUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		AE26631B22B645D900DE3996 /* SideMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuViewController.storyboard; sourceTree = "<group>"; };
 		AE26631D22B6854F00DE3996 /* SideMenuCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCellViewController.swift; sourceTree = "<group>"; };
 		AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		AE26632522B697FB00DE3996 /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
 		B81F4E2C1A9BEF9300AFE0D5 /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D94B1C989B5A7F9CEF84B611 /* Pods_RicaWebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7B4E7C2CDB9D528850FE44 /* Pods_RicaWebUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,10 +140,9 @@
 		AE2662E522B4CDC800DE3996 /* RicaWeb */ = {
 			isa = PBXGroup;
 			children = (
+				AE26632422B692F100DE3996 /* WebView */,
 				AE26631822B63B0200DE3996 /* SideMenu */,
 				AE2662E622B4CDC800DE3996 /* AppDelegate.swift */,
-				AE2662E822B4CDC800DE3996 /* WebViewController.swift */,
-				AE2662EA22B4CDC800DE3996 /* Main.storyboard */,
 				AE2662ED22B4CDCA00DE3996 /* Assets.xcassets */,
 				AE2662EF22B4CDCA00DE3996 /* LaunchScreen.storyboard */,
 				AE2662F222B4CDCA00DE3996 /* Info.plist */,
@@ -187,6 +188,16 @@
 				AE26631B22B645D900DE3996 /* SideMenuViewController.storyboard */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		AE26632422B692F100DE3996 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				AE2662E822B4CDC800DE3996 /* WebViewController.swift */,
+				AE26632522B697FB00DE3996 /* WebViewViewModel.swift */,
+				AE2662EA22B4CDC800DE3996 /* Main.storyboard */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +426,7 @@
 				AE2662E922B4CDC800DE3996 /* WebViewController.swift in Sources */,
 				AE26631A22B63B1A00DE3996 /* SideMenuViewController.swift in Sources */,
 				AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */,
+				AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */,
 				AE2662E722B4CDC800DE3996 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

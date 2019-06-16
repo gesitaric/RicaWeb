@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLb-pr-iBz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -38,27 +38,41 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xa9-cc-6G6"/>
                                 </connections>
                             </tabBar>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Googleで検索、またはURL入力" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-qv-S7m">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5b8-6d-dUN"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LLb-pr-iBz" firstAttribute="top" secondItem="7PA-qv-S7m" secondAttribute="bottom" id="6Vw-9S-Zi4"/>
                             <constraint firstAttribute="bottom" secondItem="4GW-lM-kyw" secondAttribute="bottom" id="7hS-E5-Vad"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4GW-lM-kyw" secondAttribute="trailing" id="7u3-Mw-y6a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LLb-pr-iBz" secondAttribute="trailing" id="84l-1E-WE1"/>
                             <constraint firstItem="4GW-lM-kyw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9lz-8P-YeX"/>
+                            <constraint firstItem="7PA-qv-S7m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gwn-sb-GPe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7PA-qv-S7m" secondAttribute="trailing" id="bLQ-Aw-C4j"/>
+                            <constraint firstItem="7PA-qv-S7m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lWh-09-Adt"/>
                             <constraint firstItem="4GW-lM-kyw" firstAttribute="top" secondItem="LLb-pr-iBz" secondAttribute="bottom" id="n5g-ez-Vxy"/>
-                            <constraint firstItem="LLb-pr-iBz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sCV-eF-Zja"/>
                             <constraint firstItem="LLb-pr-iBz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vET-SL-OW6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fGT-zC-57I"/>
                     <connections>
+                        <outlet property="searchBar" destination="7PA-qv-S7m" id="MMZ-gW-Xig"/>
                         <outlet property="webView" destination="LLb-pr-iBz" id="A6R-Ux-aN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230" y="116"/>
+            <point key="canvasLocation" x="-230.43478260869566" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>
