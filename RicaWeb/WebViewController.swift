@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import SideMenu
 
 class WebViewController: UIViewController {
 
@@ -53,7 +52,7 @@ extension WebViewController : UITabBarDelegate {
             let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
             guard let sideMenuViewController = storyboard.instantiateInitialViewController() else { return }
             present(sideMenuViewController, animated: true, completion: nil)
-
+            // TODO: deselect
         }
     }
 }

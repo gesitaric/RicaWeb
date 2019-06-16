@@ -9,26 +9,36 @@
 import UIKit
 import SideMenu
 
-class SideMenuViewController: UISideMenuNavigationController {
+class SideMenuViewController: UITableViewController {
+
+    let sections: [String] = ["メイン", "設定"]
+    let labels: [[String]] = [["ブックマーク","履歴"] ,["テーマ"]]
+    let images: [[String]] = [["bookmark","history"] ,["theme"]]
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-}
 
-extension SideMenuViewController: UISideMenuNavigationControllerDelegate {
-    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Appearing! (animated: \(animated))")
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
     }
 
-    func sideMenuDidAppear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Appeared! (animated: \(animated))")
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return labels[section].count
     }
 
-    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Disappearing! (animated: \(animated))")
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
     }
 
-    func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) {
-        print("SideMenu Disappeared! (animated: \(animated))")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as? SideMenuCellViewController else { return UITableViewCell() }
+        cell.setup(imageIcon: images[indexPath.section][indexPath.row],
+                    label: labels[indexPath.section][indexPath.row])
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO
     }
 }

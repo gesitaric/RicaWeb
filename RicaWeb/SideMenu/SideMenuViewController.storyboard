@@ -12,13 +12,13 @@
         <!--メニュー-->
         <scene sceneID="VBW-GV-aEW">
             <objects>
-                <tableViewController id="JUE-As-yLq" sceneMemberID="viewController">
+                <tableViewController id="JUE-As-yLq" customClass="SideMenuViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bkJ-rg-ReM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uJP-xD-Z1g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reuse" id="uJP-xD-Z1g" customClass="SideMenuCellViewController" customModule="RicaWeb" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uJP-xD-Z1g" id="Qo1-zd-6IK">
@@ -47,6 +47,10 @@
                                         <constraint firstItem="Kaq-m2-5Wl" firstAttribute="leading" secondItem="Qo1-zd-6IK" secondAttribute="leading" constant="16" id="bEI-L8-XZ1"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageIcon" destination="Kaq-m2-5Wl" id="bHd-wp-ccH"/>
+                                    <outlet property="label" destination="EeU-wL-aDh" id="eod-Zx-EDH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,7 +67,7 @@
         <!--Side Menu Navigation Controller-->
         <scene sceneID="UdO-sd-Kba">
             <objects>
-                <navigationController storyboardIdentifier="SideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Y4-4k-TGI" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController id="8Y4-4k-TGI" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bkl-9T-skb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
