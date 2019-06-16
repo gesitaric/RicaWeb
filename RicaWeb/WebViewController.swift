@@ -12,7 +12,13 @@ import WebKit
 class WebViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
-    
+
+    enum ToolbarItem: Int {
+        case back = 0
+        case forward
+        case more
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +28,22 @@ class WebViewController: UIViewController {
         guard let encodedUrl = encodedUrlString else { return }
         if let url = URL(string: encodedUrl) {
             let request = URLRequest(url: url)
-            let userAgentStr = "RicaWeb"
-            webView.customUserAgent = userAgentStr
             webView.load(request)
+        }
+    }
+}
+
+extension WebViewController : UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        guard let index = tabBar.items?.firstIndex(of: item) else { return }
+        guard let selectedItem = ToolbarItem(rawValue: index) else { return }
+        switch selectedItem {
+        case .back:
+            print(0)
+        case .forward:
+            print(1)
+        case .more:
+            print(2)
         }
     }
 }

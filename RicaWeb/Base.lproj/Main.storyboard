@@ -30,8 +30,9 @@
                                 <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="DWf-ad-VqV"/>
-                                    <tabBarItem systemItem="more" id="0IZ-YK-Kaf"/>
+                                    <tabBarItem title="Back" id="AZb-Y8-8TZ"/>
+                                    <tabBarItem title="Forward" id="rbn-Gj-8Vf"/>
+                                    <tabBarItem systemItem="more" id="DWf-ad-VqV"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xa9-cc-6G6"/>
