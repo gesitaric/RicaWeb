@@ -11,30 +11,30 @@ import SideMenu
 
 class SideMenuViewController: UITableViewController {
 
-    let sections: [String] = ["メイン", "設定"]
-    let labels: [[String]] = [["ブックマーク","履歴"] ,["テーマ"]]
-    let images: [[String]] = [["bookmark","history"] ,["theme"]]
+    private lazy var viewModel: SideMenuViewModel = {
+        let model: SideMenuViewModel = SideMenuViewModel()
+        return model
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return viewModel.getSectionCount()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return labels[section].count
+        return viewModel.getLabelCountForSection(section: section)
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
+        return viewModel.getSection(section: section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as? SideMenuCellViewController else { return UITableViewCell() }
-        cell.setup(imageIcon: images[indexPath.section][indexPath.row],
-                    label: labels[indexPath.section][indexPath.row])
+        cell.setup(imageIcon: viewModel.getImage(section: indexPath.section, row: indexPath.row), label:viewModel.getLabel(section: indexPath.section, row: indexPath.row))
         return cell
     }
 
