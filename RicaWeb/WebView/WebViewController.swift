@@ -16,8 +16,10 @@ class WebViewController: UIViewController {
         return model
     }()
 
+    @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
+    var lastScrollOffset = CGFloat()
     
     enum ToolbarItem: Int {
         case back = 0
@@ -93,4 +95,3 @@ extension WebViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
-

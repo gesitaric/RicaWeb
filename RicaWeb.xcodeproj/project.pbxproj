@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3435C2C8CCF08AB3EFA43A75 /* Pods_RicaWebTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94B1C989B5A7F9CEF84B611 /* Pods_RicaWebTests.framework */; };
-		7581072FB56C7FBEE68EFD1C /* Pods_RicaWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703AA47EA3C03D1D0BD701A8 /* Pods_RicaWeb.framework */; };
+		1AA03CD76C0FFFA8872879A8 /* Pods_RicaWebTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F622CC777912B183B3CDEA0 /* Pods_RicaWebTests.framework */; };
+		93E1AB332D5109BA29FA1719 /* Pods_RicaWebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC75699A6790078EA00A62 /* Pods_RicaWebUITests.framework */; };
+		A2B6A36CB2FDE2906B62DCA7 /* Pods_RicaWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818394015FE411A3EF6423F9 /* Pods_RicaWeb.framework */; };
+		AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF02F22B793C700018BD5 /* RicaWeb.xcdatamodeld */; };
+		AE1DF03A22B7A18E00018BD5 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF03922B7A18E00018BD5 /* BookmarkViewModel.swift */; };
 		AE2662E722B4CDC800DE3996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662E622B4CDC800DE3996 /* AppDelegate.swift */; };
 		AE2662E922B4CDC800DE3996 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662E822B4CDC800DE3996 /* WebViewController.swift */; };
 		AE2662EC22B4CDC800DE3996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2662EA22B4CDC800DE3996 /* Main.storyboard */; };
@@ -22,7 +25,8 @@
 		AE26631E22B6854F00DE3996 /* SideMenuCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26631D22B6854F00DE3996 /* SideMenuCellViewController.swift */; };
 		AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */; };
 		AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632522B697FB00DE3996 /* WebViewViewModel.swift */; };
-		DF5CBFDF8ED016121DEE4B10 /* Pods_RicaWebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7B4E7C2CDB9D528850FE44 /* Pods_RicaWebUITests.framework */; };
+		AE26632922B7850F00DE3996 /* BookmarkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE26632822B7850F00DE3996 /* BookmarkViewController.storyboard */; };
+		AE26632B22B785A100DE3996 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632A22B785A100DE3996 /* BookmarkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +49,15 @@
 /* Begin PBXFileReference section */
 		06FA8A9E35F111DC66801618 /* Pods-RicaWebTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebTests.release.xcconfig"; path = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.release.xcconfig"; sourceTree = "<group>"; };
 		0968B79D6D508B5B81D55A41 /* Pods-RicaWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWeb.debug.xcconfig"; path = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb.debug.xcconfig"; sourceTree = "<group>"; };
-		703AA47EA3C03D1D0BD701A8 /* Pods_RicaWeb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWeb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BCC75699A6790078EA00A62 /* Pods_RicaWebUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		818394015FE411A3EF6423F9 /* Pods_RicaWeb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWeb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		846FA34937B306D6A5020D98 /* Pods-RicaWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWeb.release.xcconfig"; path = "Target Support Files/Pods-RicaWeb/Pods-RicaWeb.release.xcconfig"; sourceTree = "<group>"; };
 		9634758CF9862BF0D0CDA88F /* Pods-RicaWebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebTests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F622CC777912B183B3CDEA0 /* Pods_RicaWebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90F5337796A94E77C9048B5 /* Pods-RicaWebUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.release.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AE1DF03022B793C700018BD5 /* RicaWeb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RicaWeb.xcdatamodel; sourceTree = "<group>"; };
+		AE1DF03222B7941600018BD5 /* RicaWebHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RicaWebHeader.h; sourceTree = "<group>"; };
+		AE1DF03922B7A18E00018BD5 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		AE2662E322B4CDC800DE3996 /* RicaWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RicaWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2662E622B4CDC800DE3996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE2662E822B4CDC800DE3996 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -68,9 +77,9 @@
 		AE26631D22B6854F00DE3996 /* SideMenuCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCellViewController.swift; sourceTree = "<group>"; };
 		AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		AE26632522B697FB00DE3996 /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
+		AE26632822B7850F00DE3996 /* BookmarkViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookmarkViewController.storyboard; sourceTree = "<group>"; };
+		AE26632A22B785A100DE3996 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		B81F4E2C1A9BEF9300AFE0D5 /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D94B1C989B5A7F9CEF84B611 /* Pods_RicaWebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA7B4E7C2CDB9D528850FE44 /* Pods_RicaWebUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE26631622B4E33300DE3996 /* WebKit.framework in Frameworks */,
-				7581072FB56C7FBEE68EFD1C /* Pods_RicaWeb.framework in Frameworks */,
+				A2B6A36CB2FDE2906B62DCA7 /* Pods_RicaWeb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3435C2C8CCF08AB3EFA43A75 /* Pods_RicaWebTests.framework in Frameworks */,
+				1AA03CD76C0FFFA8872879A8 /* Pods_RicaWebTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF5CBFDF8ED016121DEE4B10 /* Pods_RicaWebUITests.framework in Frameworks */,
+				93E1AB332D5109BA29FA1719 /* Pods_RicaWebUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,9 +124,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AE1DF00B22B78B2F00018BD5 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		AE2662DA22B4CDC800DE3996 = {
 			isa = PBXGroup;
 			children = (
+				AE1DF03222B7941600018BD5 /* RicaWebHeader.h */,
+				AE1DF02F22B793C700018BD5 /* RicaWeb.xcdatamodeld */,
 				AE2662E522B4CDC800DE3996 /* RicaWeb */,
 				AE2662FA22B4CDCA00DE3996 /* RicaWebTests */,
 				AE26630522B4CDCA00DE3996 /* RicaWebUITests */,
@@ -140,8 +158,10 @@
 		AE2662E522B4CDC800DE3996 /* RicaWeb */ = {
 			isa = PBXGroup;
 			children = (
+				AE26632722B784F900DE3996 /* Bookmark */,
 				AE26632422B692F100DE3996 /* WebView */,
 				AE26631822B63B0200DE3996 /* SideMenu */,
+				AE1DF00B22B78B2F00018BD5 /* Database */,
 				AE2662E622B4CDC800DE3996 /* AppDelegate.swift */,
 				AE2662ED22B4CDCA00DE3996 /* Assets.xcassets */,
 				AE2662EF22B4CDCA00DE3996 /* LaunchScreen.storyboard */,
@@ -172,9 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				AE26631522B4E33300DE3996 /* WebKit.framework */,
-				703AA47EA3C03D1D0BD701A8 /* Pods_RicaWeb.framework */,
-				D94B1C989B5A7F9CEF84B611 /* Pods_RicaWebTests.framework */,
-				FA7B4E7C2CDB9D528850FE44 /* Pods_RicaWebUITests.framework */,
+				818394015FE411A3EF6423F9 /* Pods_RicaWeb.framework */,
+				9F622CC777912B183B3CDEA0 /* Pods_RicaWebTests.framework */,
+				6BCC75699A6790078EA00A62 /* Pods_RicaWebUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,6 +218,16 @@
 				AE2662EA22B4CDC800DE3996 /* Main.storyboard */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		AE26632722B784F900DE3996 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				AE26632A22B785A100DE3996 /* BookmarkViewController.swift */,
+				AE1DF03922B7A18E00018BD5 /* BookmarkViewModel.swift */,
+				AE26632822B7850F00DE3996 /* BookmarkViewController.storyboard */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +341,7 @@
 				AE2662F122B4CDCA00DE3996 /* LaunchScreen.storyboard in Resources */,
 				AE2662EE22B4CDCA00DE3996 /* Assets.xcassets in Resources */,
 				AE2662EC22B4CDC800DE3996 /* Main.storyboard in Resources */,
+				AE26632922B7850F00DE3996 /* BookmarkViewController.storyboard in Resources */,
 				AE26631C22B645D900DE3996 /* SideMenuViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +455,10 @@
 			files = (
 				AE26631E22B6854F00DE3996 /* SideMenuCellViewController.swift in Sources */,
 				AE2662E922B4CDC800DE3996 /* WebViewController.swift in Sources */,
+				AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */,
 				AE26631A22B63B1A00DE3996 /* SideMenuViewController.swift in Sources */,
+				AE26632B22B785A100DE3996 /* BookmarkViewController.swift in Sources */,
+				AE1DF03A22B7A18E00018BD5 /* BookmarkViewModel.swift in Sources */,
 				AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */,
 				AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */,
 				AE2662E722B4CDC800DE3996 /* AppDelegate.swift in Sources */,
@@ -612,6 +646,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = italoricardogeske.RicaWeb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = RicaWebHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -631,6 +667,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = italoricardogeske.RicaWeb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = RicaWebHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -762,6 +800,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AE1DF02F22B793C700018BD5 /* RicaWeb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AE1DF03022B793C700018BD5 /* RicaWeb.xcdatamodel */,
+			);
+			currentVersion = AE1DF03022B793C700018BD5 /* RicaWeb.xcdatamodel */;
+			path = RicaWeb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AE2662DB22B4CDC800DE3996 /* Project object */;
 }
