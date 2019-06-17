@@ -31,6 +31,10 @@ class WebViewController: UIViewController {
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
     }
+
+    @objc func dismissKeyboard() {
+        searchBar.endEditing(true)
+    }
 }
 
 extension WebViewController : UITabBarDelegate {
@@ -81,5 +85,12 @@ extension WebViewController: UISearchBarDelegate {
         }
     }
     //TODO: コードの整理とキーボードの表示のタイミング
+}
+
+extension WebViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        dismissKeyboard()
+        return true
+    }
 }
 
