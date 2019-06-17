@@ -26,9 +26,6 @@
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="KR9-lq-G9h" appends="YES" id="8Zf-gc-QnG"/>
-                                </connections>
                             </wkWebView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GW-lM-kyw">
                                 <rect key="frame" x="0.0" y="813" width="414" height="83"/>
@@ -71,15 +68,11 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="7PA-qv-S7m" id="MMZ-gW-Xig"/>
+                        <outlet property="tabBar" destination="4GW-lM-kyw" id="7On-Bb-OLh"/>
                         <outlet property="webView" destination="LLb-pr-iBz" id="A6R-Ux-aN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <gestureRecognizer id="KR9-lq-G9h">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="QmQ-t0-ouF"/>
-                    </connections>
-                </gestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-230.43478260869566" y="115.84821428571428"/>
         </scene>

@@ -22,6 +22,7 @@ class WebViewViewModel {
         return nil
     }
 
+    //TODO: urlかquerieかちゃんと調べる
     func verifyUrl (urlString: String?) -> Bool {
         guard let urlString = urlString else { return false }
         if let url = URL(string: urlString) {

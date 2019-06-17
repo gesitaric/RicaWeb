@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RicaWeb/WebView/WebViewController.swift"
-            timestampString = "582422671.3894221"
+            timestampString = "582452037.082122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "searchBarSearchButtonClicked(_:)"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "gestureRecognizer(_:shouldReceive:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
