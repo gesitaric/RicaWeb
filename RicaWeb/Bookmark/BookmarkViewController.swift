@@ -17,6 +17,6 @@ class BookmarkViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.read
+        viewModel.save()
     }
 }

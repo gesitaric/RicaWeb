@@ -39,6 +39,9 @@ class SideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO
+        if indexPath.row == 0 && indexPath.section == 0 {
+            let vc =  BookmarkViewController()
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
