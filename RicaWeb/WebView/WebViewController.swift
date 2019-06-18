@@ -9,8 +9,12 @@
 import UIKit
 import WebKit
 import SideMenu
+import CKCircleMenuView
 
 class WebViewController: UIViewController {
+
+    var circleMenuImageArray = Array<UIImage>()
+    var circleMenuView: CKCircleMenuView?
 
     private lazy var viewModel: WebViewViewModel = {
         let model = WebViewViewModel()
@@ -25,11 +29,17 @@ class WebViewController: UIViewController {
     enum ToolbarItem: Int {
         case back = 0
         case forward
+        case actions
         case more
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.circleMenuImageArray.append(UIImage(named: "action")!)
+        self.circleMenuImageArray.append(UIImage(named: "action")!)
+        self.circleMenuImageArray.append(UIImage(named: "action")!)
+        self.circleMenuImageArray.append(UIImage(named: "action")!)
 
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
@@ -44,17 +54,18 @@ extension WebViewController : UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(of: item) else { return }
         guard let selectedItem = ToolbarItem(rawValue: index) else { return }
+        tabBar.selectedItem = nil
         switch selectedItem {
         case .back:
             webView.goBack()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                tabBar.selectedItem = nil
-            }
         case .forward:
             webView.goForward()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                tabBar.selectedItem = nil
-            }
+        case .actions:
+            let tPoint = CGPoint(x: view.frame.midX, y: view.frame.midY)
+            self.circleMenuView = CKCircleMenuView(atOrigin: tPoint, usingOptions: CircleMenu().initialize(), withImageArray: self.circleMenuImageArray)
+            self.view.addSubview(self.circleMenuView!)
+            self.circleMenuView!.delegate = self
+            self.circleMenuView!.openMenu()
         case .more:
             let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
             guard let sideMenuViewController = storyboard.instantiateInitialViewController() else { return }
@@ -94,5 +105,21 @@ extension WebViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         dismissKeyboard()
         return true
+    }
+}
+
+extension WebViewController: CKCircleMenuDelegate {
+    func circleMenuActivatedButton(with anIndex: Int32) {
+        print(anIndex)
+    }
+    
+    func circleMenuOpened() {
+        tabBar.isUserInteractionEnabled = false
+        webView.isUserInteractionEnabled = false
+    }
+    
+    func circleMenuClosed() {
+        tabBar.isUserInteractionEnabled = true
+        webView.isUserInteractionEnabled = true
     }
 }

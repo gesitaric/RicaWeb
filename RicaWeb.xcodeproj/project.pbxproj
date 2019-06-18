@@ -12,6 +12,7 @@
 		8C46A8FC22B897A000EBCE02 /* BookmarkCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46A8FB22B897A000EBCE02 /* BookmarkCellViewController.swift */; };
 		8C46A8FD22B89AA400EBCE02 /* BookmarkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C46A8F822B8934E00EBCE02 /* BookmarkViewController.storyboard */; };
 		8C46A8FE22B89ABC00EBCE02 /* BookmarkCellViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 8C46A8FB22B897A000EBCE02 /* BookmarkCellViewController.swift */; };
+		8C46A90222B8D72500EBCE02 /* CircleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46A90122B8D72500EBCE02 /* CircleMenu.swift */; };
 		93E1AB332D5109BA29FA1719 /* Pods_RicaWebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC75699A6790078EA00A62 /* Pods_RicaWebUITests.framework */; };
 		A2B6A36CB2FDE2906B62DCA7 /* Pods_RicaWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818394015FE411A3EF6423F9 /* Pods_RicaWeb.framework */; };
 		AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF02F22B793C700018BD5 /* RicaWeb.xcdatamodeld */; };
@@ -60,6 +61,7 @@
 		8C46A8F422B87B0800EBCE02 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		8C46A8F722B8934E00EBCE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BookmarkViewController.storyboard; sourceTree = "<group>"; };
 		8C46A8FB22B897A000EBCE02 /* BookmarkCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellViewController.swift; sourceTree = "<group>"; };
+		8C46A90122B8D72500EBCE02 /* CircleMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenu.swift; sourceTree = "<group>"; };
 		9634758CF9862BF0D0CDA88F /* Pods-RicaWebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebTests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F622CC777912B183B3CDEA0 /* Pods_RicaWebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90F5337796A94E77C9048B5 /* Pods-RicaWebUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.release.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8C46A8F422B87B0800EBCE02 /* Util.swift */,
+				8C46A90122B8D72500EBCE02 /* CircleMenu.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				AE1DF04722B7D8B500018BD5 /* Bookmark+CoreDataClass.swift in Sources */,
 				AE1DF04822B7D8B500018BD5 /* Bookmark+CoreDataProperties.swift in Sources */,
 				AE26631A22B63B1A00DE3996 /* SideMenuViewController.swift in Sources */,
+				8C46A90222B8D72500EBCE02 /* CircleMenu.swift in Sources */,
 				AE26632B22B785A100DE3996 /* BookmarkViewController.swift in Sources */,
 				8C46A8F522B87B0800EBCE02 /* Util.swift in Sources */,
 				8C46A8FC22B897A000EBCE02 /* BookmarkCellViewController.swift in Sources */,
