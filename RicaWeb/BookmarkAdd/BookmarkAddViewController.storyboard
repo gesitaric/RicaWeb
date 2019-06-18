@@ -18,24 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsM-2u-iwV">
-                                <rect key="frame" x="186" y="438" width="57" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eO5-PJ-8LT">
+                                <rect key="frame" x="16" y="84" width="382" height="32"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="PMq-zv-ovg">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="PKI-cU-3EL"/>
+                                            <constraint firstAttribute="width" constant="32" id="XRC-bK-M0i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ブックマークのタイトルの入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzB-wC-RYS">
+                                        <rect key="frame" x="40" y="0.0" width="342" height="32"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8r-Zk-JsL">
+                                <rect key="frame" x="16" y="124" width="382" height="30"/>
+                                <state key="normal" title="追加"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WsM-2u-iwV" firstAttribute="centerX" secondItem="2tT-z7-BNN" secondAttribute="centerX" id="o4S-dB-Qu8"/>
-                            <constraint firstItem="WsM-2u-iwV" firstAttribute="centerY" secondItem="2tT-z7-BNN" secondAttribute="centerY" id="pjF-IZ-PUm"/>
+                            <constraint firstItem="2tT-z7-BNN" firstAttribute="trailing" secondItem="R8r-Zk-JsL" secondAttribute="trailing" constant="16" id="7O7-wn-nLr"/>
+                            <constraint firstItem="eO5-PJ-8LT" firstAttribute="top" secondItem="2tT-z7-BNN" secondAttribute="top" constant="40" id="DSe-LR-Ldx"/>
+                            <constraint firstItem="2tT-z7-BNN" firstAttribute="trailing" secondItem="eO5-PJ-8LT" secondAttribute="trailing" constant="16" id="FVR-fM-hVC"/>
+                            <constraint firstItem="eO5-PJ-8LT" firstAttribute="leading" secondItem="2tT-z7-BNN" secondAttribute="leading" constant="16" id="PIO-PD-zBA"/>
+                            <constraint firstItem="R8r-Zk-JsL" firstAttribute="leading" secondItem="2tT-z7-BNN" secondAttribute="leading" constant="16" id="eA2-Q3-DpY"/>
+                            <constraint firstItem="R8r-Zk-JsL" firstAttribute="top" secondItem="eO5-PJ-8LT" secondAttribute="bottom" constant="8" id="ilS-Ez-WWc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2tT-z7-BNN"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAh-5H-Tgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="83"/>
+            <point key="canvasLocation" x="-152.17391304347828" y="82.366071428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookmark" width="16" height="16"/>
+    </resources>
 </document>

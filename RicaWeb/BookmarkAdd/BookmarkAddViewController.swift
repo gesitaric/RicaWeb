@@ -9,6 +9,7 @@
 import Foundation
 
 class BookmarkAddViewController: UIViewController {
+    //TODO hange to tableview
     override func viewDidLoad() {
         super.viewDidLoad()
     }

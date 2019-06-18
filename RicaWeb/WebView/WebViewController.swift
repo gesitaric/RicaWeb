@@ -112,7 +112,7 @@ extension WebViewController: CKCircleMenuDelegate {
         case .addBookmark:
             let storyboard = UIStoryboard(name: "BookmarkAddViewController", bundle: nil)
             guard let bookmarkAddViewController = storyboard.instantiateInitialViewController() else { return }
-            presenter.presentationType = .bottomHalf
+            presenter.presentationType = .topHalf
             customPresentViewController(presenter, viewController: bookmarkAddViewController, animated: true, completion: nil)
         case .history:
             // TODO
