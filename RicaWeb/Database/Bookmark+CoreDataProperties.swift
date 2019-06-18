@@ -20,9 +20,10 @@ extension Bookmark {
     @NSManaged public var date: NSDate?
     @NSManaged public var title: String?
     @NSManaged public var url: String?
+    @NSManaged public var imageUrl: String?
 
     // データ登録/更新
-    func writeData(title: String, url: String) -> Bool {
+    func writeData(title: String, url: String, imageUrl: String) -> Bool {
         var ret = false
         let bookmarkList = Bookmark.mr_findAll()
         if bookmarkList!.count > 0 {
@@ -30,6 +31,8 @@ extension Bookmark {
             let bookmark = bookmarkList![0] as! Bookmark
             bookmark.title = title
             bookmark.url = url
+            bookmark.imageUrl = imageUrl
+            bookmark.date = NSDate()
             bookmark.managedObjectContext!.mr_saveToPersistentStoreAndWait()
             ret = true
         }else{
@@ -37,6 +40,8 @@ extension Bookmark {
             let bookmark: Bookmark = Bookmark.mr_createEntity()! as Bookmark
             bookmark.title = title
             bookmark.url = url
+            bookmark.imageUrl = imageUrl
+            bookmark.date = NSDate()
             bookmark.managedObjectContext!.mr_saveToPersistentStoreAndWait()
             ret = true
         }

@@ -66,6 +66,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tTR-3Y-HV1">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="JNJ-Yj-ad6"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="7PA-qv-S7m" id="MMZ-gW-Xig"/>
                         <outlet property="tabBar" destination="4GW-lM-kyw" id="7On-Bb-OLh"/>

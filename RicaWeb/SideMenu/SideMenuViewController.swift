@@ -20,6 +20,10 @@ class SideMenuViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.getSectionCount()
     }
@@ -40,8 +44,9 @@ class SideMenuViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 && indexPath.section == 0 {
-            let vc =  BookmarkViewController()
-            self.present(vc, animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "BookmarkViewController", bundle: nil)
+            guard let bookmarkViewController = storyboard.instantiateInitialViewController() else { return }
+            present(bookmarkViewController, animated: true, completion: nil)
         }
     }
 }

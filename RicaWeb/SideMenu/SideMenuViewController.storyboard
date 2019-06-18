@@ -72,11 +72,15 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aB9-qp-Wh9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="JUE-As-yLq" kind="relationship" relationship="rootViewController" id="GrP-G7-uEi"/>
+                        <outlet property="delegate" destination="Bkl-9T-skb" id="8Be-8g-X7B"/>
+                        <segue destination="JUE-As-yLq" kind="relationship" relationship="rootViewController" id="yr5-xP-VDp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F47-K1-WYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
