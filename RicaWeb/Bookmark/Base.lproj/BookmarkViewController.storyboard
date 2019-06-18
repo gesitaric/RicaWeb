@@ -12,13 +12,13 @@
         <!--ブックマーク-->
         <scene sceneID="gXd-dP-FgT">
             <objects>
-                <tableViewController title="ブックマーク" id="Ic5-l2-d7E" sceneMemberID="viewController">
+                <tableViewController title="ブックマーク" id="Ic5-l2-d7E" customClass="BookmarkViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zlk-5p-O6i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1mN-OB-vbu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookmarkCell" id="1mN-OB-vbu" customClass="BookmarkCellViewController" customModule="RicaWeb" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1mN-OB-vbu" id="9wO-YH-v2Y">
@@ -32,33 +32,41 @@
                                                 <constraint firstAttribute="width" constant="32" id="A1B-wc-9lt"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl4-Tp-3t5">
-                                            <rect key="frame" x="58" y="5" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-se-OZ2">
-                                            <rect key="frame" x="59" y="24" width="31" height="15"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jne-hz-gul">
+                                            <rect key="frame" x="58" y="5" width="39.5" height="34"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl4-Tp-3t5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-se-OZ2">
+                                                    <rect key="frame" x="0.0" y="19.5" width="39.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Dl4-Tp-3t5" firstAttribute="leading" secondItem="uTr-rR-weG" secondAttribute="trailing" constant="10" id="FeM-OQ-fKS"/>
-                                        <constraint firstAttribute="bottom" secondItem="Z67-se-OZ2" secondAttribute="bottom" constant="5" id="GDy-Hh-o5o"/>
                                         <constraint firstItem="uTr-rR-weG" firstAttribute="centerY" secondItem="9wO-YH-v2Y" secondAttribute="centerY" id="NEl-du-rAM"/>
-                                        <constraint firstItem="Dl4-Tp-3t5" firstAttribute="top" secondItem="9wO-YH-v2Y" secondAttribute="top" constant="5" id="YSc-LD-agS"/>
+                                        <constraint firstItem="Jne-hz-gul" firstAttribute="leading" secondItem="uTr-rR-weG" secondAttribute="trailing" constant="10" id="OcV-2S-OYb"/>
+                                        <constraint firstItem="Jne-hz-gul" firstAttribute="centerY" secondItem="9wO-YH-v2Y" secondAttribute="centerY" id="XhO-9z-hlr"/>
                                         <constraint firstItem="uTr-rR-weG" firstAttribute="leading" secondItem="9wO-YH-v2Y" secondAttribute="leading" constant="16" id="diK-fU-xIs"/>
-                                        <constraint firstItem="Z67-se-OZ2" firstAttribute="leading" secondItem="uTr-rR-weG" secondAttribute="trailing" constant="11" id="k0Z-7c-4zn"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageIcon" destination="uTr-rR-weG" id="eXs-de-JPX"/>
+                                    <outlet property="title" destination="Dl4-Tp-3t5" id="nnP-0m-mI4"/>
+                                    <outlet property="url" destination="Z67-se-OZ2" id="N2p-K8-XsB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Ic5-l2-d7E" id="n8G-E6-86R"/>
-                            <outlet property="delegate" destination="Ic5-l2-d7E" id="uMi-0x-fSf"/>
+                            <outlet property="dataSource" destination="Ic5-l2-d7E" id="23A-te-DcA"/>
+                            <outlet property="delegate" destination="Ic5-l2-d7E" id="Nne-Qo-rOV"/>
                         </connections>
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

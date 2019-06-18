@@ -18,6 +18,7 @@ class BookmarkViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        tableView.register(UINib(nibName: "BookmarkCellViewController", bundle: nil), forCellReuseIdentifier: "BookmarkCell")
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,8 +26,9 @@ class BookmarkViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as? SideMenuCellViewController else { return UITableViewCell() }
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookmarkCell", for: indexPath) as? BookmarkCellViewController else { return UITableViewCell() }
+        guard let bookmark = viewModel.getBookmarkDetails(index: indexPath.row) else { return UITableViewCell() }
+        cell.setup(imageIcon: bookmark.imageUrl ?? "", title: bookmark.title ?? "", url: bookmark.url ?? "")
         return cell
     }
     
