@@ -19,10 +19,8 @@ class WebViewViewModel {
     }
 
     func setupCircleMenu() {
-        circleMenuImageArray.append(UIImage(named: "action")!)
-        circleMenuImageArray.append(UIImage(named: "action")!)
-        circleMenuImageArray.append(UIImage(named: "action")!)
-        circleMenuImageArray.append(UIImage(named: "action")!)
+        circleMenuImageArray.append(UIImage(named: "bookmark")!)
+        circleMenuImageArray.append(UIImage(named: "history")!)
     }
 
     func setCircleMenuPos(x: CGFloat, y: CGFloat) {
