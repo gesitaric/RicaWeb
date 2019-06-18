@@ -13,9 +13,6 @@ import CKCircleMenuView
 
 class WebViewController: UIViewController {
 
-    var circleMenuImageArray = Array<UIImage>()
-    var circleMenuView: CKCircleMenuView?
-
     private lazy var viewModel: WebViewViewModel = {
         let model = WebViewViewModel()
         return model
@@ -24,7 +21,6 @@ class WebViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
-    var lastScrollOffset = CGFloat()
     
     enum ToolbarItem: Int {
         case back = 0
@@ -35,11 +31,7 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.circleMenuImageArray.append(UIImage(named: "action")!)
-        self.circleMenuImageArray.append(UIImage(named: "action")!)
-        self.circleMenuImageArray.append(UIImage(named: "action")!)
-        self.circleMenuImageArray.append(UIImage(named: "action")!)
+        viewModel.viewDidLoad()
 
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
@@ -54,18 +46,17 @@ extension WebViewController : UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(of: item) else { return }
         guard let selectedItem = ToolbarItem(rawValue: index) else { return }
-        tabBar.selectedItem = nil
         switch selectedItem {
         case .back:
             webView.goBack()
         case .forward:
             webView.goForward()
         case .actions:
-            let tPoint = CGPoint(x: view.frame.midX, y: view.frame.midY)
-            self.circleMenuView = CKCircleMenuView(atOrigin: tPoint, usingOptions: CircleMenu().initialize(), withImageArray: self.circleMenuImageArray)
-            self.view.addSubview(self.circleMenuView!)
-            self.circleMenuView!.delegate = self
-            self.circleMenuView!.openMenu()
+            viewModel.setCircleMenuPos(x: view.frame.midX, y: view.frame.midY)
+            guard let circleMenu = viewModel.circleMenuView else { return }
+            view.addSubview(circleMenu)
+            circleMenu.delegate = self
+            circleMenu.openMenu()
         case .more:
             let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
             guard let sideMenuViewController = storyboard.instantiateInitialViewController() else { return }
@@ -78,7 +69,6 @@ extension WebViewController : UITabBarDelegate {
 extension WebViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: suggestions
-        print("from searchbar delegate: \(searchText)")
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
