@@ -30,6 +30,7 @@ extension Bookmark {
             let bookmark = bookmarkList![0] as! Bookmark
             bookmark.title = title
             bookmark.url = url
+            bookmark.date = NSDate()
             bookmark.managedObjectContext!.mr_saveToPersistentStoreAndWait()
             ret = true
         }else{
@@ -37,6 +38,7 @@ extension Bookmark {
             let bookmark: Bookmark = Bookmark.mr_createEntity()! as Bookmark
             bookmark.title = title
             bookmark.url = url
+            bookmark.date = NSDate()
             bookmark.managedObjectContext!.mr_saveToPersistentStoreAndWait()
             ret = true
         }

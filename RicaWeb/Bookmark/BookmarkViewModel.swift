@@ -10,9 +10,25 @@ import Foundation
 import CoreData
 
 class BookmarkViewModel {
-    func save() {
+    private var bookmarks: [Bookmark] = []
+
+    func saveBookmark(title: String, url: String) {
         let bookmark = Bookmark()
-        let result = bookmark.writeData(title: "test", url: "test")
+        let result = bookmark.writeData(title: title, url: url)
         print(result)
+    }
+
+    func fetchBookmarks() -> [Bookmark] {
+        let bookmark = Bookmark()
+        let result = bookmark.readData()
+        return result
+    }
+
+    func viewDidLoad() {
+        self.bookmarks = fetchBookmarks()
+    }
+
+    func getBookmarksCount() -> Int {
+        return bookmarks.count
     }
 }
