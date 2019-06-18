@@ -10,6 +10,24 @@ import Foundation
 import UIKit
 
 class WebViewViewModel {
+
+    var circleMenuImageArray = Array<UIImage>()
+    var circleMenuView: CKCircleMenuView?
+
+    func viewDidLoad() {
+        setupCircleMenu()
+    }
+
+    func setupCircleMenu() {
+        circleMenuImageArray.append(UIImage(named: "bookmark")!)
+        circleMenuImageArray.append(UIImage(named: "history")!)
+    }
+
+    func setCircleMenuPos(x: CGFloat, y: CGFloat) {
+        let tPoint = CGPoint(x: x, y: y)
+        circleMenuView = CKCircleMenuView(atOrigin: tPoint, usingOptions: CircleMenu().initialize(), withImageArray: circleMenuImageArray)
+    }
+
     func request(url: String) -> URLRequest? {
         let urlString = url
         let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)

@@ -33,6 +33,7 @@
                                 <items>
                                     <tabBarItem title="Back" image="back2" id="AZb-Y8-8TZ"/>
                                     <tabBarItem title="Forward" image="forward" id="rbn-Gj-8Vf"/>
+                                    <tabBarItem title="Actions" image="action" id="zgH-8j-lDR"/>
                                     <tabBarItem systemItem="more" id="DWf-ad-VqV"/>
                                 </items>
                                 <connections>
@@ -83,6 +84,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="action" width="16" height="16"/>
         <image name="back2" width="16" height="16"/>
         <image name="forward" width="16" height="16"/>
     </resources>

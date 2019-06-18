@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import SideMenu
+import CKCircleMenuView
 
 class WebViewController: UIViewController {
 
@@ -20,16 +21,17 @@ class WebViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
-    var lastScrollOffset = CGFloat()
     
     enum ToolbarItem: Int {
         case back = 0
         case forward
+        case actions
         case more
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
 
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
@@ -47,14 +49,14 @@ extension WebViewController : UITabBarDelegate {
         switch selectedItem {
         case .back:
             webView.goBack()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                tabBar.selectedItem = nil
-            }
         case .forward:
             webView.goForward()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                tabBar.selectedItem = nil
-            }
+        case .actions:
+            viewModel.setCircleMenuPos(x: view.frame.midX, y: view.frame.midY)
+            guard let circleMenu = viewModel.circleMenuView else { return }
+            view.addSubview(circleMenu)
+            circleMenu.delegate = self
+            circleMenu.openMenu()
         case .more:
             let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
             guard let sideMenuViewController = storyboard.instantiateInitialViewController() else { return }
@@ -67,7 +69,6 @@ extension WebViewController : UITabBarDelegate {
 extension WebViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: suggestions
-        print("from searchbar delegate: \(searchText)")
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -94,5 +95,21 @@ extension WebViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         dismissKeyboard()
         return true
+    }
+}
+
+extension WebViewController: CKCircleMenuDelegate {
+    func circleMenuActivatedButton(with anIndex: Int32) {
+        print(anIndex)
+    }
+    
+    func circleMenuOpened() {
+        tabBar.isUserInteractionEnabled = false
+        webView.isUserInteractionEnabled = false
+    }
+    
+    func circleMenuClosed() {
+        tabBar.isUserInteractionEnabled = true
+        webView.isUserInteractionEnabled = true
     }
 }
