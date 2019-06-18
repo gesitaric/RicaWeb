@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		1AA03CD76C0FFFA8872879A8 /* Pods_RicaWebTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F622CC777912B183B3CDEA0 /* Pods_RicaWebTests.framework */; };
 		8C46A8F522B87B0800EBCE02 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46A8F422B87B0800EBCE02 /* Util.swift */; };
-		8C46A8F622B8934E00EBCE02 /* BookmarkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C46A8F822B8934E00EBCE02 /* BookmarkViewController.storyboard */; };
 		8C46A8FC22B897A000EBCE02 /* BookmarkCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46A8FB22B897A000EBCE02 /* BookmarkCellViewController.swift */; };
+		8C46A8FD22B89AA400EBCE02 /* BookmarkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C46A8F822B8934E00EBCE02 /* BookmarkViewController.storyboard */; };
+		8C46A8FE22B89ABC00EBCE02 /* BookmarkCellViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 8C46A8FB22B897A000EBCE02 /* BookmarkCellViewController.swift */; };
 		93E1AB332D5109BA29FA1719 /* Pods_RicaWebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC75699A6790078EA00A62 /* Pods_RicaWebUITests.framework */; };
 		A2B6A36CB2FDE2906B62DCA7 /* Pods_RicaWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818394015FE411A3EF6423F9 /* Pods_RicaWeb.framework */; };
 		AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF02F22B793C700018BD5 /* RicaWeb.xcdatamodeld */; };
@@ -358,10 +359,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C46A8FE22B89ABC00EBCE02 /* BookmarkCellViewController.swift in Resources */,
+				8C46A8FD22B89AA400EBCE02 /* BookmarkViewController.storyboard in Resources */,
 				AE2662F122B4CDCA00DE3996 /* LaunchScreen.storyboard in Resources */,
 				AE2662EE22B4CDCA00DE3996 /* Assets.xcassets in Resources */,
 				AE2662EC22B4CDC800DE3996 /* Main.storyboard in Resources */,
-				8C46A8F622B8934E00EBCE02 /* BookmarkViewController.storyboard in Resources */,
 				AE26631C22B645D900DE3996 /* SideMenuViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

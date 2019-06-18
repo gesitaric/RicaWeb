@@ -6,7 +6,7 @@
 //  Copyright © 2019 Italo Ricardo Geske. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class BookmarkCellViewController: UITableViewCell {
     @IBOutlet weak var imageIcon: UIImageView!

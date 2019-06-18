@@ -18,7 +18,10 @@ class BookmarkViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
-        tableView.register(UINib(nibName: "BookmarkCellViewController", bundle: nil), forCellReuseIdentifier: "BookmarkCell")
+    }
+
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

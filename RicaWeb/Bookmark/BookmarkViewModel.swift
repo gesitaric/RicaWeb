@@ -26,8 +26,6 @@ class BookmarkViewModel {
 
     func viewDidLoad() {
         bookmarkEntity = Bookmark(context: NSManagedObjectContext.mr_default())
-        saveBookmark(title: "Google", url: "www.google.com", imageUrl: "https://www.google.com/s2/favicons?domain=www.google.com")
-        saveBookmark(title: "Yahoo", url: "www.yahoo.co.jp", imageUrl: "https://www.google.com/s2/favicons?domain=www.yahoo.co.jp")
         self.bookmarks = fetchBookmarks()
     }
 
