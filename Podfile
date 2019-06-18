@@ -9,6 +9,7 @@ target 'RicaWeb' do
   pod 'SideMenu'
   pod 'MagicalRecord'
   pod 'CKCircleMenuView'
+  pod 'Presentr'
 
   target 'RicaWebTests' do
     inherit! :search_paths
