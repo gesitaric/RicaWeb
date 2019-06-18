@@ -39,6 +39,7 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        webView.uiDelegate = self
 
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
@@ -111,8 +112,9 @@ extension WebViewController: CKCircleMenuDelegate {
         switch selectedItem {
         case .addBookmark:
             let storyboard = UIStoryboard(name: "BookmarkAddViewController", bundle: nil)
-            guard let bookmarkAddViewController = storyboard.instantiateInitialViewController() else { return }
-            presenter.presentationType = .topHalf
+            guard let bookmarkAddViewController = storyboard.instantiateInitialViewController() as? BookmarkAddViewController else { return }
+            bookmarkAddViewController.setup(image: webView?.url?.absoluteString ?? "erroor", url: webView.url?.absoluteString ?? "erroor", title: webView.title ?? "error")
+            presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: ModalSize.custom(size:Float(view.frame.height / 1.2)), center: ModalCenterPosition.bottomCenter)
             customPresentViewController(presenter, viewController: bookmarkAddViewController, animated: true, completion: nil)
         case .history:
             // TODO
@@ -128,5 +130,11 @@ extension WebViewController: CKCircleMenuDelegate {
     func circleMenuClosed() {
         tabBar.isUserInteractionEnabled = true
         webView.isUserInteractionEnabled = true
+    }
+}
+
+extension WebViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
     }
 }
