@@ -10,8 +10,10 @@ import UIKit
 import WebKit
 import SideMenu
 import CKCircleMenuView
+import Presentr
 
 class WebViewController: UIViewController {
+    let presenter = Presentr(presentationType: .alert)
 
     private lazy var viewModel: WebViewViewModel = {
         let model = WebViewViewModel()
@@ -27,6 +29,11 @@ class WebViewController: UIViewController {
         case forward
         case actions
         case more
+    }
+
+    enum ActionItem: Int {
+        case addBookmark = 0
+        case history
     }
 
     override func viewDidLoad() {
@@ -100,7 +107,17 @@ extension WebViewController: UIGestureRecognizerDelegate {
 
 extension WebViewController: CKCircleMenuDelegate {
     func circleMenuActivatedButton(with anIndex: Int32) {
-        print(anIndex)
+        guard let selectedItem = ActionItem(rawValue: Int(anIndex)) else { return }
+        switch selectedItem {
+        case .addBookmark:
+            let storyboard = UIStoryboard(name: "BookmarkAddViewController", bundle: nil)
+            guard let bookmarkAddViewController = storyboard.instantiateInitialViewController() else { return }
+            presenter.presentationType = .bottomHalf
+            customPresentViewController(presenter, viewController: bookmarkAddViewController, animated: true, completion: nil)
+        case .history:
+            // TODO
+            print("TODO")
+        }
     }
     
     func circleMenuOpened() {
