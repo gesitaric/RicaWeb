@@ -13,6 +13,7 @@ class Navigator {
         case BookmarkList = "BookmarkViewController"
         case BookmarkAdd = "BookmarkAddViewController"
         case SideMenu = "SideMenuViewController"
+        case History = "HistoryViewController"
     }
 
     func instantiate(viewControllerClass: Classes) -> UIViewController? {

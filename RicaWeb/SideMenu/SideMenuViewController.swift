@@ -43,9 +43,12 @@ class SideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO enum
         if indexPath.row == 0 && indexPath.section == 0 {
-            let storyboard = UIStoryboard(name: "BookmarkViewController", bundle: nil)
-            guard let bookmarkViewController = storyboard.instantiateInitialViewController() else { return }
+            guard let bookmarkViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.BookmarkList) else { return }
+            present(bookmarkViewController, animated: true, completion: nil)
+        } else if indexPath.row == 1 && indexPath.section == 0 {
+            guard let bookmarkViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) else { return }
             present(bookmarkViewController, animated: true, completion: nil)
         }
     }

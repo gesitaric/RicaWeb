@@ -6,7 +6,16 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="History" representedClassName="History" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="UrlHistory" representedClassName="UrlHistory" parentEntity="History" syncable="YES">
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" maxCount="1" deletionRule="Nullify" destinationEntity="History" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Bookmark" positionX="-18" positionY="0" width="128" height="105"/>
+        <element name="Bookmark" positionX="-18" positionY="0" width="128" height="103"/>
+        <element name="History" positionX="-202.359375" positionY="5.5859375" width="128" height="58"/>
+        <element name="UrlHistory" positionX="-99" positionY="36" width="128" height="75"/>
     </elements>
 </model>
