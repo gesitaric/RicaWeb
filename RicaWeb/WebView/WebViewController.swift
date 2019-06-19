@@ -93,7 +93,7 @@ extension WebViewController: CKCircleMenuDelegate {
             let parameters = viewModel.sendNonNullParameters(title: webView.title, url: webView?.url?.absoluteString)
             bookmarkAddViewController.setup(url: parameters.1, title: parameters.0)
             presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: ModalSize.custom(size:Float(view.frame.height / 1.2)), center: ModalCenterPosition.bottomCenter)
-            customPresentViewController(presenter, viewController: bookmarkAddViewController, animated: true, completion: nil)
+            customPresentViewController(presenter, viewController: UINavigationController(rootViewController: bookmarkAddViewController), animated: true, completion: nil)
         case .history:
             // TODO
             print("TODO")

@@ -25,7 +25,7 @@ extension Bookmark {
 
     // データ読み込み
     func readData() -> [Bookmark] {
-        let bookmarkList = Bookmark.mr_findAllSorted(by: "index", ascending: true) as? [Bookmark]
+        let bookmarkList = Bookmark.mr_findAll() as? [Bookmark]
         guard let bookmarks = bookmarkList else { return [] }
         return !bookmarks.isEmpty ? bookmarks : []
     }

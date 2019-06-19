@@ -17,7 +17,6 @@ class BookmarkAddViewModel {
 
     enum Section: Int, CaseIterable {
         case inputField = 0
-        case buttonField
     }
 
     enum Result: Int {
@@ -37,8 +36,6 @@ class BookmarkAddViewModel {
         switch section {
         case .inputField:
             return 2
-        case .buttonField:
-            return 1
         }
     }
 

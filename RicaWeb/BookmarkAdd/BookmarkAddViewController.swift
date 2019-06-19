@@ -32,8 +32,7 @@ class BookmarkAddViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection(section: section)
     }
-
-    @IBAction func addButton(_ sender: UIButton) {
+    @IBAction func addButton(_ sender: UIBarButtonItem) {
         let result = viewModel.saveBookmark(title: titleField.text)
         switch result {
         case .success:
