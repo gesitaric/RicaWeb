@@ -18,7 +18,7 @@ class BookmarkAddViewController: UITableViewController {
     private var urlString: String?
     private var titleString: String?
 
-    lazy var viewModel: BookmarkAddViewModel = {
+    private lazy var viewModel: BookmarkAddViewModel = {
         let model = BookmarkAddViewModel()
         return model
     }()
@@ -32,7 +32,8 @@ class BookmarkAddViewController: UITableViewController {
         super.viewDidLoad()
         titleField.text = titleString ?? "ERROOR"
         urlLabel.text = urlString ?? "erroro"
-        urlIcon.image = nil
+        let imageUrl = "https://www.google.com/s2/favicons?domain=" + urlString!
+        urlIcon.image = Util().getIconFromUrl(url: imageUrl)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
