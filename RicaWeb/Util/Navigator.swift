@@ -12,6 +12,7 @@ class Navigator {
     enum Classes: String {
         case BookmarkList = "BookmarkViewController"
         case BookmarkAdd = "BookmarkAddViewController"
+        case SideMenu = "SideMenuViewController"
     }
 
     func instantiate(viewControllerClass: Classes) -> UIViewController? {

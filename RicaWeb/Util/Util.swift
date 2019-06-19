@@ -19,4 +19,19 @@ class Util {
             return nil
         }
     }
+
+    func checkIfExists(url: String) -> Bookmark? {
+        let fetchRequest = NSFetchRequest<Bookmark>(entityName: "Bookmark")
+        fetchRequest.predicate = NSPredicate(format: "url == %@", url)
+        var results: [Bookmark] = []
+        do {
+            results = try NSManagedObjectContext.mr_default().fetch(fetchRequest)
+            if !results.isEmpty {
+                return results.first
+            }
+        } catch {
+            print("Error")
+        }
+        return nil
+    }
 }

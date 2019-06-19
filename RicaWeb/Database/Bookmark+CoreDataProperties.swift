@@ -17,42 +17,21 @@ extension Bookmark {
         return NSFetchRequest<Bookmark>(entityName: "Bookmark")
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var title: String?
-    @NSManaged public var url: String?
-    @NSManaged public var imageUrl: String?
-
-    // データ登録/更新
-    func writeData(title: String, url: String, imageUrl: String) -> Bool {
-        var ret = false
-        let bookmarkList = Bookmark.mr_findAll()
-        if bookmarkList!.count > 0 {
-            // 検索して見つかったらアップデートする
-            let bookmark = bookmarkList![0] as! Bookmark
-            bookmark.title = title
-            bookmark.url = url
-            bookmark.imageUrl = imageUrl
-            bookmark.date = NSDate()
-            bookmark.managedObjectContext!.mr_saveToPersistentStoreAndWait()
-            ret = true
-        }else{
-            // 見つからなかったら新規登録
-            let bookmark: Bookmark = Bookmark.mr_createEntity()! as Bookmark
-            bookmark.title = title
-            bookmark.url = url
-            bookmark.imageUrl = imageUrl
-            bookmark.date = NSDate()
-            bookmark.managedObjectContext!.mr_saveToPersistentStoreAndWait()
-            ret = true
-        }
-        return ret
-    }
+    @NSManaged public var title: String
+    @NSManaged public var url: String
+    @NSManaged public var imageUrl: String
+    @NSManaged public var date: NSDate
+    @NSManaged public var index: Int32
 
     // データ読み込み
     func readData() -> [Bookmark] {
-        let bookmarkList = Bookmark.mr_findAll()
+        let bookmarkList = Bookmark.mr_findAllSorted(by: "index", ascending: true) as? [Bookmark]
         guard let bookmarks = bookmarkList else { return [] }
-        return bookmarks.isEmpty ? [] : bookmarkList as! [Bookmark]
+        return !bookmarks.isEmpty ? bookmarks : []
+    }
+
+    func getCount() -> Int {
+        return Bookmark.mr_findAll()?.count ?? 0
     }
 
 //    // データ削除
