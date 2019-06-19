@@ -10,8 +10,10 @@ import UIKit
 import WebKit
 import SideMenu
 import CKCircleMenuView
+import Presentr
 
 class WebViewController: UIViewController {
+    let presenter = Presentr(presentationType: .alert)
 
     private lazy var viewModel: WebViewViewModel = {
         let model = WebViewViewModel()
@@ -29,9 +31,15 @@ class WebViewController: UIViewController {
         case more
     }
 
+    enum ActionItem: Int {
+        case addBookmark = 0
+        case history
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        webView.uiDelegate = self
 
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
@@ -100,7 +108,18 @@ extension WebViewController: UIGestureRecognizerDelegate {
 
 extension WebViewController: CKCircleMenuDelegate {
     func circleMenuActivatedButton(with anIndex: Int32) {
-        print(anIndex)
+        guard let selectedItem = ActionItem(rawValue: Int(anIndex)) else { return }
+        switch selectedItem {
+        case .addBookmark:
+            let storyboard = UIStoryboard(name: "BookmarkAddViewController", bundle: nil)
+            guard let bookmarkAddViewController = storyboard.instantiateInitialViewController() as? BookmarkAddViewController else { return }
+            bookmarkAddViewController.setup(image: webView?.url?.absoluteString ?? "erroor", url: webView.url?.absoluteString ?? "erroor", title: webView.title ?? "error")
+            presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: ModalSize.custom(size:Float(view.frame.height / 1.2)), center: ModalCenterPosition.bottomCenter)
+            customPresentViewController(presenter, viewController: bookmarkAddViewController, animated: true, completion: nil)
+        case .history:
+            // TODO
+            print("TODO")
+        }
     }
     
     func circleMenuOpened() {
@@ -111,5 +130,11 @@ extension WebViewController: CKCircleMenuDelegate {
     func circleMenuClosed() {
         tabBar.isUserInteractionEnabled = true
         webView.isUserInteractionEnabled = true
+    }
+}
+
+extension WebViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
     }
 }

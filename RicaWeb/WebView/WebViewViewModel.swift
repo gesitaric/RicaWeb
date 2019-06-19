@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import Presentr
 
 class WebViewViewModel {
+    let presenter = Presentr(presentationType: .alert)
 
     var circleMenuImageArray = Array<UIImage>()
     var circleMenuView: CKCircleMenuView?

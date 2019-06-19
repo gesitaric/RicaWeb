@@ -3,24 +3,32 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - Presentr (1.9)
+  - SCLAlertView (0.8)
   - SideMenu (5.0.3)
 
 DEPENDENCIES:
   - CKCircleMenuView
   - MagicalRecord
+  - Presentr
+  - SCLAlertView
   - SideMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CKCircleMenuView
     - MagicalRecord
+    - Presentr
+    - SCLAlertView
     - SideMenu
 
 SPEC CHECKSUMS:
   CKCircleMenuView: 581c3e55ba554b62abb3f1ffd6e7d116b96759d3
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: ba9dba7fbefa859696bbcbb63a50c55c5b4df585
+PODFILE CHECKSUM: 947c3b76c52546bcf3eb6b994c5ef9a1436332f5
 
 COCOAPODS: 1.7.0
