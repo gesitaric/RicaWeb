@@ -9,28 +9,28 @@
 import Foundation
 
 class BookmarkAddViewModel {
-    private var image: String?
-    private var url: String?
-    private var title: String?
+    private (set) var image: String?
+    private (set) var url: String?
+    private (set)  var title: String?
+
+    enum Section: Int {
+        case inputField = 0
+        case buttonField
+    }
 
     func setup(image: String, url: String, title: String) {
-        self.image = image
+        self.image = "https://www.google.com/s2/favicons?domain=" + image
         self.url = url
         self.title = title
     }
 
-    func getImage() -> UIImage? {
-        guard let image = self.image else { return nil }
-        return Util().getIconFromUrl(url: image)
-    }
-
-    func getUrl() -> String? {
-        guard let url = self.url else { return nil }
-        return url
-    }
-
-    func getTitle() -> String? {
-        guard let title = self.title else { return nil }
-        return title
+    func numberOfRowsInSection(section: Int) -> Int {
+        guard let section = Section(rawValue: section) else { return 0 }
+        switch section {
+        case .inputField:
+            return 2
+        case .buttonField:
+            return 1
+        }
     }
 }

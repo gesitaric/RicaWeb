@@ -14,26 +14,14 @@ class BookmarkAddViewController: UITableViewController {
     @IBOutlet weak var urlIcon: UIImageView!
     @IBOutlet weak var urlLabel: UILabel!
 
-    private var imageString: String?
-    private var urlString: String?
-    private var titleString: String?
-
     private lazy var viewModel: BookmarkAddViewModel = {
         let model = BookmarkAddViewModel()
         return model
     }()
 
-    enum Section: Int {
-        case inputField = 0
-        case buttonField
-    }
-    //TODO hange to tableview
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleField.text = titleString ?? "ERROOR"
-        urlLabel.text = urlString ?? "erroro"
-        let imageUrl = "https://www.google.com/s2/favicons?domain=" + urlString!
-        urlIcon.image = Util().getIconFromUrl(url: imageUrl)
+        getData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,21 +29,19 @@ class BookmarkAddViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section = Section(rawValue: section) else { return 0 }
-        switch section {
-        case .inputField:
-            return 2
-        case .buttonField:
-            return 1
-        }
+        return viewModel.numberOfRowsInSection(section: section)
     }
 
     @IBAction func addButton(_ sender: UIButton) {
     }
 
     func setup(image: String, url: String, title: String) {
-        self.imageString = image
-        self.urlString = url
-        self.titleString = title
+        viewModel.setup(image: image, url: url, title:  title)
+    }
+
+    func getData() {
+        if let title = viewModel.title { titleField.text = title }
+        if let imageUrl = viewModel.image { urlIcon.image = Util().getIconFromUrl(url: imageUrl) }
+        if let url = viewModel.url { urlLabel.text = url }
     }
 }
