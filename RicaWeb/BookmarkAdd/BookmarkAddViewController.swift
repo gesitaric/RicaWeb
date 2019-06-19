@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SCLAlertView
 
 class BookmarkAddViewController: UITableViewController {
     @IBOutlet weak var titleField: UITextField!
@@ -25,7 +26,7 @@ class BookmarkAddViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.sectionsCount()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,6 +34,16 @@ class BookmarkAddViewController: UITableViewController {
     }
 
     @IBAction func addButton(_ sender: UIButton) {
+        let result = viewModel.saveBookmark(title: titleField.text)
+        switch result {
+        case .success:
+            SCLAlertView().showSuccess("ブックマークを保存しました", subTitle: "追加されたブックマークは、ブックマーク一覧からアクセスができます")
+            dismiss(animated: true, completion: nil)
+        case .emptyField:
+            SCLAlertView().showWarning("タイトルは空っぽです", subTitle: "タイトルを入力してください")
+        case .error:
+            SCLAlertView().showError("ブックマークを保存できませんでした", subTitle: "恐れ入りますが、確認してもう一度入力してください")
+        }
     }
 
     func setup(image: String, url: String, title: String) {

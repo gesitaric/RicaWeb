@@ -11,11 +11,17 @@ import Foundation
 class BookmarkAddViewModel {
     private (set) var image: String?
     private (set) var url: String?
-    private (set)  var title: String?
+    private (set) var title: String?
 
-    enum Section: Int {
+    enum Section: Int, CaseIterable {
         case inputField = 0
         case buttonField
+    }
+
+    enum Result: Int {
+        case success = 0
+        case emptyField
+        case error
     }
 
     func setup(image: String, url: String, title: String) {
@@ -32,5 +38,19 @@ class BookmarkAddViewModel {
         case .buttonField:
             return 1
         }
+    }
+
+    func sectionsCount() -> Int {
+        return Section.allCases.count
+    }
+
+    func saveBookmark(title: String?) -> Result {
+        guard let title = title else { return .error }
+        guard !title.isEmpty else { return .emptyField }
+        if let image = self.image, let url = self.url {
+            let bookmark = Bookmark(context: NSManagedObjectContext.mr_default())
+            return bookmark.writeData(title: title, url: url, imageUrl: image) ? .success : .error
+        }
+        return .error
     }
 }
