@@ -24,8 +24,8 @@ class BookmarkAddViewModel {
         case error
     }
 
-    func setup(image: String, url: String, title: String) {
-        self.image = "https://www.google.com/s2/favicons?domain=" + image
+    func setup(url: String, title: String) {
+        self.image = "https://www.google.com/s2/favicons?domain=" + url
         self.url = url
         self.title = title
     }

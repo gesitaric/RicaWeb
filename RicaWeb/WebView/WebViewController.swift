@@ -88,9 +88,9 @@ extension WebViewController: CKCircleMenuDelegate {
         guard let selectedItem = viewModel.getActionItem(index: Int(anIndex)) else { return }
         switch selectedItem {
         case .addBookmark:
-            let storyboard = UIStoryboard(name: "BookmarkAddViewController", bundle: nil)
-            guard let bookmarkAddViewController = storyboard.instantiateInitialViewController() as? BookmarkAddViewController else { return }
-            bookmarkAddViewController.setup(image: webView?.url?.absoluteString ?? "erroor", url: webView.url?.absoluteString ?? "erroor", title: webView.title ?? "error")
+            guard let bookmarkAddViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.BookmarkAdd) as? BookmarkAddViewController else { return }
+            let parameters = viewModel.sendNonNullParameters(title: webView.title, url: webView?.url?.absoluteString)
+            bookmarkAddViewController.setup(url: parameters.1, title: parameters.0)
             presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: ModalSize.custom(size:Float(view.frame.height / 1.2)), center: ModalCenterPosition.bottomCenter)
             customPresentViewController(presenter, viewController: bookmarkAddViewController, animated: true, completion: nil)
         case .history:

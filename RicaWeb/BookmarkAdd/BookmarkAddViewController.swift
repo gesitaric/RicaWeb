@@ -46,8 +46,8 @@ class BookmarkAddViewController: UITableViewController {
         }
     }
 
-    func setup(image: String, url: String, title: String) {
-        viewModel.setup(image: image, url: url, title:  title)
+    func setup(url: String, title: String) {
+        viewModel.setup(url: url, title:  title)
     }
 
     func getData() {
