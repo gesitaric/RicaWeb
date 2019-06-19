@@ -12,9 +12,20 @@ import Presentr
 
 class WebViewViewModel {
     let presenter = Presentr(presentationType: .alert)
-
     var circleMenuImageArray = Array<UIImage>()
     var circleMenuView: CKCircleMenuView?
+
+    enum ToolbarItem: Int {
+        case back = 0
+        case forward
+        case actions
+        case more
+    }
+
+    enum ActionItem: Int {
+        case addBookmark = 0
+        case history
+    }
 
     func viewDidLoad() {
         setupCircleMenu()
@@ -53,5 +64,13 @@ class WebViewViewModel {
 
     func googleSearch(q: String) -> String {
         return "http://www.google.com/search?q=" + q
+    }
+
+    func getToolbarItem(index: Int) -> ToolbarItem? {
+        return ToolbarItem(rawValue: index)
+    }
+
+    func getActionItem(index: Int) -> ActionItem? {
+        return ActionItem(rawValue: index) 
     }
 }

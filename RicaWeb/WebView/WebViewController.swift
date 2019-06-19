@@ -23,18 +23,6 @@ class WebViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    enum ToolbarItem: Int {
-        case back = 0
-        case forward
-        case actions
-        case more
-    }
-
-    enum ActionItem: Int {
-        case addBookmark = 0
-        case history
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +41,7 @@ class WebViewController: UIViewController {
 extension WebViewController : UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(of: item) else { return }
-        guard let selectedItem = ToolbarItem(rawValue: index) else { return }
+        guard let selectedItem = viewModel.getToolbarItem(index: index) else { return }
         switch selectedItem {
         case .back:
             webView.goBack()
@@ -81,22 +69,11 @@ extension WebViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let input = searchBar.text else { return }
-        let newUrl: String?
-        if viewModel.verifyUrl(urlString: input) != false {
-            guard let request = viewModel.request(url: input) else { return }
-            webView.load(request)
-            newUrl = input
-        } else {
-            let googleSearch = viewModel.googleSearch(q: input)
-            guard let request = viewModel.request(url: googleSearch) else { return }
-            webView.load(request)
-            newUrl = googleSearch
-        }
-        if let newUrl = newUrl {
-            searchBar.text = newUrl
-        }
+        let requester = viewModel.verifyUrl(urlString: input) ? viewModel.request(url: input) : viewModel.request(url: viewModel.googleSearch(q: input))
+        guard let request = requester else { return }
+        webView.load(request)
+        searchBar.text = input
     }
-    //TODO: コードの整理とキーボードの表示のタイミング
 }
 
 extension WebViewController: UIGestureRecognizerDelegate {
@@ -108,7 +85,7 @@ extension WebViewController: UIGestureRecognizerDelegate {
 
 extension WebViewController: CKCircleMenuDelegate {
     func circleMenuActivatedButton(with anIndex: Int32) {
-        guard let selectedItem = ActionItem(rawValue: Int(anIndex)) else { return }
+        guard let selectedItem = viewModel.getActionItem(index: Int(anIndex)) else { return }
         switch selectedItem {
         case .addBookmark:
             let storyboard = UIStoryboard(name: "BookmarkAddViewController", bundle: nil)
