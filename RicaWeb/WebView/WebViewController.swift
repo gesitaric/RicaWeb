@@ -27,7 +27,7 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
-        webView.uiDelegate = self
+        webView.navigationDelegate = self
 
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
@@ -47,6 +47,8 @@ extension WebViewController : UITabBarDelegate {
             webView.goBack()
         case .forward:
             webView.goForward()
+        case .reload:
+            webView.reload()
         case .actions:
             viewModel.setCircleMenuPos(x: view.frame.midX, y: view.frame.midY)
             guard let circleMenu = viewModel.circleMenuView else { return }
@@ -54,8 +56,7 @@ extension WebViewController : UITabBarDelegate {
             circleMenu.delegate = self
             circleMenu.openMenu()
         case .more:
-            let storyboard = UIStoryboard(name: "SideMenuViewController", bundle: nil)
-            guard let sideMenuViewController = storyboard.instantiateInitialViewController() else { return }
+            guard let sideMenuViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.SideMenu) else { return }
             present(sideMenuViewController, animated: true, completion: nil)
             // TODO: deselect
         }
@@ -72,7 +73,7 @@ extension WebViewController: UISearchBarDelegate {
         let requester = viewModel.verifyUrl(urlString: input) ? viewModel.request(url: input) : viewModel.request(url: viewModel.googleSearch(q: input))
         guard let request = requester else { return }
         webView.load(request)
-        searchBar.text = input
+        searchBar.text = request.url?.absoluteString
     }
 }
 
@@ -110,8 +111,12 @@ extension WebViewController: CKCircleMenuDelegate {
     }
 }
 
-extension WebViewController: WKUIDelegate {
+extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
+    }
+
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        searchBar.text = webView.url?.absoluteString
     }
 }

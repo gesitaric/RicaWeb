@@ -18,6 +18,7 @@ class WebViewViewModel {
     enum ToolbarItem: Int {
         case back = 0
         case forward
+        case reload
         case actions
         case more
     }
@@ -32,8 +33,8 @@ class WebViewViewModel {
     }
 
     func setupCircleMenu() {
-        circleMenuImageArray.append(UIImage(named: "bookmark")!)
-        circleMenuImageArray.append(UIImage(named: "history")!)
+        circleMenuImageArray.append(UIImage(named: "bookmark_m")!)
+        circleMenuImageArray.append(UIImage(named: "history_m")!)
     }
 
     func setCircleMenuPos(x: CGFloat, y: CGFloat) {
