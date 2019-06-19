@@ -71,6 +71,14 @@ class WebViewViewModel {
     }
 
     func getActionItem(index: Int) -> ActionItem? {
-        return ActionItem(rawValue: index) 
+        return ActionItem(rawValue: index)
+    }
+
+    func sendNonNullParameters(title: String?, url: String?) -> (String, String) {
+        var sendTitle = "エラー"
+        var sendUrl = "エラー"
+        if let title = title { sendTitle = title }
+        if let url = url { sendUrl = url }
+        return (sendTitle, sendUrl)
     }
 }
