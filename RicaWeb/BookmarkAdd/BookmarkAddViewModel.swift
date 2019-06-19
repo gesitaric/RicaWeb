@@ -9,6 +9,8 @@
 import Foundation
 
 class BookmarkAddViewModel {
+    var bookmark: Bookmark?
+
     private (set) var image: String?
     private (set) var url: String?
     private (set) var title: String?
@@ -47,9 +49,22 @@ class BookmarkAddViewModel {
     func saveBookmark(title: String?) -> Result {
         guard let title = title else { return .error }
         guard !title.isEmpty else { return .emptyField }
+
         if let image = self.image, let url = self.url {
-            let bookmark = Bookmark(context: NSManagedObjectContext.mr_default())
-            return bookmark.writeData(title: title, url: url, imageUrl: image) ? .success : .error
+            if let bookmark = Util().checkIfExists(url: url){
+                bookmark.title = title
+                bookmark.imageUrl = image
+                bookmark.date = Date() as NSDate
+                return .success
+            } else {
+                bookmark = Bookmark.mr_createEntity()
+                bookmark?.title = title
+                bookmark?.imageUrl = image
+                bookmark?.date = Date() as NSDate
+                bookmark?.url = url
+                NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+                return .success
+            }
         }
         return .error
     }

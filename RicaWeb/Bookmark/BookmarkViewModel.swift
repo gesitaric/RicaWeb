@@ -7,35 +7,26 @@
 //
 
 import Foundation
-import CoreData
 
 class BookmarkViewModel {
+    var bookmark: Bookmark?
     private var bookmarks: [Bookmark] = []
-    private var bookmarkEntity: Bookmark?
-
-    func saveBookmark(title: String, url: String, imageUrl: String) {
-        guard let bookmark = bookmarkEntity else { return }
-        let result = bookmark.writeData(title: title, url: url, imageUrl: imageUrl)
-        print(result)
-    }
 
     func fetchBookmarks() -> [Bookmark] {
-        guard let bookmark = bookmarkEntity else { return [] }
-        return bookmark.readData()
+        return self.bookmarks
     }
 
     func viewDidLoad() {
-        bookmarkEntity = Bookmark(context: NSManagedObjectContext.mr_default())
-        self.bookmarks = fetchBookmarks()
+        bookmark = Bookmark()
+        self.bookmarks = bookmark?.readData() ?? []
     }
 
     func getBookmarksCount() -> Int {
-        return bookmarks.count
+        return self.bookmarks.count
     }
 
     func getBookmarkDetails(index: Int) -> Bookmark? {
-        //TODO: test a lot
-        guard bookmarks.indices ~= index else { return nil }
+        guard self.bookmarks.contains(bookmarks[index]) else { return nil }
         return bookmarks[index]
     }
 }
