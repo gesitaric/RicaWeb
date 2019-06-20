@@ -82,4 +82,12 @@ class WebViewViewModel {
         if let url = url { sendUrl = url }
         return (sendTitle, sendUrl)
     }
+
+    func saveHistory(url: String?) {
+        guard let url = url else { return }
+        let history = History.mr_createEntity()
+        history?.date = Date() as NSDate
+        history?.url = url
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+    }
 }

@@ -48,7 +48,7 @@ class BookmarkAddViewModel {
         guard !title.isEmpty else { return .emptyField }
 
         if let image = self.image, let url = self.url {
-            if let bookmark = Util().checkIfExists(url: url){
+            if let bookmark = Util().checkIfExists(url: url) {
                 bookmark.title = title
                 bookmark.imageUrl = image
                 bookmark.date = Date() as NSDate

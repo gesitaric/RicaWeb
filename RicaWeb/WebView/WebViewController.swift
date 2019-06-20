@@ -113,7 +113,7 @@ extension WebViewController: CKCircleMenuDelegate {
 
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
+        viewModel.saveHistory(url: webView.url?.absoluteString)
     }
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
