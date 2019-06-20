@@ -38,8 +38,4 @@ class HistoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.sections[section]
     }
-
-    @IBAction func closeButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
 }

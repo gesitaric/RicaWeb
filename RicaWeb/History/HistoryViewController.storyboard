@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
             <objects>
                 <tableViewController id="Se4-A0-zlm" customClass="HistoryViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="CVn-wi-wYQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -51,7 +52,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9F-ai-dgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-688" y="149"/>
+            <point key="canvasLocation" x="-86" y="149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="toS-NF-eBf">
@@ -62,12 +63,59 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Se4-A0-zlm" kind="relationship" relationship="rootViewController" id="M89-s2-vLL"/>
+                        <segue destination="Xn0-QG-1Bj" kind="relationship" relationship="rootViewController" id="rqg-wW-0Ap"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E16-Xw-tB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1605" y="149"/>
+        </scene>
+        <!--履歴-->
+        <scene sceneID="2F3-9p-Q2G">
+            <objects>
+                <viewController id="Xn0-QG-1Bj" customClass="HistoryContainerViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xnv-m8-TM2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3p-gy-DBu">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PT3-Sk-ClL"/>
+                                </constraints>
+                                <state key="normal" title="削除"/>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRs-PU-Nfq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
+                                <connections>
+                                    <segue destination="Se4-A0-zlm" kind="embed" id="Asj-v6-nxx"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ePe-UH-20q" firstAttribute="trailing" secondItem="fRs-PU-Nfq" secondAttribute="trailing" id="A8U-cN-QYZ"/>
+                            <constraint firstItem="fRs-PU-Nfq" firstAttribute="leading" secondItem="ePe-UH-20q" secondAttribute="leading" id="A8y-YN-vkn"/>
+                            <constraint firstItem="C3p-gy-DBu" firstAttribute="bottom" secondItem="ePe-UH-20q" secondAttribute="bottom" id="DAp-i8-yFT"/>
+                            <constraint firstItem="ePe-UH-20q" firstAttribute="trailing" secondItem="C3p-gy-DBu" secondAttribute="trailing" id="HJN-LO-S7g"/>
+                            <constraint firstItem="fRs-PU-Nfq" firstAttribute="top" secondItem="ePe-UH-20q" secondAttribute="top" id="TIN-Ym-24z"/>
+                            <constraint firstItem="C3p-gy-DBu" firstAttribute="top" secondItem="fRs-PU-Nfq" secondAttribute="bottom" id="WCw-vr-IJ0"/>
+                            <constraint firstItem="C3p-gy-DBu" firstAttribute="leading" secondItem="ePe-UH-20q" secondAttribute="leading" id="ahH-Vz-tHG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ePe-UH-20q"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="履歴" id="tBd-PU-qlJ">
+                        <barButtonItem key="rightBarButtonItem" title="X" id="eLR-oc-ucB">
+                            <connections>
+                                <action selector="closeButton:" destination="Xn0-QG-1Bj" id="yqV-li-WsP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVy-PK-rpj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-842.02898550724649" y="148.66071428571428"/>
         </scene>
     </scenes>
 </document>
