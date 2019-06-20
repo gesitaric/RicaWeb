@@ -18,6 +18,7 @@ class HistoryViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
