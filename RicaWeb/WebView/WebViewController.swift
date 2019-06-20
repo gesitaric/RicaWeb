@@ -50,11 +50,7 @@ extension WebViewController : UITabBarDelegate {
         case .reload:
             webView.reload()
         case .actions:
-            viewModel.setCircleMenuPos(x: view.frame.midX, y: view.frame.midY)
-            guard let circleMenu = viewModel.circleMenuView else { return }
-            view.addSubview(circleMenu)
-            circleMenu.delegate = self
-            circleMenu.openMenu()
+            showCircleMenu()
         case .more:
             guard let sideMenuViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.SideMenu) else { return }
             present(sideMenuViewController, animated: true, completion: nil)
@@ -89,14 +85,12 @@ extension WebViewController: CKCircleMenuDelegate {
         guard let selectedItem = viewModel.getActionItem(index: Int(anIndex)) else { return }
         switch selectedItem {
         case .addBookmark:
-            guard let bookmarkAddViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.BookmarkAdd) as? BookmarkAddViewController else { return }
-            let parameters = viewModel.sendNonNullParameters(title: webView.title, url: webView?.url?.absoluteString)
-            bookmarkAddViewController.setup(url: parameters.1, title: parameters.0)
-            presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: ModalSize.custom(size:Float(view.frame.height / 1.2)), center: ModalCenterPosition.bottomCenter)
-            customPresentViewController(presenter, viewController: UINavigationController(rootViewController: bookmarkAddViewController), animated: true, completion: nil)
+            addBookmarkModal()
         case .history:
             // TODO
             print("TODO")
+        case .share:
+            share()
         }
     }
     
@@ -118,5 +112,31 @@ extension WebViewController: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         searchBar.text = webView.url?.absoluteString
+    }
+}
+
+extension WebViewController {
+    func addBookmarkModal() {
+        guard let bookmarkAddViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.BookmarkAdd) as? BookmarkAddViewController else { return }
+        let parameters = viewModel.sendNonNullParameters(title: webView.title, url: webView?.url?.absoluteString)
+        bookmarkAddViewController.setup(url: parameters.1, title: parameters.0)
+        presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: ModalSize.custom(size:Float(view.frame.height / 1.2)), center: ModalCenterPosition.bottomCenter)
+        customPresentViewController(presenter, viewController: UINavigationController(rootViewController: bookmarkAddViewController), animated: true, completion: nil)
+    }
+
+    func share() {
+        guard let title = webView.title else { return }
+        guard let url = webView.url else { return }
+        let activityItems = [title, url] as [Any]
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
+    }
+
+    func showCircleMenu() {
+        viewModel.setCircleMenuPos(x: view.frame.midX, y: view.frame.midY)
+        guard let circleMenu = viewModel.circleMenuView else { return }
+        view.addSubview(circleMenu)
+        circleMenu.delegate = self
+        circleMenu.openMenu()
     }
 }
