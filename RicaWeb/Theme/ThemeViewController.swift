@@ -40,6 +40,10 @@ class ThemeViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UserDefaults.standard.set(viewModel.rows[indexPath.section][indexPath.row].name, forKey: Keys.themeKey)
+    }
+
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }

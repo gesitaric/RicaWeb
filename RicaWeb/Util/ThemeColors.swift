@@ -9,6 +9,14 @@
 import Foundation
 
 extension UIColor {
+
+    static var colors = [
+        UIColor.green,
+        UIColor.blue,
+        UIColor.gray,
+        UIColor.purple
+    ]
+
     var name: String? {
         switch self {
         case UIColor.black: return "black"

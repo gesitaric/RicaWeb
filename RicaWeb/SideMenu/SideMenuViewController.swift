@@ -18,6 +18,7 @@ class SideMenuViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setThemeColor(color: viewModel.getThemeColor())
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -54,5 +55,10 @@ class SideMenuViewController: UITableViewController {
             guard let themeViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Theme) else { return }
             present(themeViewController, animated: true, completion: nil)
         }
+    }
+
+    private func setThemeColor(color: UIColor?) {
+        guard let color = color else { return }
+        tableView.backgroundColor = color
     }
 }
