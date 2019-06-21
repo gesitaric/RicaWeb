@@ -18,6 +18,7 @@ class BookmarkViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        setThemeColor()
     }
 
     @IBAction func closeButton(_ sender: Any) {
@@ -37,5 +38,10 @@ class BookmarkViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //TODO
+    }
+
+    func setThemeColor() {
+        guard let color = Util().getThemeColor() else { return }
+        tableView.backgroundColor = color.adjust(by:70)
     }
 }

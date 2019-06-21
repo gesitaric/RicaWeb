@@ -36,14 +36,4 @@ class SideMenuViewModel {
     func getSectionCount() -> Int {
         return sections.count
     }
-
-    func getThemeColor() -> UIColor? {
-        let colorName = UserDefaults.standard.string(forKey: Keys.themeKey)
-        for color in UIColor.colors {
-            if color.name == colorName {
-                return color
-            }
-        }
-        return nil
-    }
 }

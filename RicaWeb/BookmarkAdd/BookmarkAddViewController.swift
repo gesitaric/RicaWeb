@@ -23,6 +23,7 @@ class BookmarkAddViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
+        setThemeColor()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,5 +55,10 @@ class BookmarkAddViewController: UITableViewController {
         if let title = viewModel.title { titleField.text = title }
         if let imageUrl = viewModel.image { urlIcon.image = Util().getIconFromUrl(url: imageUrl) }
         if let url = viewModel.url { urlLabel.text = url }
+    }
+
+    func setThemeColor() {
+        guard let color = Util().getThemeColor() else { return }
+        tableView.backgroundColor = color.adjust(by:70)
     }
 }

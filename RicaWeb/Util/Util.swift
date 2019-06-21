@@ -61,4 +61,14 @@ class Util {
         print(myStringafd)
         return myStringafd
     }
+
+    func getThemeColor(color: String? = nil) -> UIColor? {
+        let colorName = color ?? UserDefaults.standard.string(forKey: Keys.themeKey)
+        for color in UIColor.colors {
+            if color.name == colorName {
+                return color
+            }
+        }
+        return nil
+    }
 }

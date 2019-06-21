@@ -8,12 +8,18 @@
 
 import Foundation
 
+protocol ThemeViewDelegate: class {
+    func setNewColor(color: String?)
+}
+
 class ThemeViewController: UITableViewController {
 
     private lazy var viewModel: ThemeViewModel = {
         let model = ThemeViewModel()
         return model
     }()
+
+    weak var delegate: ThemeViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +42,15 @@ class ThemeViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as UITableViewCell
         let color = viewModel.rows[indexPath.section][indexPath.row]
         cell.textLabel?.text = color.name
-        cell.backgroundColor = color
+        cell.backgroundColor = color.adjust(by: 70)
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UserDefaults.standard.set(viewModel.rows[indexPath.section][indexPath.row].name, forKey: Keys.themeKey)
+        let newColor = viewModel.rows[indexPath.section][indexPath.row].name
+        UserDefaults.standard.set(newColor, forKey: Keys.themeKey)
+        delegate?.setNewColor(color: newColor)
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
