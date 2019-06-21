@@ -14,6 +14,7 @@ class Navigator {
         case BookmarkAdd = "BookmarkAddViewController"
         case SideMenu = "SideMenuViewController"
         case History = "HistoryViewController"
+        case Theme = "ThemeViewController"
     }
 
     func instantiate(viewControllerClass: Classes) -> UIViewController? {

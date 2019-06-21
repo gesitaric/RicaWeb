@@ -50,6 +50,9 @@ class SideMenuViewController: UITableViewController {
         } else if indexPath.row == 1 && indexPath.section == 0 {
             guard let bookmarkViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) else { return }
             present(bookmarkViewController, animated: true, completion: nil)
+        } else if indexPath.row == 0 && indexPath.section == 1 {
+            guard let themeViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Theme) else { return }
+            present(themeViewController, animated: true, completion: nil)
         }
     }
 }
