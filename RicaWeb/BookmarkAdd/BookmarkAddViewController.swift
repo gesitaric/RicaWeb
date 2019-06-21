@@ -23,6 +23,7 @@ class BookmarkAddViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
+        setThemeColor()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,12 +33,14 @@ class BookmarkAddViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection(section: section)
     }
+
     @IBAction func addButton(_ sender: UIBarButtonItem) {
         let result = viewModel.saveBookmark(title: titleField.text)
         switch result {
         case .success:
-            SCLAlertView().showSuccess("ブックマークを保存しました", subTitle: "追加されたブックマークは、ブックマーク一覧からアクセスができます")
-            dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: {
+                SCLAlertView().showSuccess("ブックマークを保存しました", subTitle: "追加されたブックマークは、ブックマーク一覧からアクセスができます")
+            })
         case .emptyField:
             SCLAlertView().showWarning("タイトルは空っぽです", subTitle: "タイトルを入力してください")
         case .error:
@@ -53,5 +56,10 @@ class BookmarkAddViewController: UITableViewController {
         if let title = viewModel.title { titleField.text = title }
         if let imageUrl = viewModel.image { urlIcon.image = Util().getIconFromUrl(url: imageUrl) }
         if let url = viewModel.url { urlLabel.text = url }
+    }
+
+    func setThemeColor() {
+        guard let color = Util().getThemeColor() else { return }
+        tableView.backgroundColor = color.adjust(by:70)
     }
 }

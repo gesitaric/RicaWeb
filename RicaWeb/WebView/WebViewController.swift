@@ -31,10 +31,26 @@ class WebViewController: UIViewController {
 
         guard let request = viewModel.request(url: "https://www.google.com/") else { return }
         webView.load(request)
+
+        setThemeColor()
     }
 
     @objc func dismissKeyboard() {
         searchBar.endEditing(true)
+    }
+
+    func setThemeColor() {
+        guard let color = Util().getThemeColor() else { return }
+        tabBar.backgroundColor = color.adjust(by:70)
+        tabBar.tintColor = color
+        searchBar.backgroundColor = color.adjust(by:70)
+    }
+
+    func navigateToThemeViewController() {
+        guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Theme) as? UINavigationController else { return }
+        let themeViewController = navigationViewController.topViewController as? ThemeViewController
+        themeViewController?.delegate = self
+        present(navigationViewController, animated: true, completion: nil)
     }
 }
 
@@ -52,8 +68,10 @@ extension WebViewController : UITabBarDelegate {
         case .actions:
             showCircleMenu()
         case .more:
-            guard let sideMenuViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.SideMenu) else { return }
-            present(sideMenuViewController, animated: true, completion: nil)
+            guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.SideMenu) as? UINavigationController else { return }
+            let sideMenuViewController = navigationViewController.topViewController as? SideMenuViewController
+            sideMenuViewController?.delegate = self
+            present(navigationViewController, animated: true, completion: nil)
             // TODO: deselect
         }
     }
@@ -138,5 +156,20 @@ extension WebViewController {
         view.addSubview(circleMenu)
         circleMenu.delegate = self
         circleMenu.openMenu()
+    }
+}
+
+extension WebViewController: ThemeViewDelegate {
+    func setNewColor(color: String?) {
+        guard let color = Util().getThemeColor(color: color) else { return }
+        tabBar.backgroundColor = color.adjust(by:70)
+        tabBar.tintColor = color
+        searchBar.backgroundColor = color.adjust(by:70)
+    }
+}
+
+extension WebViewController: SideMenuDelegate {
+    func navigateToThemeController() {
+        navigateToThemeViewController()
     }
 }

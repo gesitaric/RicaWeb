@@ -19,6 +19,7 @@ class HistoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        setThemeColor()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,5 +38,10 @@ class HistoryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.sections[section]
+    }
+
+    func setThemeColor() {
+        guard let color = Util().getThemeColor() else { return }
+        tableView.backgroundColor = color.adjust(by:70)
     }
 }

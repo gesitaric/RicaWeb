@@ -9,6 +9,10 @@
 import UIKit
 import SideMenu
 
+protocol SideMenuDelegate: class {
+    func navigateToThemeController()
+}
+
 class SideMenuViewController: UITableViewController {
 
     private lazy var viewModel: SideMenuViewModel = {
@@ -16,8 +20,11 @@ class SideMenuViewController: UITableViewController {
         return model
     }()
 
+    weak var delegate: SideMenuDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setThemeColor(color: Util().getThemeColor())
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +57,17 @@ class SideMenuViewController: UITableViewController {
         } else if indexPath.row == 1 && indexPath.section == 0 {
             guard let bookmarkViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) else { return }
             present(bookmarkViewController, animated: true, completion: nil)
+        } else if indexPath.row == 0 && indexPath.section == 1 {
+            dismiss(animated: true, completion: {
+                self.delegate?.navigateToThemeController()
+            })
+//            guard let themeViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Theme) else { return }
+//            present(themeViewController, animated: true, completion: nil)
         }
+    }
+
+    private func setThemeColor(color: UIColor?) {
+        guard let color = color else { return }
+        tableView.backgroundColor = color.adjust(by: 70)
     }
 }
