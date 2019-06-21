@@ -9,10 +9,10 @@
 import Foundation
 
 class ThemeViewModel {
-    func test() {
-        let allColors = Array<UIColor.ThemeColor>()
-        for color in allColors {
-            color
-        }
-    }
+    let colors = [
+        UIColor.green,
+        UIColor.blue,
+        UIColor.gray,
+        UIColor.purple
+    ]
 }
