@@ -17,13 +17,30 @@ class ThemeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return viewModel.sections.count
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.sections[section]
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowsInSection(section: section)
+        return viewModel.rows[section].count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as UITableViewCell
+        let color = viewModel.rows[indexPath.section][indexPath.row]
+        cell.textLabel?.text = color.name
+        cell.backgroundColor = color
+        return cell
+    }
+
+    @IBAction func closeButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 }
