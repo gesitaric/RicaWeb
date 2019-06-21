@@ -38,8 +38,9 @@ class BookmarkAddViewController: UITableViewController {
         let result = viewModel.saveBookmark(title: titleField.text)
         switch result {
         case .success:
-            SCLAlertView().showSuccess("ブックマークを保存しました", subTitle: "追加されたブックマークは、ブックマーク一覧からアクセスができます")
-            dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: {
+                SCLAlertView().showSuccess("ブックマークを保存しました", subTitle: "追加されたブックマークは、ブックマーク一覧からアクセスができます")
+            })
         case .emptyField:
             SCLAlertView().showWarning("タイトルは空っぽです", subTitle: "タイトルを入力してください")
         case .error:

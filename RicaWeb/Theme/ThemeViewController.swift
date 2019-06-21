@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SCLAlertView
 
 protocol ThemeViewDelegate: class {
     func setNewColor(color: String?)
@@ -50,7 +51,9 @@ class ThemeViewController: UITableViewController {
         let newColor = viewModel.rows[indexPath.section][indexPath.row].name
         UserDefaults.standard.set(newColor, forKey: Keys.themeKey)
         delegate?.setNewColor(color: newColor)
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            SCLAlertView().showSuccess("テーマの変更", subTitle: "テーマの色が\(newColor!)に適用されました。")
+        })
     }
 
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
