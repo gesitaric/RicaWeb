@@ -124,6 +124,8 @@ extension WebViewController: CKCircleMenuDelegate {
             print("TODO")
         case .share:
             share()
+        case .tabs:
+            navigateToTabsViewController()
         }
     }
     
@@ -171,6 +173,11 @@ extension WebViewController {
         view.addSubview(circleMenu)
         circleMenu.delegate = self
         circleMenu.openMenu()
+    }
+
+    func navigateToTabsViewController() {
+        guard let tabsViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Tabs) as? TabsViewController else { return }
+        present(tabsViewController, animated: true, completion: nil)
     }
 }
 

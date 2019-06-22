@@ -48,6 +48,10 @@
 		AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */; };
 		AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632522B697FB00DE3996 /* WebViewViewModel.swift */; };
 		AE26632B22B785A100DE3996 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632A22B785A100DE3996 /* BookmarkViewController.swift */; };
+		AE67A4A922BE792700D4EEF4 /* TabsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */; };
+		AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */; };
+		AE67A4AD22BE79F600D4EEF4 /* TabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */; };
+		AE67A4AF22BE7D5B00D4EEF4 /* TabsCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,10 @@
 		AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		AE26632522B697FB00DE3996 /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
 		AE26632A22B785A100DE3996 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabsViewController.storyboard; sourceTree = "<group>"; };
+		AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewModel.swift; sourceTree = "<group>"; };
+		AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCellViewController.swift; sourceTree = "<group>"; };
 		B81F4E2C1A9BEF9300AFE0D5 /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				8C46A8F322B87AFA00EBCE02 /* Util */,
+				AE67A4A722BE78E600D4EEF4 /* Tabs */,
 				8C46A93322BB35E900EBCE02 /* Theme */,
 				8C46A91422BA2D1300EBCE02 /* History */,
 				8C46A90322B8E74400EBCE02 /* BookmarkAdd */,
@@ -321,6 +330,17 @@
 				8C46A8F822B8934E00EBCE02 /* BookmarkViewController.storyboard */,
 			);
 			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		AE67A4A722BE78E600D4EEF4 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */,
+				AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */,
+				AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */,
+				AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +458,7 @@
 				8C46A93522BB35F700EBCE02 /* ThemeViewController.storyboard in Resources */,
 				8C46A90522B8E75B00EBCE02 /* BookmarkAddViewController.storyboard in Resources */,
 				AE2662EE22B4CDCA00DE3996 /* Assets.xcassets in Resources */,
+				AE67A4A922BE792700D4EEF4 /* TabsViewController.storyboard in Resources */,
 				AE2662EC22B4CDC800DE3996 /* Main.storyboard in Resources */,
 				AE26631C22B645D900DE3996 /* SideMenuViewController.storyboard in Resources */,
 			);
@@ -550,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE67A4AF22BE7D5B00D4EEF4 /* TabsCellViewController.swift in Sources */,
 				8C46A93922BB36C600EBCE02 /* ThemeViewModel.swift in Sources */,
 				AE1DF04E22B92BBE00018BD5 /* BookmarkAddViewModel.swift in Sources */,
 				8C46A90B22B9DD8D00EBCE02 /* Navigator.swift in Sources */,
@@ -566,7 +588,9 @@
 				8C46A8F522B87B0800EBCE02 /* Util.swift in Sources */,
 				8C46A92D22BB149700EBCE02 /* History+CoreDataClass.swift in Sources */,
 				8C46A91A22BA2E4E00EBCE02 /* HistoryViewModel.swift in Sources */,
+				AE67A4AD22BE79F600D4EEF4 /* TabsViewModel.swift in Sources */,
 				8C46A92E22BB149700EBCE02 /* History+CoreDataProperties.swift in Sources */,
+				AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */,
 				8C77E52D22BC99EF00BB50D1 /* Keys.swift in Sources */,
 				8C46A8FC22B897A000EBCE02 /* BookmarkCellViewController.swift in Sources */,
 				AE1DF03A22B7A18E00018BD5 /* BookmarkViewModel.swift in Sources */,

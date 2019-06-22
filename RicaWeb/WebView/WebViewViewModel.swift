@@ -27,6 +27,7 @@ class WebViewViewModel {
         case addBookmark = 0
         case history
         case share
+        case tabs
     }
 
     func viewDidLoad() {
@@ -37,6 +38,7 @@ class WebViewViewModel {
         circleMenuImageArray.append(UIImage(named: "bookmark_m")!)
         circleMenuImageArray.append(UIImage(named: "history_m")!)
         circleMenuImageArray.append(UIImage(named: "share")!)
+        circleMenuImageArray.append(UIImage(named: "tabs_m")!)
     }
 
     func setCircleMenuPos(x: CGFloat, y: CGFloat) {
