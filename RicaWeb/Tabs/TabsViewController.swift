@@ -29,4 +29,8 @@ class TabsViewController: UICollectionViewController {
         cell.title.text = model
         return cell
     }
+
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

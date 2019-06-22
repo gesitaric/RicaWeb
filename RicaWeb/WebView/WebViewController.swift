@@ -176,8 +176,10 @@ extension WebViewController {
     }
 
     func navigateToTabsViewController() {
-        guard let tabsViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Tabs) as? TabsViewController else { return }
-        present(tabsViewController, animated: true, completion: nil)
+        guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Tabs) as? UINavigationController else { return }
+//        let tabsViewController = navigationViewController.topViewController as? TabsViewController
+//        tabsViewController?.delegate = self
+        present(navigationViewController, animated: true, completion: nil)
     }
 }
 
