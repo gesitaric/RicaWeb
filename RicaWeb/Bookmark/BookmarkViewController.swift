@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol BookmarkDelegate: class {
+    func loadClickedUrl(url: String?)
+}
+
 class BookmarkViewController: UITableViewController {
 
     private lazy var viewModel: BookmarkViewModel = {
         let model = BookmarkViewModel()
         return model
     }()
+
+    weak var delegate: BookmarkDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +43,10 @@ class BookmarkViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO
+        let bookmark = viewModel.getBookmarkDetails(index: indexPath.row)
+        dismiss(animated: true, completion: {
+            self.delegate?.loadClickedUrl(url: bookmark?.url)
+        })
     }
 
     func setThemeColor() {

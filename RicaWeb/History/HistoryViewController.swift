@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
+protocol HistoryDelegate: class {
+    func didSelectHistory(url: String)
+}
+
 class HistoryViewController: UITableViewController {
 
     private lazy var viewModel: HistoryViewModel = {
         let model = HistoryViewModel()
         return model
     }()
+
+    weak var delegate: HistoryDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,13 @@ class HistoryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.sections[section]
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let url = viewModel.rows[indexPath.section][indexPath.row]
+        dismiss(animated: true, completion: {
+            self.delegate?.didSelectHistory(url: url)
+        })
     }
 
     func setThemeColor() {

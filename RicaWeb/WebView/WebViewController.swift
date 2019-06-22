@@ -52,6 +52,21 @@ class WebViewController: UIViewController {
         themeViewController?.delegate = self
         present(navigationViewController, animated: true, completion: nil)
     }
+
+    func navigateToBookmarkViewController() {
+        guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.BookmarkList) as? UINavigationController else { return }
+        let bookmarkViewController = navigationViewController.topViewController as? BookmarkViewController
+        bookmarkViewController?.delegate = self
+        present(navigationViewController, animated: true, completion: nil)
+    }
+
+    func navigateToHistoryViewController() {
+        // TODO
+        guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) as? UINavigationController else { return }
+        let historyViewController = navigationViewController.topViewController as? HistoryViewController
+        historyViewController?.delegate = self
+        present(navigationViewController, animated: true, completion: nil)
+    }
 }
 
 extension WebViewController : UITabBarDelegate {
@@ -168,7 +183,30 @@ extension WebViewController: ThemeViewDelegate {
     }
 }
 
+extension WebViewController: BookmarkDelegate {
+    func loadClickedUrl(url: String?) {
+        guard let url = url else { return }
+        guard let request = viewModel.request(url: url) else { return }
+        webView.load(request)
+    }
+}
+
+extension WebViewController: HistoryDelegate {
+    func didSelectHistory(url: String) {
+        guard let request = viewModel.request(url: url) else { return }
+        webView.load(request)
+    }
+}
+
 extension WebViewController: SideMenuDelegate {
+    func navigateToHistoryController() {
+        navigateToHistoryViewController()
+    }
+
+    func navigateToBookmarkController() {
+        navigateToBookmarkViewController()
+    }
+
     func navigateToThemeController() {
         navigateToThemeViewController()
     }

@@ -11,6 +11,8 @@ import SideMenu
 
 protocol SideMenuDelegate: class {
     func navigateToThemeController()
+    func navigateToBookmarkController()
+    func navigateToHistoryController()
 }
 
 class SideMenuViewController: UITableViewController {
@@ -52,17 +54,17 @@ class SideMenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO enum
         if indexPath.row == 0 && indexPath.section == 0 {
-            guard let bookmarkViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.BookmarkList) else { return }
-            present(bookmarkViewController, animated: true, completion: nil)
+            dismiss(animated: true, completion: {
+                self.delegate?.navigateToBookmarkController()
+            })
         } else if indexPath.row == 1 && indexPath.section == 0 {
-            guard let bookmarkViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) else { return }
-            present(bookmarkViewController, animated: true, completion: nil)
+            dismiss(animated: true, completion: {
+                self.delegate?.navigateToHistoryController()
+            })
         } else if indexPath.row == 0 && indexPath.section == 1 {
             dismiss(animated: true, completion: {
                 self.delegate?.navigateToThemeController()
             })
-//            guard let themeViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Theme) else { return }
-//            present(themeViewController, animated: true, completion: nil)
         }
     }
 
