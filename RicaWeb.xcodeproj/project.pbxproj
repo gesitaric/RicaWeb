@@ -48,6 +48,13 @@
 		AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */; };
 		AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632522B697FB00DE3996 /* WebViewViewModel.swift */; };
 		AE26632B22B785A100DE3996 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632A22B785A100DE3996 /* BookmarkViewController.swift */; };
+		AE67A4A922BE792700D4EEF4 /* TabsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */; };
+		AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */; };
+		AE67A4AD22BE79F600D4EEF4 /* TabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */; };
+		AE67A4AF22BE7D5B00D4EEF4 /* TabsCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */; };
+		AED31F1A22BF4A700047E56B /* TabsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1922BF4A700047E56B /* TabsManager.swift */; };
+		AED31F1E22BF4F710047E56B /* Tab+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1C22BF4F710047E56B /* Tab+CoreDataClass.swift */; };
+		AED31F1F22BF4F710047E56B /* Tab+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1D22BF4F710047E56B /* Tab+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +127,13 @@
 		AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		AE26632522B697FB00DE3996 /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
 		AE26632A22B785A100DE3996 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabsViewController.storyboard; sourceTree = "<group>"; };
+		AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewModel.swift; sourceTree = "<group>"; };
+		AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCellViewController.swift; sourceTree = "<group>"; };
+		AED31F1922BF4A700047E56B /* TabsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsManager.swift; sourceTree = "<group>"; };
+		AED31F1C22BF4F710047E56B /* Tab+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tab+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AED31F1D22BF4F710047E56B /* Tab+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tab+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B81F4E2C1A9BEF9300AFE0D5 /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +225,8 @@
 		AE1DF00B22B78B2F00018BD5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				AED31F1C22BF4F710047E56B /* Tab+CoreDataClass.swift */,
+				AED31F1D22BF4F710047E56B /* Tab+CoreDataProperties.swift */,
 				8C46A92B22BB149700EBCE02 /* History+CoreDataClass.swift */,
 				8C46A92C22BB149700EBCE02 /* History+CoreDataProperties.swift */,
 				AE1DF04522B7D8B500018BD5 /* Bookmark+CoreDataClass.swift */,
@@ -247,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				8C46A8F322B87AFA00EBCE02 /* Util */,
+				AE67A4A722BE78E600D4EEF4 /* Tabs */,
 				8C46A93322BB35E900EBCE02 /* Theme */,
 				8C46A91422BA2D1300EBCE02 /* History */,
 				8C46A90322B8E74400EBCE02 /* BookmarkAdd */,
@@ -321,6 +338,26 @@
 				8C46A8F822B8934E00EBCE02 /* BookmarkViewController.storyboard */,
 			);
 			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		AE67A4A722BE78E600D4EEF4 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				AED31F1B22BF4A750047E56B /* TabsManager */,
+				AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */,
+				AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */,
+				AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */,
+				AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		AED31F1B22BF4A750047E56B /* TabsManager */ = {
+			isa = PBXGroup;
+			children = (
+				AED31F1922BF4A700047E56B /* TabsManager.swift */,
+			);
+			path = TabsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +475,7 @@
 				8C46A93522BB35F700EBCE02 /* ThemeViewController.storyboard in Resources */,
 				8C46A90522B8E75B00EBCE02 /* BookmarkAddViewController.storyboard in Resources */,
 				AE2662EE22B4CDCA00DE3996 /* Assets.xcassets in Resources */,
+				AE67A4A922BE792700D4EEF4 /* TabsViewController.storyboard in Resources */,
 				AE2662EC22B4CDC800DE3996 /* Main.storyboard in Resources */,
 				AE26631C22B645D900DE3996 /* SideMenuViewController.storyboard in Resources */,
 			);
@@ -550,7 +588,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE67A4AF22BE7D5B00D4EEF4 /* TabsCellViewController.swift in Sources */,
 				8C46A93922BB36C600EBCE02 /* ThemeViewModel.swift in Sources */,
+				AED31F1A22BF4A700047E56B /* TabsManager.swift in Sources */,
 				AE1DF04E22B92BBE00018BD5 /* BookmarkAddViewModel.swift in Sources */,
 				8C46A90B22B9DD8D00EBCE02 /* Navigator.swift in Sources */,
 				AE26631E22B6854F00DE3996 /* SideMenuCellViewController.swift in Sources */,
@@ -560,13 +600,16 @@
 				8C46A93722BB360900EBCE02 /* ThemeViewController.swift in Sources */,
 				AE1DF04722B7D8B500018BD5 /* Bookmark+CoreDataClass.swift in Sources */,
 				AE1DF04822B7D8B500018BD5 /* Bookmark+CoreDataProperties.swift in Sources */,
+				AED31F1E22BF4F710047E56B /* Tab+CoreDataClass.swift in Sources */,
 				AE26631A22B63B1A00DE3996 /* SideMenuViewController.swift in Sources */,
 				8C46A90222B8D72500EBCE02 /* CircleMenu.swift in Sources */,
 				AE26632B22B785A100DE3996 /* BookmarkViewController.swift in Sources */,
 				8C46A8F522B87B0800EBCE02 /* Util.swift in Sources */,
 				8C46A92D22BB149700EBCE02 /* History+CoreDataClass.swift in Sources */,
 				8C46A91A22BA2E4E00EBCE02 /* HistoryViewModel.swift in Sources */,
+				AE67A4AD22BE79F600D4EEF4 /* TabsViewModel.swift in Sources */,
 				8C46A92E22BB149700EBCE02 /* History+CoreDataProperties.swift in Sources */,
+				AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */,
 				8C77E52D22BC99EF00BB50D1 /* Keys.swift in Sources */,
 				8C46A8FC22B897A000EBCE02 /* BookmarkCellViewController.swift in Sources */,
 				AE1DF03A22B7A18E00018BD5 /* BookmarkViewModel.swift in Sources */,
@@ -575,6 +618,7 @@
 				AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */,
 				8C46A90722B8E7A800EBCE02 /* BookmarkAddViewController.swift in Sources */,
 				AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */,
+				AED31F1F22BF4F710047E56B /* Tab+CoreDataProperties.swift in Sources */,
 				AE2662E722B4CDC800DE3996 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,8 @@ class WebViewViewModel {
     var circleMenuImageArray = Array<UIImage>()
     var circleMenuView: CKCircleMenuView?
 
+    var isAddingTab: Bool = false
+
     enum ToolbarItem: Int {
         case back = 0
         case forward
@@ -25,8 +27,10 @@ class WebViewViewModel {
 
     enum ActionItem: Int {
         case addBookmark = 0
-        case history
+//        case history
         case share
+        case tabs
+        case addtab
     }
 
     func viewDidLoad() {
@@ -35,8 +39,10 @@ class WebViewViewModel {
 
     func setupCircleMenu() {
         circleMenuImageArray.append(UIImage(named: "bookmark_m")!)
-        circleMenuImageArray.append(UIImage(named: "history_m")!)
+//        circleMenuImageArray.append(UIImage(named: "history_m")!)
         circleMenuImageArray.append(UIImage(named: "share")!)
+        circleMenuImageArray.append(UIImage(named: "tabs_m")!)
+        circleMenuImageArray.append(UIImage(named: "addtab_m")!)
     }
 
     func setCircleMenuPos(x: CGFloat, y: CGFloat) {
@@ -91,5 +97,10 @@ class WebViewViewModel {
         history?.date = Date() as NSDate
         history?.url = url
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+    }
+
+    func convertAndSaveImage(webView: UIView) -> String? {
+        let image = Util().screenshot(webView)
+        return Util().imageToString(image: image)
     }
 }

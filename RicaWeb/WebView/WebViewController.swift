@@ -29,7 +29,9 @@ class WebViewController: UIViewController {
         viewModel.viewDidLoad()
         webView.navigationDelegate = self
 
-        guard let request = viewModel.request(url: "https://www.google.com/") else { return }
+        TabsManager.shared.fetchTabs()
+        let firstPage = !TabsManager.shared.tabs.isEmpty ? TabsManager.shared.tabs[0].url : "https://google.com"
+        guard let request = viewModel.request(url: firstPage) else { return }
         webView.load(request)
 
         setThemeColor()
@@ -119,11 +121,13 @@ extension WebViewController: CKCircleMenuDelegate {
         switch selectedItem {
         case .addBookmark:
             addBookmarkModal()
-        case .history:
-            // TODO
-            print("TODO")
         case .share:
             share()
+        case .tabs:
+            navigateToTabsViewController()
+        case .addtab:
+            viewModel.isAddingTab = true
+            addTab()
         }
     }
     
@@ -141,6 +145,17 @@ extension WebViewController: CKCircleMenuDelegate {
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         viewModel.saveHistory(url: webView.url?.absoluteString)
+        if viewModel.isAddingTab {
+            let imageData = viewModel.convertAndSaveImage(webView: webView)
+            TabsManager.shared.makeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
+            viewModel.isAddingTab = false
+            TabsManager.shared.currentTab = TabsManager.shared.tabs.count - 1
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                let imageData = self.viewModel.convertAndSaveImage(webView: webView)
+                TabsManager.shared.changeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
+            }
+        }
     }
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
@@ -172,6 +187,20 @@ extension WebViewController {
         circleMenu.delegate = self
         circleMenu.openMenu()
     }
+
+    func navigateToTabsViewController() {
+        guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Tabs) as? UINavigationController else { return }
+        let tabsViewController = navigationViewController.topViewController as? TabsViewController
+        tabsViewController?.delegate = self
+        presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: .half, center: ModalCenterPosition.bottomCenter)
+        customPresentViewController(presenter, viewController: navigationViewController, animated: true, completion: nil)
+    }
+
+    func addTab() {
+        let url = "https://google.com"
+        guard let request = viewModel.request(url: url) else { return }
+        webView.load(request)
+    }
 }
 
 extension WebViewController: ThemeViewDelegate {
@@ -194,6 +223,13 @@ extension WebViewController: BookmarkDelegate {
 extension WebViewController: HistoryDelegate {
     func didSelectHistory(url: String) {
         guard let request = viewModel.request(url: url) else { return }
+        webView.load(request)
+    }
+}
+
+extension WebViewController: TabsDelegate {
+    func didSelectItemAt(tab: Tab) {
+        guard let request = viewModel.request(url: tab.url) else { return }
         webView.load(request)
     }
 }
