@@ -119,13 +119,12 @@ extension WebViewController: CKCircleMenuDelegate {
         switch selectedItem {
         case .addBookmark:
             addBookmarkModal()
-        case .history:
-            // TODO
-            print("TODO")
         case .share:
             share()
         case .tabs:
             navigateToTabsViewController()
+        case .addtab:
+            break
         }
     }
     
