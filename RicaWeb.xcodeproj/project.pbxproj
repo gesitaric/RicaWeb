@@ -52,6 +52,8 @@
 		AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */; };
 		AE67A4AD22BE79F600D4EEF4 /* TabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */; };
 		AE67A4AF22BE7D5B00D4EEF4 /* TabsCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */; };
+		AED31F1822BF48FA0047E56B /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1722BF48FA0047E56B /* TabModel.swift */; };
+		AED31F1A22BF4A700047E56B /* TabsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1922BF4A700047E56B /* TabsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewModel.swift; sourceTree = "<group>"; };
 		AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCellViewController.swift; sourceTree = "<group>"; };
+		AED31F1722BF48FA0047E56B /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		AED31F1922BF4A700047E56B /* TabsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsManager.swift; sourceTree = "<group>"; };
 		B81F4E2C1A9BEF9300AFE0D5 /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -335,12 +339,22 @@
 		AE67A4A722BE78E600D4EEF4 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				AED31F1B22BF4A750047E56B /* TabsManager */,
 				AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */,
 				AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */,
 				AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */,
 				AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		AED31F1B22BF4A750047E56B /* TabsManager */ = {
+			isa = PBXGroup;
+			children = (
+				AED31F1722BF48FA0047E56B /* TabModel.swift */,
+				AED31F1922BF4A700047E56B /* TabsManager.swift */,
+			);
+			path = TabsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,6 +587,7 @@
 			files = (
 				AE67A4AF22BE7D5B00D4EEF4 /* TabsCellViewController.swift in Sources */,
 				8C46A93922BB36C600EBCE02 /* ThemeViewModel.swift in Sources */,
+				AED31F1A22BF4A700047E56B /* TabsManager.swift in Sources */,
 				AE1DF04E22B92BBE00018BD5 /* BookmarkAddViewModel.swift in Sources */,
 				8C46A90B22B9DD8D00EBCE02 /* Navigator.swift in Sources */,
 				AE26631E22B6854F00DE3996 /* SideMenuCellViewController.swift in Sources */,
@@ -580,6 +595,7 @@
 				AE2662E922B4CDC800DE3996 /* WebViewController.swift in Sources */,
 				AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */,
 				8C46A93722BB360900EBCE02 /* ThemeViewController.swift in Sources */,
+				AED31F1822BF48FA0047E56B /* TabModel.swift in Sources */,
 				AE1DF04722B7D8B500018BD5 /* Bookmark+CoreDataClass.swift in Sources */,
 				AE1DF04822B7D8B500018BD5 /* Bookmark+CoreDataProperties.swift in Sources */,
 				AE26631A22B63B1A00DE3996 /* SideMenuViewController.swift in Sources */,

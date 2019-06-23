@@ -20,6 +20,11 @@ class WebViewController: UIViewController {
         return model
     }()
 
+    private lazy var tabsManager: TabsManager = {
+        let model = TabsManager()
+        return model
+    }()
+
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -29,7 +34,7 @@ class WebViewController: UIViewController {
         viewModel.viewDidLoad()
         webView.navigationDelegate = self
 
-        guard let request = viewModel.request(url: "https://www.google.com/") else { return }
+        guard let request = viewModel.request(url: tabsManager.tabs[0].url) else { return }
         webView.load(request)
 
         setThemeColor()
@@ -176,8 +181,8 @@ extension WebViewController {
 
     func navigateToTabsViewController() {
         guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Tabs) as? UINavigationController else { return }
-//        let tabsViewController = navigationViewController.topViewController as? TabsViewController
-//        tabsViewController?.delegate = self
+        let tabsViewController = navigationViewController.topViewController as? TabsViewController
+        tabsViewController?.delegate = self
         present(navigationViewController, animated: true, completion: nil)
     }
 }
@@ -202,6 +207,13 @@ extension WebViewController: BookmarkDelegate {
 extension WebViewController: HistoryDelegate {
     func didSelectHistory(url: String) {
         guard let request = viewModel.request(url: url) else { return }
+        webView.load(request)
+    }
+}
+
+extension WebViewController: TabsDelegate {
+    func didSelectItemAt(tab: TabModel) {
+        guard let request = viewModel.request(url: tab.url) else { return }
         webView.load(request)
     }
 }

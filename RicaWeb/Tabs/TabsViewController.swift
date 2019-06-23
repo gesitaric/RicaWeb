@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol TabsDelegate: class {
+    func didSelectItemAt(tab: TabModel)
+}
+
 class TabsViewController: UICollectionViewController {
 
     private lazy var viewModel: TabsViewModel = {
@@ -15,19 +19,32 @@ class TabsViewController: UICollectionViewController {
         return model
     }()
 
+    private lazy var tabsManager: TabsManager = {
+        let model = TabsManager()
+        return model
+    }()
+
+    weak var delegate: TabsDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.tabs.count
+        return tabsManager.tabs.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Reuse", for: indexPath) as? TabsCellViewController else { return UICollectionViewCell() }
-        let model = viewModel.tabs[indexPath.item]
-        cell.title.text = model
+        let model = tabsManager.tabs[indexPath.item]
+        cell.title.text = model.tilte
         return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        dismiss(animated: true, completion: {
+            self.delegate?.didSelectItemAt(tab: self.tabsManager.tabs[indexPath.item])
+        })
     }
 
     @IBAction func closeButton(_ sender: Any) {
