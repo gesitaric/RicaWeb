@@ -192,7 +192,8 @@ extension WebViewController {
         guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Tabs) as? UINavigationController else { return }
         let tabsViewController = navigationViewController.topViewController as? TabsViewController
         tabsViewController?.delegate = self
-        present(navigationViewController, animated: true, completion: nil)
+        presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: .half, center: ModalCenterPosition.bottomCenter)
+        customPresentViewController(presenter, viewController: navigationViewController, animated: true, completion: nil)
     }
 
     func addTab() {
