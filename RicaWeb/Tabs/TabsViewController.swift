@@ -29,6 +29,12 @@ class TabsViewController: UICollectionViewController {
         setThemeColor()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let index = TabsManager.shared.currentTab ?? TabsManager.shared.tabs.count - 1
+        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+    }
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return TabsManager.shared.tabs.count
     }
