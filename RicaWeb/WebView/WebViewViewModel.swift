@@ -15,6 +15,8 @@ class WebViewViewModel {
     var circleMenuImageArray = Array<UIImage>()
     var circleMenuView: CKCircleMenuView?
 
+    var isAddingTab: Bool = false
+
     enum ToolbarItem: Int {
         case back = 0
         case forward

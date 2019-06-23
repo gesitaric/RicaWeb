@@ -9,7 +9,23 @@
 import Foundation
 
 class TabsManager {
-    var tabs: [TabModel]  = [TabModel(url: "https://google.com", tilte: "Google"),
-                             TabModel(url: "https://yahoo.co.jp", tilte: "Yahoo"),
-                             TabModel(url: "https://italoricardogeske.netlify.com", tilte: "Italo Ricardo Geske")]
+    var tabManager: Tab?
+    var tabs: [Tab] = []
+
+    func makeTab(title: String?, url: String?) {
+        tabManager = Tab.mr_createEntity()
+        tabManager?.title = title ?? "Unknown"
+        tabManager?.url = url ?? "Unknown"
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+        tabs.append(tabManager!)
+    }
+
+    func fetchTabs() {
+        tabManager = Tab()
+        tabs = tabManager?.readData() ?? []
+    }
+
+    static let shared: TabsManager = {
+        return TabsManager()
+    }()
 }

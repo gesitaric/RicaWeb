@@ -20,11 +20,6 @@ class WebViewController: UIViewController {
         return model
     }()
 
-    private lazy var tabsManager: TabsManager = {
-        let model = TabsManager()
-        return model
-    }()
-
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -34,7 +29,9 @@ class WebViewController: UIViewController {
         viewModel.viewDidLoad()
         webView.navigationDelegate = self
 
-        guard let request = viewModel.request(url: tabsManager.tabs[0].url) else { return }
+        TabsManager.shared.fetchTabs()
+        let firstPage = !TabsManager.shared.tabs.isEmpty ? TabsManager.shared.tabs[0].url : "https://google.com"
+        guard let request = viewModel.request(url: firstPage) else { return }
         webView.load(request)
 
         setThemeColor()
@@ -129,7 +126,8 @@ extension WebViewController: CKCircleMenuDelegate {
         case .tabs:
             navigateToTabsViewController()
         case .addtab:
-            break
+            viewModel.isAddingTab = true
+            addTab()
         }
     }
     
@@ -147,6 +145,10 @@ extension WebViewController: CKCircleMenuDelegate {
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         viewModel.saveHistory(url: webView.url?.absoluteString)
+        if viewModel.isAddingTab {
+            TabsManager.shared.makeTab(title: webView.title, url: webView.url?.absoluteString)
+            viewModel.isAddingTab = false
+        }
     }
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
@@ -185,6 +187,12 @@ extension WebViewController {
         tabsViewController?.delegate = self
         present(navigationViewController, animated: true, completion: nil)
     }
+
+    func addTab() {
+        let url = "https://google.com"
+        guard let request = viewModel.request(url: url) else { return }
+        webView.load(request)
+    }
 }
 
 extension WebViewController: ThemeViewDelegate {
@@ -212,7 +220,7 @@ extension WebViewController: HistoryDelegate {
 }
 
 extension WebViewController: TabsDelegate {
-    func didSelectItemAt(tab: TabModel) {
+    func didSelectItemAt(tab: Tab) {
         guard let request = viewModel.request(url: tab.url) else { return }
         webView.load(request)
     }

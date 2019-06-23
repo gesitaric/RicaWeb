@@ -1,16 +1,16 @@
 //
-//  TabModel.swift
+//  Tab+CoreDataClass.swift
 //  RicaWeb
 //
 //  Created by Italo Ricardo Geske on 2019/06/23.
 //  Copyright © 2019 Italo Ricardo Geske. All rights reserved.
 //
+//
 
 import Foundation
+import CoreData
 
-struct TabModel {
+@objc(Tab)
+public class Tab: NSManagedObject {
 
-    let url: String
-    let tilte: String
-//    let image: String
 }
