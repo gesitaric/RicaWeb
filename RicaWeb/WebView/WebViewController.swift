@@ -146,8 +146,15 @@ extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         viewModel.saveHistory(url: webView.url?.absoluteString)
         if viewModel.isAddingTab {
-            TabsManager.shared.makeTab(title: webView.title, url: webView.url?.absoluteString)
+            let imageData = viewModel.convertAndSaveImage(webView: webView)
+            TabsManager.shared.makeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
             viewModel.isAddingTab = false
+            TabsManager.shared.currentTab = TabsManager.shared.tabs.count - 1
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                let imageData = self.viewModel.convertAndSaveImage(webView: webView)
+                TabsManager.shared.changeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
+            }
         }
     }
 

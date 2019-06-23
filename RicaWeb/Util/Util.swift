@@ -71,4 +71,39 @@ class Util {
         }
         return nil
     }
+
+    func screenshot(_ view: UIView?) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view?.bounds.size ?? CGSize.zero, _: true, _: 0)
+        view?.drawHierarchy(in: view?.bounds ?? CGRect.zero, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+
+    func imageToString(image: UIImage?) -> String? {
+        guard let image = image else { return nil }
+        guard let data = image.pngData() as NSData? else { return nil }
+        let pngData = data
+        let encodeString =
+            pngData.base64EncodedString(options: .lineLength64Characters)
+        return encodeString
+    }
+
+    func stringToImage(imageString:String?) -> UIImage? {
+        guard let imageString = imageString else { return nil }
+        //空白を+に変換する
+        let base64String = imageString.replacingOccurrences(of: " ", with:"+")
+        //BASE64の文字列をデコードしてNSDataを生成
+        let decodeBase64 =
+            NSData(base64Encoded:base64String, options: .ignoreUnknownCharacters)
+        //NSDataの生成が成功していたら
+        if let decodeSuccess = decodeBase64 {
+            //NSDataからUIImageを生成
+            let img = UIImage(data: decodeSuccess as Data)
+            //結果を返却
+            return img
+        }
+        return nil
+        
+    }
 }

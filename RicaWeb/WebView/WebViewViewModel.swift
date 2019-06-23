@@ -98,4 +98,9 @@ class WebViewViewModel {
         history?.url = url
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
     }
+
+    func convertAndSaveImage(webView: UIView) -> String? {
+        let image = Util().screenshot(webView)
+        return Util().imageToString(image: image)
+    }
 }

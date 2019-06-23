@@ -14,6 +14,8 @@ protocol TabsDelegate: class {
 
 class TabsViewController: UICollectionViewController {
 
+    var themeColor: UIColor?
+
     private lazy var viewModel: TabsViewModel = {
         let model = TabsViewModel()
         return model
@@ -23,6 +25,8 @@ class TabsViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        themeColor = Util().getThemeColor()
+        setThemeColor()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,10 +37,13 @@ class TabsViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Reuse", for: indexPath) as? TabsCellViewController else { return UICollectionViewCell() }
         let model = TabsManager.shared.tabs[indexPath.item]
         cell.title.text = model.title
+        cell.image.image = Util().stringToImage(imageString: model.image)
+        cell.backgroundColor = themeColor?.adjust(by: 40)
         return cell
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        TabsManager.shared.currentTab = indexPath.item
         dismiss(animated: true, completion: {
             self.delegate?.didSelectItemAt(tab: TabsManager.shared.tabs[indexPath.item])
         })
@@ -44,5 +51,10 @@ class TabsViewController: UICollectionViewController {
 
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+
+    private func setThemeColor() {
+        guard let color = themeColor else { return }
+        collectionView.backgroundColor = color.adjust(by: 70)
     }
 }
