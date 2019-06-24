@@ -28,13 +28,20 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         webView.navigationDelegate = self
-
-        TabsManager.shared.fetchTabs()
-        let firstPage = !TabsManager.shared.tabs.isEmpty ? TabsManager.shared.tabs[0].url : "https://google.com"
-        guard let request = viewModel.request(url: firstPage) else { return }
-        webView.load(request)
-
+        initialize()
         setThemeColor()
+    }
+
+    func initialize() {
+        TabsManager.shared.fetchTabs()
+        if !TabsManager.shared.tabs.isEmpty {
+            // TODO: Save last index
+            guard let request = viewModel.request(url: TabsManager.shared.tabs[0].url) else { return }
+            webView.load(request)
+        } else {
+            viewModel.isAddingTab = true
+            addTab()
+        }
     }
 
     @objc func dismissKeyboard() {
