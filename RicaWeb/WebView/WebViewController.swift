@@ -158,7 +158,7 @@ extension WebViewController: WKNavigationDelegate {
             viewModel.isAddingTab = false
             TabsManager.shared.currentTab = TabsManager.shared.tabs.count - 1
         } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 let imageData = self.viewModel.convertAndSaveImage(webView: webView)
                 TabsManager.shared.changeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
             }

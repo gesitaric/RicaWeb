@@ -14,8 +14,6 @@ protocol TabsDelegate: class {
 
 class TabsViewController: UICollectionViewController {
 
-    var themeColor: UIColor?
-
     private lazy var viewModel: TabsViewModel = {
         let model = TabsViewModel()
         return model
@@ -25,14 +23,13 @@ class TabsViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        themeColor = Util().getThemeColor()
+        viewModel.viewDidLoad()
         setThemeColor()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let index = TabsManager.shared.currentTab ?? TabsManager.shared.tabs.count - 1
-        collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+        collectionView.scrollToItem(at: viewModel.getIndexPath(), at: .centeredHorizontally, animated: true)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,11 +38,8 @@ class TabsViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Reuse", for: indexPath) as? TabsCellViewController else { return UICollectionViewCell() }
-        let model = TabsManager.shared.tabs[indexPath.item]
-        cell.title.text = model.title
-        cell.image.image = Util().stringToImage(imageString: model.image)
-        cell.backgroundColor = themeColor?.adjust(by: 40)
-        return cell
+        return viewModel.setupCell(cell: cell, indexPath: indexPath)
+        
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -60,7 +54,7 @@ class TabsViewController: UICollectionViewController {
     }
 
     private func setThemeColor() {
-        guard let color = themeColor else { return }
+        guard let color = viewModel.themeColor else { return }
         collectionView.backgroundColor = color.adjust(by: 70)
     }
 }
