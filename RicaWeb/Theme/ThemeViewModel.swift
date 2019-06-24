@@ -16,4 +16,17 @@ class ThemeViewModel {
         rows.append([UIColor]())
         rows[0] = UIColor.colors
     }
+
+    func setupCell(indexPath: IndexPath, cell: UITableViewCell) -> UITableViewCell {
+        let color = rows[indexPath.section][indexPath.row]
+        cell.textLabel?.text = color.name
+        cell.backgroundColor = color.adjust(by: 70)
+        return cell
+    }
+
+    func setNewColor(indexPath: IndexPath) -> String? {
+        let newColor = rows[indexPath.section][indexPath.row].name
+        UserDefaults.standard.set(newColor, forKey: Keys.themeKey)
+        return newColor
+    }
 }

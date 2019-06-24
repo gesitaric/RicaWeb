@@ -41,15 +41,11 @@ class ThemeViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as UITableViewCell
-        let color = viewModel.rows[indexPath.section][indexPath.row]
-        cell.textLabel?.text = color.name
-        cell.backgroundColor = color.adjust(by: 70)
-        return cell
+        return viewModel.setupCell(indexPath: indexPath, cell: cell)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newColor = viewModel.rows[indexPath.section][indexPath.row].name
-        UserDefaults.standard.set(newColor, forKey: Keys.themeKey)
+        let newColor = viewModel.setNewColor(indexPath: indexPath)
         delegate?.setNewColor(color: newColor)
         dismiss(animated: true, completion: {
             SCLAlertView().showSuccess("テーマの変更", subTitle: "テーマの色が\(newColor!)に適用されました。")
