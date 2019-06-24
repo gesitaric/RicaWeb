@@ -35,8 +35,8 @@ class WebViewController: UIViewController {
     func initialize() {
         TabsManager.shared.fetchTabs()
         if !TabsManager.shared.tabs.isEmpty {
-            // TODO: Save last index
-            guard let request = viewModel.request(url: TabsManager.shared.tabs[0].url) else { return }
+            TabsManager.shared.currentTab = viewModel.getLastIndex()
+            guard let request = viewModel.request(url: TabsManager.shared.tabs[TabsManager.shared.currentTab ?? 0].url) else { return }
             webView.load(request)
         } else {
             viewModel.isAddingTab = true
@@ -157,10 +157,12 @@ extension WebViewController: WKNavigationDelegate {
             TabsManager.shared.makeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
             viewModel.isAddingTab = false
             TabsManager.shared.currentTab = TabsManager.shared.tabs.count - 1
+            viewModel.saveLastIndex(int: TabsManager.shared.currentTab)
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 let imageData = self.viewModel.convertAndSaveImage(webView: webView)
                 TabsManager.shared.changeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
+                self.viewModel.saveLastIndex(int: TabsManager.shared.currentTab)
             }
         }
     }

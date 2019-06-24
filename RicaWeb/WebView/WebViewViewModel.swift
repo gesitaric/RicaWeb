@@ -27,7 +27,6 @@ class WebViewViewModel {
 
     enum ActionItem: Int {
         case addBookmark = 0
-//        case history
         case share
         case tabs
         case addtab
@@ -39,7 +38,6 @@ class WebViewViewModel {
 
     func setupCircleMenu() {
         circleMenuImageArray.append(UIImage(named: "bookmark_m")!)
-//        circleMenuImageArray.append(UIImage(named: "history_m")!)
         circleMenuImageArray.append(UIImage(named: "share")!)
         circleMenuImageArray.append(UIImage(named: "tabs_m")!)
         circleMenuImageArray.append(UIImage(named: "addtab_m")!)
@@ -102,5 +100,14 @@ class WebViewViewModel {
     func convertAndSaveImage(webView: UIView) -> String? {
         let image = Util().screenshot(webView)
         return Util().imageToString(image: image)
+    }
+
+    func saveLastIndex(int: Int?) {
+        guard let lastIndex = int else { return }
+        UserDefaults.standard.set(lastIndex, forKey: Keys.lastIndex)
+    }
+
+    func getLastIndex() -> Int {
+        return UserDefaults.standard.integer(forKey: Keys.lastIndex)
     }
 }

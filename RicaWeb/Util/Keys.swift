@@ -9,5 +9,8 @@
 import Foundation
 
 class Keys {
+    /*----theme---*/
     static var themeKey = "theme_color"
+    /*----webview---*/
+    static var lastIndex = "last_index"
 }
