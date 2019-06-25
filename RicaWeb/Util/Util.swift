@@ -58,7 +58,6 @@ class Util {
         let yourDate = formatter.date(from: myString)
         formatter.dateFormat = "dd-MMM-yyyy"
         let myStringafd = formatter.string(from: yourDate!)
-        print(myStringafd)
         return myStringafd
     }
 

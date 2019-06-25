@@ -53,6 +53,22 @@ class HistoryViewController: UITableViewController {
         })
     }
 
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "削除") { (action, index) -> Void in
+            self.viewModel.deleteRow(indexPath: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        deleteButton.backgroundColor = UIColor.red
+        return [deleteButton]
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteRow(indexPath: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
     func setThemeColor() {
         guard let color = Util().getThemeColor() else { return }
         tableView.backgroundColor = color.adjust(by:70)
