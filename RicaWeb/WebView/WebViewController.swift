@@ -234,6 +234,10 @@ extension WebViewController: HistoryDelegate {
 }
 
 extension WebViewController: TabsDelegate {
+    func closeAllTabs() {
+        webView.reload()
+    }
+    
     func didSelectItemAt(tab: Tab) {
         guard let request = viewModel.request(url: tab.url) else { return }
         webView.load(request)

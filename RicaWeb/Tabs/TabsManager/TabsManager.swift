@@ -35,6 +35,14 @@ class TabsManager {
         tabs = tabManager?.readData() ?? []
     }
 
+    func deleteTabs() {
+        tabs.removeAll()
+        Tab.mr_truncateAll()
+        tabManager = Tab.mr_createEntity()
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+        tabs.append(tabManager!)
+    }
+
     static let shared: TabsManager = {
         return TabsManager()
     }()

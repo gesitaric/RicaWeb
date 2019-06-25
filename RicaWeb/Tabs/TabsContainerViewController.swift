@@ -20,4 +20,12 @@ class TabsContainerViewController: UIViewController {
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func closeAllTabs(_ sender: Any) {
+        TabsManager.shared.deleteTabs()
+        TabsManager.shared.currentTab = 0
+        dismiss(animated: true, completion: {
+            self.delegate?.closeAllTabs()
+        })
+    }
 }
