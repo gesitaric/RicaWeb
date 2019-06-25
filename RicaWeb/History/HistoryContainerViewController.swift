@@ -9,8 +9,12 @@
 import Foundation
 
 class HistoryContainerViewController: UIViewController {
+    
+    weak var delegate: HistoryDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let child = children.first as? HistoryViewController
+        child?.delegate = delegate
     }
 
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
