@@ -29,12 +29,12 @@ class HistoryViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.rows[section].count
+        return viewModel.histories[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = viewModel.rows[indexPath.section][indexPath.row]
+        cell.textLabel?.text = viewModel.histories[indexPath.section][indexPath.row].url
         return cell
     }
 
@@ -47,7 +47,7 @@ class HistoryViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let url = viewModel.rows[indexPath.section][indexPath.row]
+        let url = viewModel.histories[indexPath.section][indexPath.row].url
         dismiss(animated: true, completion: {
             self.delegate?.didSelectHistory(url: url)
         })
