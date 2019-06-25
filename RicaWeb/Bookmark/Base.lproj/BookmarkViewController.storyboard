@@ -86,7 +86,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ブックマーク" id="SrE-7I-Al4">
-                        <barButtonItem key="rightBarButtonItem" title="X" id="82e-My-Mue">
+                        <barButtonItem key="rightBarButtonItem" title="閉じる" id="82e-My-Mue">
                             <connections>
                                 <action selector="closeButton:" destination="Ic5-l2-d7E" id="pA7-gK-tSC"/>
                             </connections>

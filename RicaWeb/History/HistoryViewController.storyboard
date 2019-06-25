@@ -105,7 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="ePe-UH-20q"/>
                     </view>
                     <navigationItem key="navigationItem" title="履歴" id="tBd-PU-qlJ">
-                        <barButtonItem key="rightBarButtonItem" title="X" id="eLR-oc-ucB">
+                        <barButtonItem key="rightBarButtonItem" title="閉じる" id="eLR-oc-ucB">
                             <connections>
                                 <action selector="closeButton:" destination="Xn0-QG-1Bj" id="yqV-li-WsP"/>
                             </connections>
