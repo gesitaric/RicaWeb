@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,19 +19,57 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="w4d-hG-HW2" kind="relationship" relationship="rootViewController" id="GE0-3a-NEY"/>
+                        <segue destination="hFa-yI-ls0" kind="relationship" relationship="rootViewController" id="jcS-xS-QGs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32G-nl-DC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-865" y="118"/>
+            <point key="canvasLocation" x="-1680" y="118"/>
         </scene>
         <!--タブ管理-->
+        <scene sceneID="jqK-eB-2za">
+            <objects>
+                <viewController id="hFa-yI-ls0" customClass="TabsContainerViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jgv-dV-kY8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ed9-UB-Oeu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="18f-92-Roq"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="w4d-hG-HW2" kind="embed" id="0sD-Z7-2qo"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ed9-UB-Oeu" firstAttribute="top" secondItem="u8s-VR-kOT" secondAttribute="top" id="Uoc-yY-8Ub"/>
+                            <constraint firstItem="u8s-VR-kOT" firstAttribute="trailing" secondItem="Ed9-UB-Oeu" secondAttribute="trailing" id="fDx-vv-t2D"/>
+                            <constraint firstItem="Ed9-UB-Oeu" firstAttribute="leading" secondItem="u8s-VR-kOT" secondAttribute="leading" id="jBF-6O-Ty1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u8s-VR-kOT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="タブ管理" id="h1g-I8-Ctn">
+                        <barButtonItem key="rightBarButtonItem" title="X" id="ros-yC-QzQ">
+                            <connections>
+                                <action selector="closeButton:" destination="hFa-yI-ls0" id="oTw-TK-gQo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7z-gz-s17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-842.02898550724649" y="118.52678571428571"/>
+        </scene>
+        <!--Tabs View Controller-->
         <scene sceneID="0V6-E1-Kbn">
             <objects>
                 <collectionViewController id="w4d-hG-HW2" customClass="TabsViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LMQ-pI-gzK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="sNL-HZ-95l">
@@ -41,7 +80,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Reuse" id="4zA-kE-GZd" customClass="TabsCellViewController" customModule="RicaWeb" customModuleProvider="target">
-                                <rect key="frame" x="55" y="5" width="300" height="350"/>
+                                <rect key="frame" x="55" y="32.5" width="300" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
@@ -89,18 +128,10 @@
                             <outlet property="delegate" destination="w4d-hG-HW2" id="CeJ-pq-BsC"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="タブ管理" id="h1g-I8-Ctn">
-                        <barButtonItem key="rightBarButtonItem" title="X" id="ros-yC-QzQ">
-                            <connections>
-                                <action selector="closeButton:" destination="w4d-hG-HW2" id="qEp-GD-hb2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBo-Lv-Nvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10.144927536231885" y="117.85714285714285"/>
+            <point key="canvasLocation" x="-41" y="-7"/>
         </scene>
     </scenes>
     <resources>

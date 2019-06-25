@@ -70,7 +70,6 @@ class WebViewController: UIViewController {
     }
 
     func navigateToHistoryViewController() {
-        // TODO
         guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) as? UINavigationController else { return }
         let historyViewContainer = navigationViewController.topViewController as? HistoryContainerViewController
         historyViewContainer?.delegate = self
@@ -197,9 +196,9 @@ extension WebViewController {
 
     func navigateToTabsViewController() {
         guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Tabs) as? UINavigationController else { return }
-        let tabsViewController = navigationViewController.topViewController as? TabsViewController
-        tabsViewController?.delegate = self
-        presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: .half, center: ModalCenterPosition.bottomCenter)
+        let tabsContainerViewController = navigationViewController.topViewController as? TabsContainerViewController
+        tabsContainerViewController?.delegate = self
+        presenter.presentationType = .custom(width: ModalSize.custom(size: Float(view.frame.width)), height: .full, center: ModalCenterPosition.bottomCenter)
         customPresentViewController(presenter, viewController: navigationViewController, animated: true, completion: nil)
     }
 
