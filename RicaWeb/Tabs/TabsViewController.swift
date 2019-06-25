@@ -49,10 +49,6 @@ class TabsViewController: UICollectionViewController {
         })
     }
 
-    @IBAction func closeButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-
     private func setThemeColor() {
         guard let color = viewModel.themeColor else { return }
         collectionView.backgroundColor = color.adjust(by: 70)

@@ -27,6 +27,7 @@
 		8C46A93722BB360900EBCE02 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46A93622BB360900EBCE02 /* ThemeViewController.swift */; };
 		8C46A93922BB36C600EBCE02 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46A93822BB36C600EBCE02 /* ThemeViewModel.swift */; };
 		8C77E52D22BC99EF00BB50D1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77E52C22BC99EF00BB50D1 /* Keys.swift */; };
+		8CBCCC6822C218BD00401F23 /* TabsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCCC6722C218BD00401F23 /* TabsContainerViewController.swift */; };
 		93E1AB332D5109BA29FA1719 /* Pods_RicaWebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC75699A6790078EA00A62 /* Pods_RicaWebUITests.framework */; };
 		A2B6A36CB2FDE2906B62DCA7 /* Pods_RicaWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818394015FE411A3EF6423F9 /* Pods_RicaWeb.framework */; };
 		AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF02F22B793C700018BD5 /* RicaWeb.xcdatamodeld */; };
@@ -98,6 +99,7 @@
 		8C46A93622BB360900EBCE02 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		8C46A93822BB36C600EBCE02 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		8C77E52C22BC99EF00BB50D1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		8CBCCC6722C218BD00401F23 /* TabsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsContainerViewController.swift; sourceTree = "<group>"; };
 		9634758CF9862BF0D0CDA88F /* Pods-RicaWebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebTests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebTests/Pods-RicaWebTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F622CC777912B183B3CDEA0 /* Pods_RicaWebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicaWebTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90F5337796A94E77C9048B5 /* Pods-RicaWebUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.release.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */,
 				AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */,
 				AE67A4AE22BE7D5B00D4EEF4 /* TabsCellViewController.swift */,
+				8CBCCC6722C218BD00401F23 /* TabsContainerViewController.swift */,
 				AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */,
 			);
 			path = Tabs;
@@ -612,6 +615,7 @@
 				AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */,
 				8C77E52D22BC99EF00BB50D1 /* Keys.swift in Sources */,
 				8C46A8FC22B897A000EBCE02 /* BookmarkCellViewController.swift in Sources */,
+				8CBCCC6822C218BD00401F23 /* TabsContainerViewController.swift in Sources */,
 				AE1DF03A22B7A18E00018BD5 /* BookmarkViewModel.swift in Sources */,
 				8C46A93022BB2BA900EBCE02 /* HistoryContainerViewController.swift in Sources */,
 				8C46A93222BB34AB00EBCE02 /* ThemeColors.swift in Sources */,
