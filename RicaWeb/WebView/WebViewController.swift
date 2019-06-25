@@ -72,8 +72,8 @@ class WebViewController: UIViewController {
     func navigateToHistoryViewController() {
         // TODO
         guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) as? UINavigationController else { return }
-        let historyViewController = navigationViewController.topViewController as? HistoryViewController
-        historyViewController?.delegate = self
+        let historyViewContainer = navigationViewController.topViewController as? HistoryContainerViewController
+        historyViewContainer?.delegate = self
         present(navigationViewController, animated: true, completion: nil)
     }
 }
