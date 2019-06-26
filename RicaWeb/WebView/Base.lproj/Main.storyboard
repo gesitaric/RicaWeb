@@ -52,14 +52,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5b8-6d-dUN"/>
                                 </connections>
                             </searchBar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oCR-rO-pDE">
+                                <rect key="frame" x="0.0" y="98" width="414" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="8tJ-7M-hru"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oCR-rO-pDE" firstAttribute="bottom" secondItem="7PA-qv-S7m" secondAttribute="bottom" id="21e-Vk-tGU"/>
                             <constraint firstItem="LLb-pr-iBz" firstAttribute="top" secondItem="7PA-qv-S7m" secondAttribute="bottom" id="6Vw-9S-Zi4"/>
                             <constraint firstAttribute="bottom" secondItem="4GW-lM-kyw" secondAttribute="bottom" id="7hS-E5-Vad"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4GW-lM-kyw" secondAttribute="trailing" id="7u3-Mw-y6a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LLb-pr-iBz" secondAttribute="trailing" id="84l-1E-WE1"/>
                             <constraint firstItem="4GW-lM-kyw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9lz-8P-YeX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oCR-rO-pDE" secondAttribute="trailing" id="BwA-Xi-VVy"/>
+                            <constraint firstItem="oCR-rO-pDE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EGc-CC-789"/>
                             <constraint firstItem="7PA-qv-S7m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gwn-sb-GPe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7PA-qv-S7m" secondAttribute="trailing" id="bLQ-Aw-C4j"/>
                             <constraint firstItem="7PA-qv-S7m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lWh-09-Adt"/>
@@ -74,6 +83,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="progressBar" destination="oCR-rO-pDE" id="pFg-ha-jxw"/>
                         <outlet property="searchBar" destination="7PA-qv-S7m" id="MMZ-gW-Xig"/>
                         <outlet property="tabBar" destination="4GW-lM-kyw" id="7On-Bb-OLh"/>
                         <outlet property="webView" destination="LLb-pr-iBz" id="A6R-Ux-aN9"/>
