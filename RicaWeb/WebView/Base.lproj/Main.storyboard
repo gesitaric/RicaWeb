@@ -10,23 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Web View Controller-->
+        <!--Web View Container-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WebViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WebViewContainer" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLb-pr-iBz">
-                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GW-lM-kyw">
                                 <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,9 +28,6 @@
                                     <tabBarItem title="Actions" image="action" id="zgH-8j-lDR"/>
                                     <tabBarItem systemItem="more" id="DWf-ad-VqV"/>
                                 </items>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xa9-cc-6G6"/>
-                                </connections>
                             </tabBar>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Googleで検索、またはURL入力" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-qv-S7m">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
@@ -48,9 +36,6 @@
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5b8-6d-dUN"/>
-                                </connections>
                             </searchBar>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oCR-rO-pDE">
                                 <rect key="frame" x="0.0" y="98" width="414" height="2"/>
@@ -58,22 +43,28 @@
                                     <constraint firstAttribute="height" constant="2" id="8tJ-7M-hru"/>
                                 </constraints>
                             </progressView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfz-3a-rKa">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <connections>
+                                    <segue destination="vhV-yO-QO5" kind="embed" id="NqS-hS-0A6"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oCR-rO-pDE" firstAttribute="bottom" secondItem="7PA-qv-S7m" secondAttribute="bottom" id="21e-Vk-tGU"/>
-                            <constraint firstItem="LLb-pr-iBz" firstAttribute="top" secondItem="7PA-qv-S7m" secondAttribute="bottom" id="6Vw-9S-Zi4"/>
+                            <constraint firstItem="4GW-lM-kyw" firstAttribute="top" secondItem="rfz-3a-rKa" secondAttribute="bottom" id="2gm-SL-I0B"/>
                             <constraint firstAttribute="bottom" secondItem="4GW-lM-kyw" secondAttribute="bottom" id="7hS-E5-Vad"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4GW-lM-kyw" secondAttribute="trailing" id="7u3-Mw-y6a"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LLb-pr-iBz" secondAttribute="trailing" id="84l-1E-WE1"/>
                             <constraint firstItem="4GW-lM-kyw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9lz-8P-YeX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oCR-rO-pDE" secondAttribute="trailing" id="BwA-Xi-VVy"/>
                             <constraint firstItem="oCR-rO-pDE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EGc-CC-789"/>
                             <constraint firstItem="7PA-qv-S7m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gwn-sb-GPe"/>
+                            <constraint firstItem="rfz-3a-rKa" firstAttribute="top" secondItem="7PA-qv-S7m" secondAttribute="bottom" id="Ooj-dz-ZCn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7PA-qv-S7m" secondAttribute="trailing" id="bLQ-Aw-C4j"/>
                             <constraint firstItem="7PA-qv-S7m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lWh-09-Adt"/>
-                            <constraint firstItem="4GW-lM-kyw" firstAttribute="top" secondItem="LLb-pr-iBz" secondAttribute="bottom" id="n5g-ez-Vxy"/>
-                            <constraint firstItem="LLb-pr-iBz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vET-SL-OW6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rfz-3a-rKa" secondAttribute="trailing" id="sZJ-Am-q7y"/>
+                            <constraint firstItem="rfz-3a-rKa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uLy-p0-7dF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -83,15 +74,46 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="progressBar" destination="oCR-rO-pDE" id="pFg-ha-jxw"/>
-                        <outlet property="searchBar" destination="7PA-qv-S7m" id="MMZ-gW-Xig"/>
-                        <outlet property="tabBar" destination="4GW-lM-kyw" id="7On-Bb-OLh"/>
-                        <outlet property="webView" destination="LLb-pr-iBz" id="A6R-Ux-aN9"/>
+                        <outlet property="mainView" destination="rfz-3a-rKa" id="Njy-Tk-HHR"/>
+                        <outlet property="progressBar" destination="oCR-rO-pDE" id="lWQ-XD-3va"/>
+                        <outlet property="searchBar" destination="7PA-qv-S7m" id="FGr-W8-zfs"/>
+                        <outlet property="tabBar" destination="4GW-lM-kyw" id="iSq-Qh-eqC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-230.43478260869566" y="115.84821428571428"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ojb-NI-aq1">
+            <objects>
+                <viewController id="vhV-yO-QO5" customClass="WebViewController" customModule="RicaWeb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b3O-vI-wmC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pye-bi-3sS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Pye-bi-3sS" secondAttribute="trailing" id="AE5-AU-lkL"/>
+                            <constraint firstItem="Pye-bi-3sS" firstAttribute="leading" secondItem="b3O-vI-wmC" secondAttribute="leading" id="NgJ-uP-Lj9"/>
+                            <constraint firstAttribute="bottom" secondItem="Pye-bi-3sS" secondAttribute="bottom" id="eed-4n-LkM"/>
+                            <constraint firstItem="Pye-bi-3sS" firstAttribute="top" secondItem="b3O-vI-wmC" secondAttribute="top" id="hBr-TJ-6q5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dHa-AO-qUC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBk-U0-A4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="116"/>
         </scene>
     </scenes>
     <resources>
