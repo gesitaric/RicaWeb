@@ -28,6 +28,9 @@
                                     <tabBarItem title="Actions" image="action" id="zgH-8j-lDR"/>
                                     <tabBarItem systemItem="more" id="DWf-ad-VqV"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Gs7-bz-NUv"/>
+                                </connections>
                             </tabBar>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Googleで検索、またはURL入力" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-qv-S7m">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
@@ -36,6 +39,9 @@
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FKM-Y8-oXC"/>
+                                </connections>
                             </searchBar>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oCR-rO-pDE">
                                 <rect key="frame" x="0.0" y="98" width="414" height="2"/>
@@ -110,6 +116,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dHa-AO-qUC"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Pye-bi-3sS" id="lhZ-mg-OLd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBk-U0-A4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

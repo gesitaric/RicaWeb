@@ -8,6 +8,8 @@
 
 import Foundation
 import Presentr
+import CKCircleMenuView
+import WebKit
 
 class WebViewContainer: UIViewController {
 
@@ -28,6 +30,7 @@ class WebViewContainer: UIViewController {
         setThemeColor()
         initialize()
         setupProgressBar()
+        viewModel.viewDidLoad()
     }
 
     func initialize() {
@@ -212,6 +215,12 @@ extension WebViewContainer: UISearchBarDelegate {
         viewModel.currentTab().load(request)
         searchBar.text = request.url?.absoluteString
         searchBar.resignFirstResponder()
+    }
+}
+
+extension WebViewContainer: WebViewDelegate {
+    func passParams(webView: WKWebView) {
+        print("成功")
     }
 }
 
