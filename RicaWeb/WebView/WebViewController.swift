@@ -135,10 +135,12 @@ extension WebViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let input = searchBar.text else { return }
-        let requester = viewModel.verifyUrl(urlString: input) ? viewModel.request(url: input) : viewModel.request(url: viewModel.googleSearch(q: input))
+        guard let url = viewModel.verifyUrl(urlString: input) else { return }
+        let requester = viewModel.request(url: url)
         guard let request = requester else { return }
         webView.load(request)
         searchBar.text = request.url?.absoluteString
+        searchBar.resignFirstResponder()
     }
 }
 
