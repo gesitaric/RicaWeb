@@ -53,7 +53,12 @@
                         <viewLayoutGuide key="safeArea" id="u8s-VR-kOT"/>
                     </view>
                     <navigationItem key="navigationItem" title="タブ管理" id="h1g-I8-Ctn">
-                        <barButtonItem key="rightBarButtonItem" title="X" id="ros-yC-QzQ">
+                        <barButtonItem key="leftBarButtonItem" title="全てを閉じる" id="Khb-br-AuD">
+                            <connections>
+                                <action selector="closeAllTabs:" destination="hFa-yI-ls0" id="lhd-Ig-Wlc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="閉じる" id="ros-yC-QzQ">
                             <connections>
                                 <action selector="closeButton:" destination="hFa-yI-ls0" id="oTw-TK-gQo"/>
                             </connections>

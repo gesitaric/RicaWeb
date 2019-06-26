@@ -10,6 +10,7 @@ import Foundation
 
 protocol TabsDelegate: class {
     func didSelectItemAt(tab: Tab)
+    func closeAllTabs()
 }
 
 class TabsViewController: UICollectionViewController {

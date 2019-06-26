@@ -49,6 +49,15 @@ class BookmarkViewController: UITableViewController {
         })
     }
 
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "削除") { (action, index) -> Void in
+            self.viewModel.deleteBookmark(indexPath: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        deleteButton.backgroundColor = UIColor.red
+        return [deleteButton]
+    }
+
     func setThemeColor() {
         guard let color = Util().getThemeColor() else { return }
         tableView.backgroundColor = color.adjust(by:70)

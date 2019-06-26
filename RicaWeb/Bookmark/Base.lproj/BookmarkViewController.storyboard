@@ -49,16 +49,16 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jne-hz-gul">
-                                            <rect key="frame" x="58" y="5" width="39.5" height="34"/>
+                                            <rect key="frame" x="58" y="5" width="340" height="34"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl4-Tp-3t5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="19.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-se-OZ2">
-                                                    <rect key="frame" x="0.0" y="19.5" width="39.5" height="14.5"/>
+                                                    <rect key="frame" x="0.0" y="19.5" width="340" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -67,6 +67,7 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Jne-hz-gul" secondAttribute="trailing" constant="16" id="BGt-bp-24b"/>
                                         <constraint firstItem="uTr-rR-weG" firstAttribute="centerY" secondItem="9wO-YH-v2Y" secondAttribute="centerY" id="NEl-du-rAM"/>
                                         <constraint firstItem="Jne-hz-gul" firstAttribute="leading" secondItem="uTr-rR-weG" secondAttribute="trailing" constant="10" id="OcV-2S-OYb"/>
                                         <constraint firstItem="Jne-hz-gul" firstAttribute="centerY" secondItem="9wO-YH-v2Y" secondAttribute="centerY" id="XhO-9z-hlr"/>
@@ -86,7 +87,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ブックマーク" id="SrE-7I-Al4">
-                        <barButtonItem key="rightBarButtonItem" title="X" id="82e-My-Mue">
+                        <barButtonItem key="rightBarButtonItem" title="閉じる" id="82e-My-Mue">
                             <connections>
                                 <action selector="closeButton:" destination="Ic5-l2-d7E" id="pA7-gK-tSC"/>
                             </connections>

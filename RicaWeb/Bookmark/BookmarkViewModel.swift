@@ -29,4 +29,10 @@ class BookmarkViewModel {
         guard self.bookmarks.contains(bookmarks[index]) else { return nil }
         return bookmarks[index]
     }
+
+    func deleteBookmark(indexPath: IndexPath) {
+        let bookmark = bookmarks.remove(at: indexPath.row)
+        bookmark.mr_deleteEntity()
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+    }
 }

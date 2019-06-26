@@ -42,7 +42,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="テーマ" id="Oix-Yv-r9F">
-                        <barButtonItem key="rightBarButtonItem" title="X" id="a4B-4I-9ag">
+                        <barButtonItem key="rightBarButtonItem" title="閉じる" id="a4B-4I-9ag">
                             <connections>
                                 <action selector="closeButton:" destination="jSU-qY-FCL" id="A6p-tb-MjY"/>
                             </connections>

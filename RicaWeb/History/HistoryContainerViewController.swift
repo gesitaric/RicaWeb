@@ -9,15 +9,21 @@
 import Foundation
 
 class HistoryContainerViewController: UIViewController {
+    var viewController: HistoryViewController?
     
     weak var delegate: HistoryDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let child = children.first as? HistoryViewController
-        child?.delegate = delegate
+        viewController = children.first as? HistoryViewController
+        viewController?.delegate = delegate
     }
 
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteHistoryButton(_ sender: UIButton) {
+        guard let isEditing = viewController?.tableView.isEditing else { return }
+        viewController?.tableView.setEditing(!isEditing, animated: true)
     }
 }
