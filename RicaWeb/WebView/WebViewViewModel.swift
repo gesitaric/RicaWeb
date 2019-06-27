@@ -53,7 +53,7 @@ class WebViewViewModel {
     func request(url: String) -> URLRequest? {
         let urlString = url
         let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
-        
+
         guard let encodedUrl = encodedUrlString else { return nil }
         if let url = URL(string: encodedUrl) {
             let request = URLRequest(url: url)
@@ -62,16 +62,28 @@ class WebViewViewModel {
         return nil
     }
 
-    //TODO: urlかquerieかちゃんと調べる
-    func verifyUrl (urlString: String?) -> Bool {
-        guard let urlString = urlString else { return false }
-        if let url = URL(string: urlString) {
-            return UIApplication.shared.canOpenURL(url)
+    func verifyUrl (urlString: String?) -> String? {
+        guard var urlString = urlString else { return nil }
+
+        var stringUrl: String
+        let checkUrl = urlString.components(separatedBy: ".")
+        if checkUrl.count > 1 {
+            // URLの場合
+            if !urlString.hasPrefix("http://") || !urlString.hasPrefix("https://") {
+                stringUrl = "http://"
+                urlString = stringUrl.appending(urlString)
+            }
+        } else {
+            // 検索ワード
+            urlString = urlString.replacingOccurrences(of: "?", with: " ")
+            let words = urlString.components(separatedBy: " ")
+            let searchWord = words.joined(separator: "+")
+            return googleSearch(q: searchWord)
         }
-        return false
+        return urlString
     }
 
-    func googleSearch(q: String) -> String {
+    private func googleSearch(q: String) -> String {
         return "http://www.google.com/search?q=" + q
     }
 

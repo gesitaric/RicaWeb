@@ -23,13 +23,15 @@ class WebViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
-
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         webView.navigationDelegate = self
         initialize()
         setThemeColor()
+        setupProgressBar()
     }
 
     func initialize() {
@@ -41,6 +43,32 @@ class WebViewController: UIViewController {
         } else {
             viewModel.isAddingTab = true
             addTab()
+        }
+    }
+
+    func setupProgressBar() {
+        webView.addObserver(self, forKeyPath:"estimatedProgress", options:.new, context:nil)
+    }
+
+    //ProgressBar Observer
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if(keyPath == "estimatedProgress") {
+            let progress = Float(webView.estimatedProgress)
+            if(progressBar != nil) {
+                // プログレスバーの更新
+                if(progress < 1.0) {
+                    progressBar.setProgress(progress, animated: true)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                    //TODO: StopButtonの追加
+//                    self.navigationItem.rightBarButtonItem = stopBtn
+                } else {
+                    // 読み込み完了
+                    progressBar.setProgress(0.0, animated: false)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//                    self.navigationItem.rightBarButtonItem = reloadBtn
+//                    searchBar.text = webView.url?.absoluteString
+                }
+            }
         }
     }
 
@@ -107,10 +135,12 @@ extension WebViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let input = searchBar.text else { return }
-        let requester = viewModel.verifyUrl(urlString: input) ? viewModel.request(url: input) : viewModel.request(url: viewModel.googleSearch(q: input))
+        guard let url = viewModel.verifyUrl(urlString: input) else { return }
+        let requester = viewModel.request(url: url)
         guard let request = requester else { return }
         webView.load(request)
         searchBar.text = request.url?.absoluteString
+        searchBar.resignFirstResponder()
     }
 }
 
