@@ -11,6 +11,8 @@ import WebKit
 import CKCircleMenuView
 
 class WebViewContainerViewModel {
+    
+    private var webView: WKWebView?
 
     var webViews: [WKWebView] = []
     var circleMenuImageArray = Array<UIImage>()
@@ -118,5 +120,14 @@ class WebViewContainerViewModel {
     func currentTab() -> WKWebView {
         guard  let currentIndex = TabsManager.shared.currentTab else { return WKWebView() }
         return webViews[currentIndex]
+    }
+
+    func setWebView(webView: WKWebView) {
+        self.webView = webView
+    }
+    
+    func getWebView() -> WKWebView {
+        guard let webView = webView else { return WKWebView() }
+        return webView
     }
 }

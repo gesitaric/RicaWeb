@@ -220,7 +220,7 @@ extension WebViewContainer: UISearchBarDelegate {
 
 extension WebViewContainer: WebViewDelegate {
     func passParams(webView: WKWebView) {
-        print("成功")
+        viewModel.setWebView(webView: webView)
     }
 }
 
