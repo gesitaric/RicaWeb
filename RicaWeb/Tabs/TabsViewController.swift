@@ -44,7 +44,7 @@ class TabsViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        TabsManager.shared.currentTab = indexPath.item
+        TabsManager.shared.changeCurrentTab(index: indexPath.item)
         dismiss(animated: true, completion: {
             self.delegate?.didSelectItemAt(tab: TabsManager.shared.tabs[indexPath.item])
         })

@@ -10,4 +10,5 @@ import Foundation
 
 class Keys {
     static var themeKey = "theme_color"
+    static var currentIndexKey = "current_index"
 }
