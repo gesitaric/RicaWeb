@@ -24,7 +24,25 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var progressBar: UIProgressView!
-    
+
+    weak var delegate: AnyObject?
+
+    init(delegate: AnyObject?, wKWebView: WKWebView?, url: String?) {
+        super.init(nibName: nil, bundle: nil)
+        self.delegate = delegate
+        self.webView = wKWebView
+        // ナビゲーションの戻るを非表示
+//        self.navigationItem.setHidesBackButton(true, animated:false)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    required override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
@@ -36,14 +54,16 @@ class WebViewController: UIViewController {
 
     func initialize() {
         TabsManager.shared.fetchTabs()
-        if !TabsManager.shared.tabs.isEmpty {
-            // TODO: Save last index
-            guard let request = viewModel.request(url: TabsManager.shared.tabs[0].url) else { return }
-            webView.load(request)
-        } else {
-            viewModel.isAddingTab = true
-            addTab()
-        }
+        let request = viewModel.request(url: "https://google.com")
+        webView.load(request!)
+//        if !TabsManager.shared.tabs.isEmpty {
+//            // TODO: Save last index
+//            guard let request = viewModel.request(url: TabsManager.shared.tabs[0].tab.url) else { return }
+//            webView.load(request)
+//        } else {
+//            viewModel.isAddingTab = true
+//            addTab()
+//        }
     }
 
     func setupProgressBar() {
@@ -195,7 +215,7 @@ extension WebViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        searchBar.text = webView.url?.absoluteString
+//        searchBar.text = webView.url?.absoluteString
     }
 }
 
@@ -268,9 +288,11 @@ extension WebViewController: TabsDelegate {
         webView.reload()
     }
     
-    func didSelectItemAt(tab: Tab) {
-        guard let request = viewModel.request(url: tab.url) else { return }
-        webView.load(request)
+    func didSelectItemAt(tab: TabData) {
+//        guard let request = viewModel.request(url: tab.tab.url) else { return }
+//        webView.load(request)
+        let webViewController = WebViewController(delegate: self, wKWebView: WKWebView(frame: view.frame), url: tab.tab.url)
+        navigationController?.pushViewController(webViewController, animated: true)
     }
 }
 

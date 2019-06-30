@@ -23,8 +23,8 @@ class TabsViewModel {
 
     func setupCell(cell: TabsCellViewController, indexPath: IndexPath) -> TabsCellViewController {
         let model = TabsManager.shared.tabs[indexPath.item]
-        cell.title.text = model.title
-        cell.image.image = Util().stringToImage(imageString: model.image)
+        cell.title.text = model.tab.title
+        cell.image.image = Util().stringToImage(imageString: model.tab.image)
         cell.backgroundColor = themeColor?.adjust(by: 40)
         return cell
     }

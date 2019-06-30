@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TabsDelegate: class {
-    func didSelectItemAt(tab: Tab)
+    func didSelectItemAt(tab: TabData)
     func closeAllTabs()
 }
 
@@ -42,7 +42,7 @@ class TabsViewController: UICollectionViewController {
         return viewModel.setupCell(cell: cell, indexPath: indexPath)
         
     }
-
+ 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         TabsManager.shared.currentTab = indexPath.item
         dismiss(animated: true, completion: {

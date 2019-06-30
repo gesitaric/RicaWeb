@@ -56,6 +56,7 @@
 		AED31F1A22BF4A700047E56B /* TabsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1922BF4A700047E56B /* TabsManager.swift */; };
 		AED31F1E22BF4F710047E56B /* Tab+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1C22BF4F710047E56B /* Tab+CoreDataClass.swift */; };
 		AED31F1F22BF4F710047E56B /* Tab+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED31F1D22BF4F710047E56B /* Tab+CoreDataProperties.swift */; };
+		AED736A822C7B0D800495280 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED736A722C7B0D800495280 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		AED31F1922BF4A700047E56B /* TabsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsManager.swift; sourceTree = "<group>"; };
 		AED31F1C22BF4F710047E56B /* Tab+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tab+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AED31F1D22BF4F710047E56B /* Tab+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tab+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AED736A722C7B0D800495280 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B81F4E2C1A9BEF9300AFE0D5 /* Pods-RicaWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicaWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-RicaWebUITests/Pods-RicaWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +266,7 @@
 		AE2662E522B4CDC800DE3996 /* RicaWeb */ = {
 			isa = PBXGroup;
 			children = (
+				AED736A622C7B0C200495280 /* WebViewTest */,
 				8C46A8F322B87AFA00EBCE02 /* Util */,
 				AE67A4A722BE78E600D4EEF4 /* Tabs */,
 				8C46A93322BB35E900EBCE02 /* Theme */,
@@ -361,6 +364,14 @@
 				AED31F1922BF4A700047E56B /* TabsManager.swift */,
 			);
 			path = TabsManager;
+			sourceTree = "<group>";
+		};
+		AED736A622C7B0C200495280 /* WebViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				AED736A722C7B0D800495280 /* WebView.swift */,
+			);
+			path = WebViewTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +613,7 @@
 				AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */,
 				8C46A93722BB360900EBCE02 /* ThemeViewController.swift in Sources */,
 				AE1DF04722B7D8B500018BD5 /* Bookmark+CoreDataClass.swift in Sources */,
+				AED736A822C7B0D800495280 /* WebView.swift in Sources */,
 				AE1DF04822B7D8B500018BD5 /* Bookmark+CoreDataProperties.swift in Sources */,
 				AED31F1E22BF4F710047E56B /* Tab+CoreDataClass.swift in Sources */,
 				AE26631A22B63B1A00DE3996 /* SideMenuViewController.swift in Sources */,

@@ -68,10 +68,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Jne-hz-gul" secondAttribute="trailing" constant="16" id="BGt-bp-24b"/>
+                                        <constraint firstAttribute="bottom" secondItem="Jne-hz-gul" secondAttribute="bottom" constant="4.5" id="Dvf-tL-SoZ"/>
                                         <constraint firstItem="uTr-rR-weG" firstAttribute="centerY" secondItem="9wO-YH-v2Y" secondAttribute="centerY" id="NEl-du-rAM"/>
                                         <constraint firstItem="Jne-hz-gul" firstAttribute="leading" secondItem="uTr-rR-weG" secondAttribute="trailing" constant="10" id="OcV-2S-OYb"/>
-                                        <constraint firstItem="Jne-hz-gul" firstAttribute="centerY" secondItem="9wO-YH-v2Y" secondAttribute="centerY" id="XhO-9z-hlr"/>
                                         <constraint firstItem="uTr-rR-weG" firstAttribute="leading" secondItem="9wO-YH-v2Y" secondAttribute="leading" constant="16" id="diK-fU-xIs"/>
+                                        <constraint firstItem="Jne-hz-gul" firstAttribute="top" secondItem="9wO-YH-v2Y" secondAttribute="top" constant="5" id="nhi-fZ-eUf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
