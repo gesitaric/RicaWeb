@@ -13,6 +13,7 @@ protocol SideMenuDelegate: class {
     func navigateToThemeController()
     func navigateToBookmarkController()
     func navigateToHistoryController()
+    func navigateToSettingsController()
 }
 
 class SideMenuViewController: UITableViewController {
@@ -64,6 +65,10 @@ class SideMenuViewController: UITableViewController {
         } else if indexPath.row == 0 && indexPath.section == 1 {
             dismiss(animated: true, completion: {
                 self.delegate?.navigateToThemeController()
+            })
+        } else if indexPath.row == 1 && indexPath.section == 1 {
+            dismiss(animated: true, completion: {
+                self.delegate?.navigateToSettingsController()
             })
         }
     }

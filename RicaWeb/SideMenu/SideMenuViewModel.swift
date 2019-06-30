@@ -10,8 +10,8 @@ import Foundation
 
 class SideMenuViewModel {
     private let sections: [String] = ["メイン", "設定"]
-    private let labels: [[String]] = [["ブックマーク","履歴"], ["テーマ"]]
-    private let images: [[String]] = [["bookmark","history"], ["theme"]]
+    private let labels: [[String]] = [["ブックマーク","履歴"], ["テーマ", "設定"]]
+    private let images: [[String]] = [["bookmark","history"], ["theme", "setting"]]
 
     func getImage(section: Int, row: Int) -> String {
         return images[section][row]

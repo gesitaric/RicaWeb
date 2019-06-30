@@ -17,6 +17,7 @@ class Navigator {
         case Theme = "ThemeViewController"
         case Main = "Main"
         case Tabs = "TabsViewController"
+        case Settings = "SettingsViewController"
     }
 
     func instantiate(viewControllerClass: Classes) -> UIViewController? {

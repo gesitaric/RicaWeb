@@ -49,6 +49,10 @@
 		AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */; };
 		AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632522B697FB00DE3996 /* WebViewViewModel.swift */; };
 		AE26632B22B785A100DE3996 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26632A22B785A100DE3996 /* BookmarkViewController.swift */; };
+		AE2D944C22C8ACE7003134F2 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2D944B22C8ACE7003134F2 /* SettingsViewController.storyboard */; };
+		AE2D944E22C8ACFA003134F2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D944D22C8ACFA003134F2 /* SettingsViewController.swift */; };
+		AE2D945022C8AD1A003134F2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D944F22C8AD1A003134F2 /* SettingsViewModel.swift */; };
+		AE2D945322C8B473003134F2 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D945222C8B473003134F2 /* SettingsManager.swift */; };
 		AE67A4A922BE792700D4EEF4 /* TabsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */; };
 		AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */; };
 		AE67A4AD22BE79F600D4EEF4 /* TabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */; };
@@ -129,6 +133,10 @@
 		AE26631F22B688FC00DE3996 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		AE26632522B697FB00DE3996 /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
 		AE26632A22B785A100DE3996 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		AE2D944B22C8ACE7003134F2 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		AE2D944D22C8ACFA003134F2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AE2D944F22C8AD1A003134F2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AE2D945222C8B473003134F2 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		AE67A4A822BE792700D4EEF4 /* TabsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabsViewController.storyboard; sourceTree = "<group>"; };
 		AE67A4AA22BE79BB00D4EEF4 /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		AE67A4AC22BE79F600D4EEF4 /* TabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewModel.swift; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				8C46A8F322B87AFA00EBCE02 /* Util */,
+				AE2D944A22C8ACBF003134F2 /* Settings */,
 				AE67A4A722BE78E600D4EEF4 /* Tabs */,
 				8C46A93322BB35E900EBCE02 /* Theme */,
 				8C46A91422BA2D1300EBCE02 /* History */,
@@ -340,6 +349,25 @@
 				8C46A8F822B8934E00EBCE02 /* BookmarkViewController.storyboard */,
 			);
 			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		AE2D944A22C8ACBF003134F2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AE2D945122C8B45D003134F2 /* SettingsManager */,
+				AE2D944D22C8ACFA003134F2 /* SettingsViewController.swift */,
+				AE2D944F22C8AD1A003134F2 /* SettingsViewModel.swift */,
+				AE2D944B22C8ACE7003134F2 /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		AE2D945122C8B45D003134F2 /* SettingsManager */ = {
+			isa = PBXGroup;
+			children = (
+				AE2D945222C8B473003134F2 /* SettingsManager.swift */,
+			);
+			path = SettingsManager;
 			sourceTree = "<group>";
 		};
 		AE67A4A722BE78E600D4EEF4 /* Tabs */ = {
@@ -473,6 +501,7 @@
 			files = (
 				8C46A91622BA2D2F00EBCE02 /* HistoryViewController.storyboard in Resources */,
 				8C46A8FE22B89ABC00EBCE02 /* BookmarkCellViewController.swift in Resources */,
+				AE2D944C22C8ACE7003134F2 /* SettingsViewController.storyboard in Resources */,
 				8C46A8FD22B89AA400EBCE02 /* BookmarkViewController.storyboard in Resources */,
 				AE2662F122B4CDCA00DE3996 /* LaunchScreen.storyboard in Resources */,
 				8C46A93522BB35F700EBCE02 /* ThemeViewController.storyboard in Resources */,
@@ -599,6 +628,7 @@
 				AE26631E22B6854F00DE3996 /* SideMenuCellViewController.swift in Sources */,
 				8C46A91822BA2DD900EBCE02 /* HistoryViewController.swift in Sources */,
 				AE2662E922B4CDC800DE3996 /* WebViewController.swift in Sources */,
+				AE2D945322C8B473003134F2 /* SettingsManager.swift in Sources */,
 				AE1DF03122B793C700018BD5 /* RicaWeb.xcdatamodeld in Sources */,
 				8C46A93722BB360900EBCE02 /* ThemeViewController.swift in Sources */,
 				AE1DF04722B7D8B500018BD5 /* Bookmark+CoreDataClass.swift in Sources */,
@@ -611,6 +641,7 @@
 				8C46A92D22BB149700EBCE02 /* History+CoreDataClass.swift in Sources */,
 				8C46A91A22BA2E4E00EBCE02 /* HistoryViewModel.swift in Sources */,
 				AE67A4AD22BE79F600D4EEF4 /* TabsViewModel.swift in Sources */,
+				AE2D945022C8AD1A003134F2 /* SettingsViewModel.swift in Sources */,
 				8C46A92E22BB149700EBCE02 /* History+CoreDataProperties.swift in Sources */,
 				AE67A4AB22BE79BB00D4EEF4 /* TabsViewController.swift in Sources */,
 				8C77E52D22BC99EF00BB50D1 /* Keys.swift in Sources */,
@@ -620,6 +651,7 @@
 				8C46A93022BB2BA900EBCE02 /* HistoryContainerViewController.swift in Sources */,
 				8C46A93222BB34AB00EBCE02 /* ThemeColors.swift in Sources */,
 				AE26632022B688FC00DE3996 /* SideMenuViewModel.swift in Sources */,
+				AE2D944E22C8ACFA003134F2 /* SettingsViewController.swift in Sources */,
 				8C46A90722B8E7A800EBCE02 /* BookmarkAddViewController.swift in Sources */,
 				AE26632622B697FB00DE3996 /* WebViewViewModel.swift in Sources */,
 				AED31F1F22BF4F710047E56B /* Tab+CoreDataProperties.swift in Sources */,

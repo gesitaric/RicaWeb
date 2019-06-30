@@ -36,6 +36,7 @@ class WebViewController: UIViewController {
 
     func initialize() {
         TabsManager.shared.fetchTabs()
+        SettingsManager.shared.initialize()
         if !TabsManager.shared.tabs.isEmpty {
             // TODO: Save last index
             let index = TabsManager.shared.initCurrentTab()
@@ -102,6 +103,12 @@ class WebViewController: UIViewController {
         guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) as? UINavigationController else { return }
         let historyViewContainer = navigationViewController.topViewController as? HistoryContainerViewController
         historyViewContainer?.delegate = self
+        present(navigationViewController, animated: true, completion: nil)
+    }
+
+    func navigateToSettingsViewController() {
+        guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Settings) as? UINavigationController else { return }
+//        let settingsViewController = navigationViewController.topViewController as? SettingsViewController
         present(navigationViewController, animated: true, completion: nil)
     }
 }
@@ -276,6 +283,10 @@ extension WebViewController: TabsDelegate {
 }
 
 extension WebViewController: SideMenuDelegate {
+    func navigateToSettingsController() {
+        navigateToSettingsViewController()
+    }
+    
     func navigateToHistoryController() {
         navigateToHistoryViewController()
     }
