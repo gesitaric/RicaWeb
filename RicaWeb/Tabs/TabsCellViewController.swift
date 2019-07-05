@@ -11,5 +11,9 @@ import Foundation
 class TabsCellViewController: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var image: UIImageView!
-    
+    var buttonAction: ((Any) -> Void)?
+
+    @IBAction func deleteTab(_ sender: Any) {
+        self.buttonAction?(sender)
+    }
 }

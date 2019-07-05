@@ -48,6 +48,12 @@ class TabsManager {
         saveUserDefaults(index: index)
     }
 
+    func deleteTab(index: Int) {
+        let tab = tabs.remove(at: index)
+        tab.mr_deleteEntity()
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+    }
+
     func initCurrentTab() -> Int {
         if UserDefaults.standard.object(forKey: Keys.currentIndexKey) != nil {
             let currentTab = UserDefaults.standard.integer(forKey: Keys.currentIndexKey)

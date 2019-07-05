@@ -39,6 +39,10 @@ class TabsViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Reuse", for: indexPath) as? TabsCellViewController else { return UICollectionViewCell() }
+        cell.buttonAction = { sender in
+            self.viewModel.deleteTab(index: indexPath.item)
+            collectionView.reloadData()
+        }
         return viewModel.setupCell(cell: cell, indexPath: indexPath)
         
     }
@@ -53,5 +57,9 @@ class TabsViewController: UICollectionViewController {
     private func setThemeColor() {
         guard let color = viewModel.themeColor else { return }
         collectionView.backgroundColor = color.adjust(by: 70)
+    }
+
+    @IBAction func closeTab(_ sender: Any) {
+        
     }
 }
