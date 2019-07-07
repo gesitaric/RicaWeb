@@ -178,11 +178,14 @@ extension WebViewController: CKCircleMenuDelegate {
     func circleMenuOpened() {
         tabBar.isUserInteractionEnabled = false
         webView.isUserInteractionEnabled = false
+        searchBar.isUserInteractionEnabled = false
     }
     
     func circleMenuClosed() {
         tabBar.isUserInteractionEnabled = true
         webView.isUserInteractionEnabled = true
+        searchBar.isUserInteractionEnabled = true
+        removeTapGesture()
     }
 }
 
@@ -229,6 +232,7 @@ extension WebViewController {
         guard let circleMenu = viewModel.circleMenuView else { return }
         view.addSubview(circleMenu)
         circleMenu.delegate = self
+        dismissCircleMenuTapGesture()
         circleMenu.openMenu()
     }
 
@@ -244,6 +248,25 @@ extension WebViewController {
         let url = "http://google.com"
         guard let request = viewModel.request(url: url) else { return }
         webView.load(request)
+    }
+
+    private func dismissCircleMenuTapGesture() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissCircleMenu))
+        //        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    //全部外してるから、要注意
+    private func removeTapGesture() {
+        if let recognizers = view.gestureRecognizers {
+            for recognizer in recognizers {
+                view.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+            }
+        }
+    }
+
+    @objc func dismissCircleMenu() {
+        viewModel.circleMenuView?.closeMenu()
     }
 }
 
