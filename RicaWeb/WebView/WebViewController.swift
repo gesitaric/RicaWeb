@@ -36,9 +36,11 @@ class WebViewController: UIViewController {
 
     func initialize() {
         TabsManager.shared.fetchTabs()
+        SettingsManager.shared.initialize()
         if !TabsManager.shared.tabs.isEmpty {
             // TODO: Save last index
-            guard let request = viewModel.request(url: TabsManager.shared.tabs[0].url) else { return }
+            let index = TabsManager.shared.initCurrentTab()
+            guard let request = viewModel.request(url: TabsManager.shared.tabs[index].url) else { return }
             webView.load(request)
         } else {
             viewModel.isAddingTab = true
@@ -101,6 +103,12 @@ class WebViewController: UIViewController {
         guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.History) as? UINavigationController else { return }
         let historyViewContainer = navigationViewController.topViewController as? HistoryContainerViewController
         historyViewContainer?.delegate = self
+        present(navigationViewController, animated: true, completion: nil)
+    }
+
+    func navigateToSettingsViewController() {
+        guard let navigationViewController = Navigator().instantiate(viewControllerClass: Navigator.Classes.Settings) as? UINavigationController else { return }
+//        let settingsViewController = navigationViewController.topViewController as? SettingsViewController
         present(navigationViewController, animated: true, completion: nil)
     }
 }
@@ -170,11 +178,14 @@ extension WebViewController: CKCircleMenuDelegate {
     func circleMenuOpened() {
         tabBar.isUserInteractionEnabled = false
         webView.isUserInteractionEnabled = false
+        searchBar.isUserInteractionEnabled = false
     }
     
     func circleMenuClosed() {
         tabBar.isUserInteractionEnabled = true
         webView.isUserInteractionEnabled = true
+        searchBar.isUserInteractionEnabled = true
+        removeTapGesture()
     }
 }
 
@@ -185,7 +196,7 @@ extension WebViewController: WKNavigationDelegate {
             let imageData = viewModel.convertAndSaveImage(webView: webView)
             TabsManager.shared.makeTab(title: webView.title, url: webView.url?.absoluteString, image: imageData)
             viewModel.isAddingTab = false
-            TabsManager.shared.currentTab = TabsManager.shared.tabs.count - 1
+            TabsManager.shared.changeCurrentTab(index: TabsManager.shared.tabs.count - 1)
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 let imageData = self.viewModel.convertAndSaveImage(webView: webView)
@@ -221,6 +232,7 @@ extension WebViewController {
         guard let circleMenu = viewModel.circleMenuView else { return }
         view.addSubview(circleMenu)
         circleMenu.delegate = self
+        dismissCircleMenuTapGesture()
         circleMenu.openMenu()
     }
 
@@ -233,9 +245,28 @@ extension WebViewController {
     }
 
     func addTab() {
-        let url = "https://google.com"
+        let url = "http://google.com"
         guard let request = viewModel.request(url: url) else { return }
         webView.load(request)
+    }
+
+    private func dismissCircleMenuTapGesture() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissCircleMenu))
+        //        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    //全部外してるから、要注意
+    private func removeTapGesture() {
+        if let recognizers = view.gestureRecognizers {
+            for recognizer in recognizers {
+                view.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+            }
+        }
+    }
+
+    @objc func dismissCircleMenu() {
+        viewModel.circleMenuView?.closeMenu()
     }
 }
 
@@ -275,6 +306,10 @@ extension WebViewController: TabsDelegate {
 }
 
 extension WebViewController: SideMenuDelegate {
+    func navigateToSettingsController() {
+        navigateToSettingsViewController()
+    }
+    
     func navigateToHistoryController() {
         navigateToHistoryViewController()
     }

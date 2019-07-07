@@ -28,4 +28,8 @@ class TabsViewModel {
         cell.backgroundColor = themeColor?.adjust(by: 40)
         return cell
     }
+
+    func deleteTab(index: Int) {
+        TabsManager.shared.deleteTab(index: index)
+    }
 }
