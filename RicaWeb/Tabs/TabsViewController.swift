@@ -30,7 +30,9 @@ class TabsViewController: UICollectionViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.scrollToItem(at: viewModel.getIndexPath(), at: .centeredHorizontally, animated: true)
+        if !TabsManager.shared.tabs.isEmpty {
+            collectionView.scrollToItem(at: viewModel.getIndexPath(), at: .centeredHorizontally, animated: true)
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
