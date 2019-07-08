@@ -133,6 +133,7 @@ extension WebViewController : UITabBarDelegate {
             present(navigationViewController, animated: true, completion: nil)
             // TODO: deselect
         }
+        tabBar.selectedItem = nil
     }
 }
 
