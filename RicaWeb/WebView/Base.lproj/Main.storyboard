@@ -37,6 +37,7 @@
                                     <tabBarItem title="Actions" image="action" id="zgH-8j-lDR"/>
                                     <tabBarItem systemItem="more" id="DWf-ad-VqV"/>
                                 </items>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xa9-cc-6G6"/>
                                 </connections>

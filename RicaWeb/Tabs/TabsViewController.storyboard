@@ -93,6 +93,9 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Italo Ricardo Geske" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXm-y6-iYm">
                                             <rect key="frame" x="64" y="16" width="147.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="147.5" id="5rO-7e-4xx"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -111,7 +114,7 @@
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-9n-pqX">
-                                            <rect key="frame" x="251.5" y="10" width="32.5" height="30"/>
+                                            <rect key="frame" x="254" y="10" width="30" height="30"/>
                                             <state key="normal" title="X"/>
                                             <connections>
                                                 <action selector="deleteTab:" destination="4zA-kE-GZd" eventType="touchUpInside" id="sw6-ve-DVr"/>
@@ -123,7 +126,6 @@
                                     <constraint firstItem="HDz-AQ-zve" firstAttribute="leading" secondItem="4zA-kE-GZd" secondAttribute="leading" constant="16" id="9sO-1o-2Yy"/>
                                     <constraint firstAttribute="bottom" secondItem="NmM-LE-kbF" secondAttribute="bottom" constant="16" id="AbY-t6-eJI"/>
                                     <constraint firstItem="tXm-y6-iYm" firstAttribute="leading" secondItem="HDz-AQ-zve" secondAttribute="trailing" constant="16" id="GGT-gB-U1k"/>
-                                    <constraint firstItem="44Q-9n-pqX" firstAttribute="leading" secondItem="tXm-y6-iYm" secondAttribute="trailing" constant="40" id="OL7-qs-dGg"/>
                                     <constraint firstAttribute="trailing" secondItem="NmM-LE-kbF" secondAttribute="trailing" constant="32" id="TV2-Gx-LEe"/>
                                     <constraint firstItem="NmM-LE-kbF" firstAttribute="leading" secondItem="4zA-kE-GZd" secondAttribute="leading" constant="32" id="Xld-Jo-7ps"/>
                                     <constraint firstItem="tXm-y6-iYm" firstAttribute="top" secondItem="4zA-kE-GZd" secondAttribute="top" constant="16" id="fa9-DK-Q05"/>

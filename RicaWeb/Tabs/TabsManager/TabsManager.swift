@@ -38,9 +38,7 @@ class TabsManager {
     func deleteTabs() {
         tabs.removeAll()
         Tab.mr_truncateAll()
-        tabManager = Tab.mr_createEntity()
-        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
-        tabs.append(tabManager!)
+        createNewTab()
     }
 
     func changeCurrentTab(index: Int) {
@@ -49,9 +47,22 @@ class TabsManager {
     }
 
     func deleteTab(index: Int) {
-        let tab = tabs.remove(at: index)
-        tab.mr_deleteEntity()
+        if tabs.count > 1 {
+            let tab = tabs.remove(at: index)
+            tab.mr_deleteEntity()
+            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+            if index >= tabs.count {
+                changeCurrentTab(index: tabs.count - 1)
+            } else {
+                changeCurrentTab(index: index)
+            }
+        }
+    }
+
+    func createNewTab() {
+        tabManager = Tab.mr_createEntity()
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+        tabs.append(tabManager!)
     }
 
     func initCurrentTab() -> Int {
